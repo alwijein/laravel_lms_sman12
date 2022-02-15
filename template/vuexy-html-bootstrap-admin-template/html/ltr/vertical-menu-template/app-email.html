@@ -1,0 +1,1923 @@
+<!DOCTYPE html>
+<!--
+Template Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
+Author: PixInvent
+Website: http://www.pixinvent.com/
+Contact: hello@pixinvent.com
+Follow: www.twitter.com/pixinvents
+Like: www.facebook.com/pixinvents
+Purchase: https://1.envato.market/vuexy_admin
+Renew Support: https://1.envato.market/vuexy_admin
+License: You must have a valid license purchased only from themeforest(the above link) in order to legally use the theme for your project.
+
+-->
+<html class="loading" lang="en" data-textdirection="ltr">
+  <!-- BEGIN: Head-->
+  
+<!-- Mirrored from pixinvent.com/demo/vuexy-html-bootstrap-admin-template/html/ltr/vertical-menu-template/app-email.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 15 Aug 2021 07:33:56 GMT -->
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=0,minimal-ui">
+    <meta name="description" content="Vuexy admin is super flexible, powerful, clean &amp; modern responsive bootstrap 4 admin template with unlimited possibilities.">
+    <meta name="keywords" content="admin template, Vuexy admin template, dashboard template, flat admin template, responsive admin template, web app">
+    <meta name="author" content="PIXINVENT">
+    <title>Email Application - Vuexy - Bootstrap HTML admin template</title>
+    <link rel="apple-touch-icon" href="../../../app-assets/images/ico/apple-icon-120.html">
+    <link rel="shortcut icon" type="image/x-icon" href="https://pixinvent.com/demo/vuexy-html-bootstrap-admin-template/app-assets/images/ico/favicon.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500;1,600" rel="stylesheet">
+
+    <!-- BEGIN: Vendor CSS-->
+    <link rel="stylesheet" type="text/css" href="../../../app-assets/vendors/css/vendors.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../app-assets/vendors/css/editors/quill/katex.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../app-assets/vendors/css/editors/quill/monokai-sublime.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../app-assets/vendors/css/editors/quill/quill.snow.css">
+    <link rel="stylesheet" type="text/css" href="../../../app-assets/vendors/css/extensions/toastr.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../app-assets/vendors/css/forms/select/select2.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com/">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Inconsolata&amp;family=Roboto+Slab&amp;family=Slabo+27px&amp;family=Sofia&amp;family=Ubuntu+Mono&amp;display=swap">
+    <!-- END: Vendor CSS-->
+
+    <!-- BEGIN: Theme CSS-->
+    <link rel="stylesheet" type="text/css" href="../../../app-assets/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../app-assets/css/bootstrap-extended.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../app-assets/css/colors.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../app-assets/css/components.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../app-assets/css/themes/dark-layout.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../app-assets/css/themes/bordered-layout.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../app-assets/css/themes/semi-dark-layout.min.css">
+
+    <!-- BEGIN: Page CSS-->
+    <link rel="stylesheet" type="text/css" href="../../../app-assets/css/core/menu/menu-types/vertical-menu.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../app-assets/css/plugins/forms/form-quill-editor.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../app-assets/css/plugins/extensions/ext-component-toastr.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../app-assets/css/pages/app-email.min.css">
+    <!-- END: Page CSS-->
+
+    <!-- BEGIN: Custom CSS-->
+    <link rel="stylesheet" type="text/css" href="../../../assets/css/style.css">
+    <!-- END: Custom CSS-->
+
+  </head>
+  <!-- END: Head-->
+
+  <!-- BEGIN: Body-->
+  <body class="vertical-layout vertical-menu-modern content-left-sidebar navbar-floating footer-static  " data-open="click" data-menu="vertical-menu-modern" data-col="content-left-sidebar">
+
+    <!-- BEGIN: Header-->
+    <nav class="header-navbar navbar navbar-expand-lg align-items-center floating-nav navbar-light navbar-shadow container-xxl">
+      <div class="navbar-container d-flex content">
+        <div class="bookmark-wrapper d-flex align-items-center">
+          <ul class="nav navbar-nav d-xl-none">
+            <li class="nav-item"><a class="nav-link menu-toggle" href="#"><i class="ficon" data-feather="menu"></i></a></li>
+          </ul>
+          <ul class="nav navbar-nav bookmark-icons">
+            <li class="nav-item d-none d-lg-block"><a class="nav-link" href="app-email.html" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Email"><i class="ficon" data-feather="mail"></i></a></li>
+            <li class="nav-item d-none d-lg-block"><a class="nav-link" href="app-chat.html" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Chat"><i class="ficon" data-feather="message-square"></i></a></li>
+            <li class="nav-item d-none d-lg-block"><a class="nav-link" href="app-calendar.html" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Calendar"><i class="ficon" data-feather="calendar"></i></a></li>
+            <li class="nav-item d-none d-lg-block"><a class="nav-link" href="app-todo.html" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Todo"><i class="ficon" data-feather="check-square"></i></a></li>
+          </ul>
+          <ul class="nav navbar-nav">
+            <li class="nav-item d-none d-lg-block"><a class="nav-link bookmark-star"><i class="ficon text-warning" data-feather="star"></i></a>
+              <div class="bookmark-input search-input">
+                <div class="bookmark-input-icon"><i data-feather="search"></i></div>
+                <input class="form-control input" type="text" placeholder="Bookmark" tabindex="0" data-search="search">
+                <ul class="search-list search-list-bookmark"></ul>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <ul class="nav navbar-nav align-items-center ms-auto">
+          <li class="nav-item dropdown dropdown-language"><a class="nav-link dropdown-toggle" id="dropdown-flag" href="#" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="flag-icon flag-icon-us"></i><span class="selected-language">English</span></a>
+            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdown-flag"><a class="dropdown-item" href="#" data-language="en"><i class="flag-icon flag-icon-us"></i> English</a><a class="dropdown-item" href="#" data-language="fr"><i class="flag-icon flag-icon-fr"></i> French</a><a class="dropdown-item" href="#" data-language="de"><i class="flag-icon flag-icon-de"></i> German</a><a class="dropdown-item" href="#" data-language="pt"><i class="flag-icon flag-icon-pt"></i> Portuguese</a></div>
+          </li>
+          <li class="nav-item d-none d-lg-block"><a class="nav-link nav-link-style"><i class="ficon" data-feather="moon"></i></a></li>
+          <li class="nav-item nav-search"><a class="nav-link nav-link-search"><i class="ficon" data-feather="search"></i></a>
+            <div class="search-input">
+              <div class="search-input-icon"><i data-feather="search"></i></div>
+              <input class="form-control input" type="text" placeholder="Explore Vuexy..." tabindex="-1" data-search="search">
+              <div class="search-input-close"><i data-feather="x"></i></div>
+              <ul class="search-list search-list-main"></ul>
+            </div>
+          </li>
+          <li class="nav-item dropdown dropdown-cart me-25"><a class="nav-link" href="#" data-bs-toggle="dropdown"><i class="ficon" data-feather="shopping-cart"></i><span class="badge rounded-pill bg-primary badge-up cart-item-count">6</span></a>
+            <ul class="dropdown-menu dropdown-menu-media dropdown-menu-end">
+              <li class="dropdown-menu-header">
+                <div class="dropdown-header d-flex">
+                  <h4 class="notification-title mb-0 me-auto">My Cart</h4>
+                  <div class="badge rounded-pill badge-light-primary">4 Items</div>
+                </div>
+              </li>
+              <li class="scrollable-container media-list">
+                <div class="list-item align-items-center"><img class="d-block rounded me-1" src="../../../app-assets/images/pages/eCommerce/1.png" alt="donuts" width="62">
+                  <div class="list-item-body flex-grow-1"><i class="ficon cart-item-remove" data-feather="x"></i>
+                    <div class="media-heading">
+                      <h6 class="cart-item-title"><a class="text-body" href="app-ecommerce-details.html"> Apple watch 5</a></h6><small class="cart-item-by">By Apple</small>
+                    </div>
+                    <div class="cart-item-qty">
+                      <div class="input-group">
+                        <input class="touchspin-cart" type="number" value="1">
+                      </div>
+                    </div>
+                    <h5 class="cart-item-price">$374.90</h5>
+                  </div>
+                </div>
+                <div class="list-item align-items-center"><img class="d-block rounded me-1" src="../../../app-assets/images/pages/eCommerce/7.png" alt="donuts" width="62">
+                  <div class="list-item-body flex-grow-1"><i class="ficon cart-item-remove" data-feather="x"></i>
+                    <div class="media-heading">
+                      <h6 class="cart-item-title"><a class="text-body" href="app-ecommerce-details.html"> Google Home Mini</a></h6><small class="cart-item-by">By Google</small>
+                    </div>
+                    <div class="cart-item-qty">
+                      <div class="input-group">
+                        <input class="touchspin-cart" type="number" value="3">
+                      </div>
+                    </div>
+                    <h5 class="cart-item-price">$129.40</h5>
+                  </div>
+                </div>
+                <div class="list-item align-items-center"><img class="d-block rounded me-1" src="../../../app-assets/images/pages/eCommerce/2.png" alt="donuts" width="62">
+                  <div class="list-item-body flex-grow-1"><i class="ficon cart-item-remove" data-feather="x"></i>
+                    <div class="media-heading">
+                      <h6 class="cart-item-title"><a class="text-body" href="app-ecommerce-details.html"> iPhone 11 Pro</a></h6><small class="cart-item-by">By Apple</small>
+                    </div>
+                    <div class="cart-item-qty">
+                      <div class="input-group">
+                        <input class="touchspin-cart" type="number" value="2">
+                      </div>
+                    </div>
+                    <h5 class="cart-item-price">$699.00</h5>
+                  </div>
+                </div>
+                <div class="list-item align-items-center"><img class="d-block rounded me-1" src="../../../app-assets/images/pages/eCommerce/3.png" alt="donuts" width="62">
+                  <div class="list-item-body flex-grow-1"><i class="ficon cart-item-remove" data-feather="x"></i>
+                    <div class="media-heading">
+                      <h6 class="cart-item-title"><a class="text-body" href="app-ecommerce-details.html"> iMac Pro</a></h6><small class="cart-item-by">By Apple</small>
+                    </div>
+                    <div class="cart-item-qty">
+                      <div class="input-group">
+                        <input class="touchspin-cart" type="number" value="1">
+                      </div>
+                    </div>
+                    <h5 class="cart-item-price">$4,999.00</h5>
+                  </div>
+                </div>
+                <div class="list-item align-items-center"><img class="d-block rounded me-1" src="../../../app-assets/images/pages/eCommerce/5.png" alt="donuts" width="62">
+                  <div class="list-item-body flex-grow-1"><i class="ficon cart-item-remove" data-feather="x"></i>
+                    <div class="media-heading">
+                      <h6 class="cart-item-title"><a class="text-body" href="app-ecommerce-details.html"> MacBook Pro</a></h6><small class="cart-item-by">By Apple</small>
+                    </div>
+                    <div class="cart-item-qty">
+                      <div class="input-group">
+                        <input class="touchspin-cart" type="number" value="1">
+                      </div>
+                    </div>
+                    <h5 class="cart-item-price">$2,999.00</h5>
+                  </div>
+                </div>
+              </li>
+              <li class="dropdown-menu-footer">
+                <div class="d-flex justify-content-between mb-1">
+                  <h6 class="fw-bolder mb-0">Total:</h6>
+                  <h6 class="text-primary fw-bolder mb-0">$10,999.00</h6>
+                </div><a class="btn btn-primary w-100" href="app-ecommerce-checkout.html">Checkout</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown dropdown-notification me-25"><a class="nav-link" href="#" data-bs-toggle="dropdown"><i class="ficon" data-feather="bell"></i><span class="badge rounded-pill bg-danger badge-up">5</span></a>
+            <ul class="dropdown-menu dropdown-menu-media dropdown-menu-end">
+              <li class="dropdown-menu-header">
+                <div class="dropdown-header d-flex">
+                  <h4 class="notification-title mb-0 me-auto">Notifications</h4>
+                  <div class="badge rounded-pill badge-light-primary">6 New</div>
+                </div>
+              </li>
+              <li class="scrollable-container media-list"><a class="d-flex" href="#">
+                  <div class="list-item d-flex align-items-start">
+                    <div class="me-1">
+                      <div class="avatar"><img src="../../../app-assets/images/portrait/small/avatar-s-15.jpg" alt="avatar" width="32" height="32"></div>
+                    </div>
+                    <div class="list-item-body flex-grow-1">
+                      <p class="media-heading"><span class="fw-bolder">Congratulation Sam 🎉</span>winner!</p><small class="notification-text"> Won the monthly best seller badge.</small>
+                    </div>
+                  </div></a><a class="d-flex" href="#">
+                  <div class="list-item d-flex align-items-start">
+                    <div class="me-1">
+                      <div class="avatar"><img src="../../../app-assets/images/portrait/small/avatar-s-3.jpg" alt="avatar" width="32" height="32"></div>
+                    </div>
+                    <div class="list-item-body flex-grow-1">
+                      <p class="media-heading"><span class="fw-bolder">New message</span>&nbsp;received</p><small class="notification-text"> You have 10 unread messages</small>
+                    </div>
+                  </div></a><a class="d-flex" href="#">
+                  <div class="list-item d-flex align-items-start">
+                    <div class="me-1">
+                      <div class="avatar bg-light-danger">
+                        <div class="avatar-content">MD</div>
+                      </div>
+                    </div>
+                    <div class="list-item-body flex-grow-1">
+                      <p class="media-heading"><span class="fw-bolder">Revised Order 👋</span>&nbsp;checkout</p><small class="notification-text"> MD Inc. order updated</small>
+                    </div>
+                  </div></a>
+                <div class="list-item d-flex align-items-center">
+                  <h6 class="fw-bolder me-auto mb-0">System Notifications</h6>
+                  <div class="form-check form-check-primary form-switch">
+                    <input class="form-check-input" id="systemNotification" type="checkbox" checked="">
+                    <label class="form-check-label" for="systemNotification"></label>
+                  </div>
+                </div><a class="d-flex" href="#">
+                  <div class="list-item d-flex align-items-start">
+                    <div class="me-1">
+                      <div class="avatar bg-light-danger">
+                        <div class="avatar-content"><i class="avatar-icon" data-feather="x"></i></div>
+                      </div>
+                    </div>
+                    <div class="list-item-body flex-grow-1">
+                      <p class="media-heading"><span class="fw-bolder">Server down</span>&nbsp;registered</p><small class="notification-text"> USA Server is down due to high CPU usage</small>
+                    </div>
+                  </div></a><a class="d-flex" href="#">
+                  <div class="list-item d-flex align-items-start">
+                    <div class="me-1">
+                      <div class="avatar bg-light-success">
+                        <div class="avatar-content"><i class="avatar-icon" data-feather="check"></i></div>
+                      </div>
+                    </div>
+                    <div class="list-item-body flex-grow-1">
+                      <p class="media-heading"><span class="fw-bolder">Sales report</span>&nbsp;generated</p><small class="notification-text"> Last month sales report generated</small>
+                    </div>
+                  </div></a><a class="d-flex" href="#">
+                  <div class="list-item d-flex align-items-start">
+                    <div class="me-1">
+                      <div class="avatar bg-light-warning">
+                        <div class="avatar-content"><i class="avatar-icon" data-feather="alert-triangle"></i></div>
+                      </div>
+                    </div>
+                    <div class="list-item-body flex-grow-1">
+                      <p class="media-heading"><span class="fw-bolder">High memory</span>&nbsp;usage</p><small class="notification-text"> BLR Server using high memory</small>
+                    </div>
+                  </div></a>
+              </li>
+              <li class="dropdown-menu-footer"><a class="btn btn-primary w-100" href="#">Read all notifications</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown dropdown-user"><a class="nav-link dropdown-toggle dropdown-user-link" id="dropdown-user" href="#" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <div class="user-nav d-sm-flex d-none"><span class="user-name fw-bolder">John Doe</span><span class="user-status">Admin</span></div><span class="avatar"><img class="round" src="../../../app-assets/images/portrait/small/avatar-s-11.jpg" alt="avatar" height="40" width="40"><span class="avatar-status-online"></span></span></a>
+            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdown-user"><a class="dropdown-item" href="page-profile.html"><i class="me-50" data-feather="user"></i> Profile</a><a class="dropdown-item" href="app-email.html"><i class="me-50" data-feather="mail"></i> Inbox</a><a class="dropdown-item" href="app-todo.html"><i class="me-50" data-feather="check-square"></i> Task</a><a class="dropdown-item" href="app-chat.html"><i class="me-50" data-feather="message-square"></i> Chats</a>
+              <div class="dropdown-divider"></div><a class="dropdown-item" href="page-account-settings.html"><i class="me-50" data-feather="settings"></i> Settings</a><a class="dropdown-item" href="page-pricing.html"><i class="me-50" data-feather="credit-card"></i> Pricing</a><a class="dropdown-item" href="page-faq.html"><i class="me-50" data-feather="help-circle"></i> FAQ</a><a class="dropdown-item" href="page-auth-login-v2.html"><i class="me-50" data-feather="power"></i> Logout</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <ul class="main-search-list-defaultlist d-none">
+      <li class="d-flex align-items-center"><a href="#">
+          <h6 class="section-label mt-75 mb-0">Files</h6></a></li>
+      <li class="auto-suggestion"><a class="d-flex align-items-center justify-content-between w-100" href="app-file-manager.html">
+          <div class="d-flex">
+            <div class="me-75"><img src="../../../app-assets/images/icons/xls.png" alt="png" height="32"></div>
+            <div class="search-data">
+              <p class="search-data-title mb-0">Two new item submitted</p><small class="text-muted">Marketing Manager</small>
+            </div>
+          </div><small class="search-data-size me-50 text-muted">&apos;17kb</small></a></li>
+      <li class="auto-suggestion"><a class="d-flex align-items-center justify-content-between w-100" href="app-file-manager.html">
+          <div class="d-flex">
+            <div class="me-75"><img src="../../../app-assets/images/icons/jpg.png" alt="png" height="32"></div>
+            <div class="search-data">
+              <p class="search-data-title mb-0">52 JPG file Generated</p><small class="text-muted">FontEnd Developer</small>
+            </div>
+          </div><small class="search-data-size me-50 text-muted">&apos;11kb</small></a></li>
+      <li class="auto-suggestion"><a class="d-flex align-items-center justify-content-between w-100" href="app-file-manager.html">
+          <div class="d-flex">
+            <div class="me-75"><img src="../../../app-assets/images/icons/pdf.png" alt="png" height="32"></div>
+            <div class="search-data">
+              <p class="search-data-title mb-0">25 PDF File Uploaded</p><small class="text-muted">Digital Marketing Manager</small>
+            </div>
+          </div><small class="search-data-size me-50 text-muted">&apos;150kb</small></a></li>
+      <li class="auto-suggestion"><a class="d-flex align-items-center justify-content-between w-100" href="app-file-manager.html">
+          <div class="d-flex">
+            <div class="me-75"><img src="../../../app-assets/images/icons/doc.png" alt="png" height="32"></div>
+            <div class="search-data">
+              <p class="search-data-title mb-0">Anna_Strong.doc</p><small class="text-muted">Web Designer</small>
+            </div>
+          </div><small class="search-data-size me-50 text-muted">&apos;256kb</small></a></li>
+      <li class="d-flex align-items-center"><a href="#">
+          <h6 class="section-label mt-75 mb-0">Members</h6></a></li>
+      <li class="auto-suggestion"><a class="d-flex align-items-center justify-content-between py-50 w-100" href="app-user-view.html">
+          <div class="d-flex align-items-center">
+            <div class="avatar me-75"><img src="../../../app-assets/images/portrait/small/avatar-s-8.jpg" alt="png" height="32"></div>
+            <div class="search-data">
+              <p class="search-data-title mb-0">John Doe</p><small class="text-muted">UI designer</small>
+            </div>
+          </div></a></li>
+      <li class="auto-suggestion"><a class="d-flex align-items-center justify-content-between py-50 w-100" href="app-user-view.html">
+          <div class="d-flex align-items-center">
+            <div class="avatar me-75"><img src="../../../app-assets/images/portrait/small/avatar-s-1.jpg" alt="png" height="32"></div>
+            <div class="search-data">
+              <p class="search-data-title mb-0">Michal Clark</p><small class="text-muted">FontEnd Developer</small>
+            </div>
+          </div></a></li>
+      <li class="auto-suggestion"><a class="d-flex align-items-center justify-content-between py-50 w-100" href="app-user-view.html">
+          <div class="d-flex align-items-center">
+            <div class="avatar me-75"><img src="../../../app-assets/images/portrait/small/avatar-s-14.jpg" alt="png" height="32"></div>
+            <div class="search-data">
+              <p class="search-data-title mb-0">Milena Gibson</p><small class="text-muted">Digital Marketing Manager</small>
+            </div>
+          </div></a></li>
+      <li class="auto-suggestion"><a class="d-flex align-items-center justify-content-between py-50 w-100" href="app-user-view.html">
+          <div class="d-flex align-items-center">
+            <div class="avatar me-75"><img src="../../../app-assets/images/portrait/small/avatar-s-6.jpg" alt="png" height="32"></div>
+            <div class="search-data">
+              <p class="search-data-title mb-0">Anna Strong</p><small class="text-muted">Web Designer</small>
+            </div>
+          </div></a></li>
+    </ul>
+    <ul class="main-search-list-defaultlist-other-list d-none">
+      <li class="auto-suggestion justify-content-between"><a class="d-flex align-items-center justify-content-between w-100 py-50">
+          <div class="d-flex justify-content-start"><span class="me-75" data-feather="alert-circle"></span><span>No results found.</span></div></a></li>
+    </ul>
+    <!-- END: Header-->
+
+
+    <!-- BEGIN: Main Menu-->
+    <div class="main-menu menu-fixed menu-light menu-accordion menu-shadow" data-scroll-to-active="true">
+      <div class="navbar-header">
+        <ul class="nav navbar-nav flex-row">
+          <li class="nav-item me-auto"><a class="navbar-brand" href="index.html"><span class="brand-logo">
+                <svg viewbox="0 0 139 95" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="24">
+                  <defs>
+                    <lineargradient id="linearGradient-1" x1="100%" y1="10.5120544%" x2="50%" y2="89.4879456%">
+                      <stop stop-color="#000000" offset="0%"></stop>
+                      <stop stop-color="#FFFFFF" offset="100%"></stop>
+                    </lineargradient>
+                    <lineargradient id="linearGradient-2" x1="64.0437835%" y1="46.3276743%" x2="37.373316%" y2="100%">
+                      <stop stop-color="#EEEEEE" stop-opacity="0" offset="0%"></stop>
+                      <stop stop-color="#FFFFFF" offset="100%"></stop>
+                    </lineargradient>
+                  </defs>
+                  <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                    <g id="Artboard" transform="translate(-400.000000, -178.000000)">
+                      <g id="Group" transform="translate(400.000000, 178.000000)">
+                        <path class="text-primary" id="Path" d="M-5.68434189e-14,2.84217094e-14 L39.1816085,2.84217094e-14 L69.3453773,32.2519224 L101.428699,2.84217094e-14 L138.784583,2.84217094e-14 L138.784199,29.8015838 C137.958931,37.3510206 135.784352,42.5567762 132.260463,45.4188507 C128.736573,48.2809251 112.33867,64.5239941 83.0667527,94.1480575 L56.2750821,94.1480575 L6.71554594,44.4188507 C2.46876683,39.9813776 0.345377275,35.1089553 0.345377275,29.8015838 C0.345377275,24.4942122 0.230251516,14.560351 -5.68434189e-14,2.84217094e-14 Z" style="fill:currentColor"></path>
+                        <path id="Path1" d="M69.3453773,32.2519224 L101.428699,1.42108547e-14 L138.784583,1.42108547e-14 L138.784199,29.8015838 C137.958931,37.3510206 135.784352,42.5567762 132.260463,45.4188507 C128.736573,48.2809251 112.33867,64.5239941 83.0667527,94.1480575 L56.2750821,94.1480575 L32.8435758,70.5039241 L69.3453773,32.2519224 Z" fill="url(#linearGradient-1)" opacity="0.2"></path>
+                        <polygon id="Path-2" fill="#000000" opacity="0.049999997" points="69.3922914 32.4202615 32.8435758 70.5039241 54.0490008 16.1851325"></polygon>
+                        <polygon id="Path-21" fill="#000000" opacity="0.099999994" points="69.3922914 32.4202615 32.8435758 70.5039241 58.3683556 20.7402338"></polygon>
+                        <polygon id="Path-3" fill="url(#linearGradient-2)" opacity="0.099999994" points="101.428699 0 83.0667527 94.1480575 130.378721 47.0740288"></polygon>
+                      </g>
+                    </g>
+                  </g>
+                </svg></span>
+              <h2 class="brand-text">Vuexy</h2></a></li>
+          <li class="nav-item nav-toggle"><a class="nav-link modern-nav-toggle pe-0" data-bs-toggle="collapse"><i class="d-block d-xl-none text-primary toggle-icon font-medium-4" data-feather="x"></i><i class="d-none d-xl-block collapse-toggle-icon font-medium-4  text-primary" data-feather="disc" data-ticon="disc"></i></a></li>
+        </ul>
+      </div>
+      <div class="shadow-bottom"></div>
+      <div class="main-menu-content">
+        <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation">
+          <li class=" nav-item"><a class="d-flex align-items-center" href="index.html"><i data-feather="home"></i><span class="menu-title text-truncate" data-i18n="Dashboards">Dashboards</span><span class="badge badge-light-warning rounded-pill ms-auto me-1">2</span></a>
+            <ul class="menu-content">
+              <li><a class="d-flex align-items-center" href="dashboard-analytics.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Analytics">Analytics</span></a>
+              </li>
+              <li><a class="d-flex align-items-center" href="dashboard-ecommerce.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="eCommerce">eCommerce</span></a>
+              </li>
+            </ul>
+          </li>
+          <li class=" navigation-header"><span data-i18n="Apps &amp; Pages">Apps &amp; Pages</span><i data-feather="more-horizontal"></i>
+          </li>
+          <li class="active nav-item"><a class="d-flex align-items-center" href="app-email.html"><i data-feather="mail"></i><span class="menu-title text-truncate" data-i18n="Email">Email</span></a>
+          </li>
+          <li class=" nav-item"><a class="d-flex align-items-center" href="app-chat.html"><i data-feather="message-square"></i><span class="menu-title text-truncate" data-i18n="Chat">Chat</span></a>
+          </li>
+          <li class=" nav-item"><a class="d-flex align-items-center" href="app-todo.html"><i data-feather="check-square"></i><span class="menu-title text-truncate" data-i18n="Todo">Todo</span></a>
+          </li>
+          <li class=" nav-item"><a class="d-flex align-items-center" href="app-calendar.html"><i data-feather="calendar"></i><span class="menu-title text-truncate" data-i18n="Calendar">Calendar</span></a>
+          </li>
+          <li class=" nav-item"><a class="d-flex align-items-center" href="app-kanban.html"><i data-feather="grid"></i><span class="menu-title text-truncate" data-i18n="Kanban">Kanban</span></a>
+          </li>
+          <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i data-feather="file-text"></i><span class="menu-title text-truncate" data-i18n="Invoice">Invoice</span></a>
+            <ul class="menu-content">
+              <li><a class="d-flex align-items-center" href="app-invoice-list.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="List">List</span></a>
+              </li>
+              <li><a class="d-flex align-items-center" href="app-invoice-preview.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Preview">Preview</span></a>
+              </li>
+              <li><a class="d-flex align-items-center" href="app-invoice-edit.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Edit">Edit</span></a>
+              </li>
+              <li><a class="d-flex align-items-center" href="app-invoice-add.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Add">Add</span></a>
+              </li>
+            </ul>
+          </li>
+          <li class=" nav-item"><a class="d-flex align-items-center" href="app-file-manager.html"><i data-feather="save"></i><span class="menu-title text-truncate" data-i18n="File Manager">File Manager</span></a>
+          </li>
+          <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i data-feather="shopping-cart"></i><span class="menu-title text-truncate" data-i18n="eCommerce">eCommerce</span></a>
+            <ul class="menu-content">
+              <li><a class="d-flex align-items-center" href="app-ecommerce-shop.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Shop">Shop</span></a>
+              </li>
+              <li><a class="d-flex align-items-center" href="app-ecommerce-details.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Details">Details</span></a>
+              </li>
+              <li><a class="d-flex align-items-center" href="app-ecommerce-wishlist.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Wish List">Wish List</span></a>
+              </li>
+              <li><a class="d-flex align-items-center" href="app-ecommerce-checkout.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Checkout">Checkout</span></a>
+              </li>
+            </ul>
+          </li>
+          <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i data-feather="user"></i><span class="menu-title text-truncate" data-i18n="User">User</span></a>
+            <ul class="menu-content">
+              <li><a class="d-flex align-items-center" href="app-user-list.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="List">List</span></a>
+              </li>
+              <li><a class="d-flex align-items-center" href="app-user-view.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="View">View</span></a>
+              </li>
+              <li><a class="d-flex align-items-center" href="app-user-edit.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Edit">Edit</span></a>
+              </li>
+            </ul>
+          </li>
+          <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i data-feather="file-text"></i><span class="menu-title text-truncate" data-i18n="Pages">Pages</span></a>
+            <ul class="menu-content">
+              <li><a class="d-flex align-items-center" href="#"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Authentication">Authentication</span></a>
+                <ul class="menu-content">
+                  <li><a class="d-flex align-items-center" href="page-auth-login-v1.html" target="_blank"><span class="menu-item text-truncate" data-i18n="LoginV1">Login v1</span></a>
+                  </li>
+                  <li><a class="d-flex align-items-center" href="page-auth-login-v2.html" target="_blank"><span class="menu-item text-truncate" data-i18n="LoginV2">Login v2</span></a>
+                  </li>
+                  <li><a class="d-flex align-items-center" href="page-auth-register-v1.html" target="_blank"><span class="menu-item text-truncate" data-i18n="RegisterV1">Register v1</span></a>
+                  </li>
+                  <li><a class="d-flex align-items-center" href="page-auth-register-v2.html" target="_blank"><span class="menu-item text-truncate" data-i18n="RegisterV2">Register v2</span></a>
+                  </li>
+                  <li><a class="d-flex align-items-center" href="page-auth-forgot-password-v1.html" target="_blank"><span class="menu-item text-truncate" data-i18n="ForgotPasswordV1">Forgot Password v1</span></a>
+                  </li>
+                  <li><a class="d-flex align-items-center" href="page-auth-forgot-password-v2.html" target="_blank"><span class="menu-item text-truncate" data-i18n="ForgotPasswordV2">Forgot Password v2</span></a>
+                  </li>
+                  <li><a class="d-flex align-items-center" href="page-auth-reset-password-v1.html" target="_blank"><span class="menu-item text-truncate" data-i18n="ResetPasswordV1">Reset Password v1</span></a>
+                  </li>
+                  <li><a class="d-flex align-items-center" href="page-auth-reset-password-v2.html" target="_blank"><span class="menu-item text-truncate" data-i18n="ResetPasswordV2">Reset Password v2</span></a>
+                  </li>
+                </ul>
+              </li>
+              <li><a class="d-flex align-items-center" href="page-account-settings.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Account Settings">Account Settings</span></a>
+              </li>
+              <li><a class="d-flex align-items-center" href="page-profile.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Profile">Profile</span></a>
+              </li>
+              <li><a class="d-flex align-items-center" href="page-faq.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="FAQ">FAQ</span></a>
+              </li>
+              <li><a class="d-flex align-items-center" href="page-knowledge-base.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Knowledge Base">Knowledge Base</span></a>
+              </li>
+              <li><a class="d-flex align-items-center" href="page-pricing.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Pricing">Pricing</span></a>
+              </li>
+              <li><a class="d-flex align-items-center" href="#"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Blog">Blog</span></a>
+                <ul class="menu-content">
+                  <li><a class="d-flex align-items-center" href="page-blog-list.html"><span class="menu-item text-truncate" data-i18n="List">List</span></a>
+                  </li>
+                  <li><a class="d-flex align-items-center" href="page-blog-detail.html"><span class="menu-item text-truncate" data-i18n="Detail">Detail</span></a>
+                  </li>
+                  <li><a class="d-flex align-items-center" href="page-blog-edit.html"><span class="menu-item text-truncate" data-i18n="Edit">Edit</span></a>
+                  </li>
+                </ul>
+              </li>
+              <li><a class="d-flex align-items-center" href="#"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Mail Template">Mail Template</span></a>
+                <ul class="menu-content">
+                  <li><a class="d-flex align-items-center" href="https://pixinvent.com/demo/vuexy-mail-template/mail-welcome.html" target="_blank"><span class="menu-item text-truncate" data-i18n="Welcome">Welcome</span></a>
+                  </li>
+                  <li><a class="d-flex align-items-center" href="https://pixinvent.com/demo/vuexy-mail-template/mail-reset-password.html" target="_blank"><span class="menu-item text-truncate" data-i18n="Reset Password">Reset Password</span></a>
+                  </li>
+                  <li><a class="d-flex align-items-center" href="https://pixinvent.com/demo/vuexy-mail-template/mail-verify-email.html" target="_blank"><span class="menu-item text-truncate" data-i18n="Verify Email">Verify Email</span></a>
+                  </li>
+                  <li><a class="d-flex align-items-center" href="https://pixinvent.com/demo/vuexy-mail-template/mail-deactivate-account.html" target="_blank"><span class="menu-item text-truncate" data-i18n="Deactivate Account">Deactivate Account</span></a>
+                  </li>
+                  <li><a class="d-flex align-items-center" href="https://pixinvent.com/demo/vuexy-mail-template/mail-invoice.html" target="_blank"><span class="menu-item text-truncate" data-i18n="Invoice">Invoice</span></a>
+                  </li>
+                  <li><a class="d-flex align-items-center" href="https://pixinvent.com/demo/vuexy-mail-template/mail-promotional.html" target="_blank"><span class="menu-item text-truncate" data-i18n="Promotional">Promotional</span></a>
+                  </li>
+                </ul>
+              </li>
+              <li><a class="d-flex align-items-center" href="#"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Miscellaneous">Miscellaneous</span></a>
+                <ul class="menu-content">
+                  <li><a class="d-flex align-items-center" href="page-misc-coming-soon.html" target="_blank"><span class="menu-item text-truncate" data-i18n="Coming Soon">Coming Soon</span></a>
+                  </li>
+                  <li><a class="d-flex align-items-center" href="page-misc-not-authorized.html" target="_blank"><span class="menu-item text-truncate" data-i18n="Not Authorized">Not Authorized</span></a>
+                  </li>
+                  <li><a class="d-flex align-items-center" href="page-misc-under-maintenance.html" target="_blank"><span class="menu-item text-truncate" data-i18n="Maintenance">Maintenance</span></a>
+                  </li>
+                  <li><a class="d-flex align-items-center" href="page-misc-error.html" target="_blank"><span class="menu-item text-truncate" data-i18n="Error">Error</span></a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li class=" navigation-header"><span data-i18n="User Interface">User Interface</span><i data-feather="more-horizontal"></i>
+          </li>
+          <li class=" nav-item"><a class="d-flex align-items-center" href="ui-typography.html"><i data-feather="type"></i><span class="menu-title text-truncate" data-i18n="Typography">Typography</span></a>
+          </li>
+          <li class=" nav-item"><a class="d-flex align-items-center" href="ui-feather.html"><i data-feather="eye"></i><span class="menu-title text-truncate" data-i18n="Feather">Feather</span></a>
+          </li>
+          <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i data-feather="credit-card"></i><span class="menu-title text-truncate" data-i18n="Card">Card</span><span class="badge badge-light-success rounded-pill ms-auto me-1">New</span></a>
+            <ul class="menu-content">
+              <li><a class="d-flex align-items-center" href="card-basic.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Basic">Basic</span></a>
+              </li>
+              <li><a class="d-flex align-items-center" href="card-advance.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Advance">Advance</span></a>
+              </li>
+              <li><a class="d-flex align-items-center" href="card-statistics.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Statistics">Statistics</span></a>
+              </li>
+              <li><a class="d-flex align-items-center" href="card-analytics.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Analytics">Analytics</span></a>
+              </li>
+              <li><a class="d-flex align-items-center" href="card-actions.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Card Actions">Card Actions</span></a>
+              </li>
+            </ul>
+          </li>
+          <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i data-feather="briefcase"></i><span class="menu-title text-truncate" data-i18n="Components">Components</span></a>
+            <ul class="menu-content">
+              <li><a class="d-flex align-items-center" href="component-accordion.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Accordion">Accordion</span></a>
+              </li>
+              <li><a class="d-flex align-items-center" href="component-alerts.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Alerts">Alerts</span></a>
+              </li>
+              <li><a class="d-flex align-items-center" href="component-avatar.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Avatar">Avatar</span></a>
+              </li>
+              <li><a class="d-flex align-items-center" href="component-badges.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Badges">Badges</span></a>
+              </li>
+              <li><a class="d-flex align-items-center" href="component-breadcrumbs.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Breadcrumbs">Breadcrumbs</span></a>
+              </li>
+              <li><a class="d-flex align-items-center" href="component-buttons.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Buttons">Buttons</span></a>
+              </li>
+              <li><a class="d-flex align-items-center" href="component-carousel.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Carousel">Carousel</span></a>
+              </li>
+              <li><a class="d-flex align-items-center" href="component-collapse.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Collapse">Collapse</span></a>
+              </li>
+              <li><a class="d-flex align-items-center" href="component-divider.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Divider">Divider</span></a>
+              </li>
+              <li><a class="d-flex align-items-center" href="component-dropdowns.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Dropdowns">Dropdowns</span></a>
+              </li>
+              <li><a class="d-flex align-items-center" href="component-list-group.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="List Group">List Group</span></a>
+              </li>
+              <li><a class="d-flex align-items-center" href="component-modals.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Modals">Modals</span></a>
+              </li>
+              <li><a class="d-flex align-items-center" href="component-navs-component.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Navs Component">Navs Component</span></a>
+              </li>
+              <li><a class="d-flex align-items-center" href="component-offcanvas.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Offcanvas">Offcanvas</span></a>
+              </li>
+              <li><a class="d-flex align-items-center" href="component-pagination.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Pagination">Pagination</span></a>
+              </li>
+              <li><a class="d-flex align-items-center" href="component-pill-badges.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Pill Badges">Pill Badges</span></a>
+              </li>
+              <li><a class="d-flex align-items-center" href="component-pills-component.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Pills Component">Pills Component</span></a>
+              </li>
+              <li><a class="d-flex align-items-center" href="component-popovers.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Popovers">Popovers</span></a>
+              </li>
+              <li><a class="d-flex align-items-center" href="component-progress.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Progress">Progress</span></a>
+              </li>
+              <li><a class="d-flex align-items-center" href="component-spinner.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Spinner">Spinner</span></a>
+              </li>
+              <li><a class="d-flex align-items-center" href="component-tabs-component.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Tabs Component">Tabs Component</span></a>
+              </li>
+              <li><a class="d-flex align-items-center" href="component-timeline.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Timeline">Timeline</span></a>
+              </li>
+              <li><a class="d-flex align-items-center" href="component-bs-toast.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Toasts">Toasts</span></a>
+              </li>
+              <li><a class="d-flex align-items-center" href="component-tooltips.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Tooltips">Tooltips</span></a>
+              </li>
+            </ul>
+          </li>
+          <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i data-feather="box"></i><span class="menu-title text-truncate" data-i18n="Extensions">Extensions</span></a>
+            <ul class="menu-content">
+              <li><a class="d-flex align-items-center" href="ext-component-sweet-alerts.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Sweet Alert">Sweet Alert</span></a>
+              </li>
+              <li><a class="d-flex align-items-center" href="ext-component-blockui.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Block UI">BlockUI</span></a>
+              </li>
+              <li><a class="d-flex align-items-center" href="ext-component-toastr.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Toastr">Toastr</span></a>
+              </li>
+              <li><a class="d-flex align-items-center" href="ext-component-sliders.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Sliders">Sliders</span></a>
+              </li>
+              <li><a class="d-flex align-items-center" href="ext-component-drag-drop.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Drag &amp; Drop">Drag &amp; Drop</span></a>
+              </li>
+              <li><a class="d-flex align-items-center" href="ext-component-tour.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Tour">Tour</span></a>
+              </li>
+              <li><a class="d-flex align-items-center" href="ext-component-clipboard.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Clipboard">Clipboard</span></a>
+              </li>
+              <li><a class="d-flex align-items-center" href="ext-component-media-player.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Media player">Media Player</span></a>
+              </li>
+              <li><a class="d-flex align-items-center" href="ext-component-context-menu.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Context Menu">Context Menu</span></a>
+              </li>
+              <li><a class="d-flex align-items-center" href="ext-component-swiper.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="swiper">Swiper</span></a>
+              </li>
+              <li><a class="d-flex align-items-center" href="ext-component-tree.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Tree">Tree</span></a>
+              </li>
+              <li><a class="d-flex align-items-center" href="ext-component-ratings.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Ratings">Ratings</span></a>
+              </li>
+              <li><a class="d-flex align-items-center" href="ext-component-i18n.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="l18n">l18n</span></a>
+              </li>
+            </ul>
+          </li>
+          <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i data-feather="layout"></i><span class="menu-title text-truncate" data-i18n="Page Layouts">Page Layouts</span></a>
+            <ul class="menu-content">
+              <li><a class="d-flex align-items-center" href="layout-collapsed-menu.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Collapsed Menu">Collapsed Menu</span></a>
+              </li>
+              <li><a class="d-flex align-items-center" href="layout-full.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Layout Full">Layout Full</span></a>
+              </li>
+              <li><a class="d-flex align-items-center" href="layout-without-menu.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Without Menu">Without Menu</span></a>
+              </li>
+              <li><a class="d-flex align-items-center" href="layout-empty.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Layout Empty">Layout Empty</span></a>
+              </li>
+              <li><a class="d-flex align-items-center" href="layout-blank.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Layout Blank">Layout Blank</span></a>
+              </li>
+            </ul>
+          </li>
+          <li class=" navigation-header"><span data-i18n="Forms &amp; Tables">Forms &amp; Tables</span><i data-feather="more-horizontal"></i>
+          </li>
+          <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i data-feather="copy"></i><span class="menu-title text-truncate" data-i18n="Form Elements">Form Elements</span></a>
+            <ul class="menu-content">
+              <li><a class="d-flex align-items-center" href="form-input.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Input">Input</span></a>
+              </li>
+              <li><a class="d-flex align-items-center" href="form-input-groups.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Input Groups">Input Groups</span></a>
+              </li>
+              <li><a class="d-flex align-items-center" href="form-input-mask.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Input Mask">Input Mask</span></a>
+              </li>
+              <li><a class="d-flex align-items-center" href="form-textarea.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Textarea">Textarea</span></a>
+              </li>
+              <li><a class="d-flex align-items-center" href="form-checkbox.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Checkbox">Checkbox</span></a>
+              </li>
+              <li><a class="d-flex align-items-center" href="form-radio.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Radio">Radio</span></a>
+              </li>
+              <li><a class="d-flex align-items-center" href="form-switch.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Switch">Switch</span></a>
+              </li>
+              <li><a class="d-flex align-items-center" href="form-select.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Select">Select</span></a>
+              </li>
+              <li><a class="d-flex align-items-center" href="form-number-input.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Number Input">Number Input</span></a>
+              </li>
+              <li><a class="d-flex align-items-center" href="form-file-uploader.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="File Uploader">File Uploader</span></a>
+              </li>
+              <li><a class="d-flex align-items-center" href="form-quill-editor.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Quill Editor">Quill Editor</span></a>
+              </li>
+              <li><a class="d-flex align-items-center" href="form-date-time-picker.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Date &amp; Time Picker">Date &amp; Time Picker</span></a>
+              </li>
+            </ul>
+          </li>
+          <li class=" nav-item"><a class="d-flex align-items-center" href="form-layout.html"><i data-feather="box"></i><span class="menu-title text-truncate" data-i18n="Form Layout">Form Layout</span></a>
+          </li>
+          <li class=" nav-item"><a class="d-flex align-items-center" href="form-wizard.html"><i data-feather="package"></i><span class="menu-title text-truncate" data-i18n="Form Wizard">Form Wizard</span></a>
+          </li>
+          <li class=" nav-item"><a class="d-flex align-items-center" href="form-validation.html"><i data-feather="check-circle"></i><span class="menu-title text-truncate" data-i18n="Form Validation">Form Validation</span></a>
+          </li>
+          <li class=" nav-item"><a class="d-flex align-items-center" href="form-repeater.html"><i data-feather="rotate-cw"></i><span class="menu-title text-truncate" data-i18n="Form Repeater">Form Repeater</span></a>
+          </li>
+          <li class=" nav-item"><a class="d-flex align-items-center" href="table-bootstrap.html"><i data-feather="server"></i><span class="menu-title text-truncate" data-i18n="Table">Table</span></a>
+          </li>
+          <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i data-feather="grid"></i><span class="menu-title text-truncate" data-i18n="Datatable">Datatable</span></a>
+            <ul class="menu-content">
+              <li><a class="d-flex align-items-center" href="table-datatable-basic.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Basic">Basic</span></a>
+              </li>
+              <li><a class="d-flex align-items-center" href="table-datatable-advanced.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Advanced">Advanced</span></a>
+              </li>
+            </ul>
+          </li>
+          <li class=" navigation-header"><span data-i18n="Charts &amp; Maps">Charts &amp; Maps</span><i data-feather="more-horizontal"></i>
+          </li>
+          <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i data-feather="pie-chart"></i><span class="menu-title text-truncate" data-i18n="Charts">Charts</span><span class="badge badge-light-danger rounded-pill ms-auto me-2">2</span></a>
+            <ul class="menu-content">
+              <li><a class="d-flex align-items-center" href="chart-apex.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Apex">Apex</span></a>
+              </li>
+              <li><a class="d-flex align-items-center" href="chart-chartjs.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Chartjs">Chartjs</span></a>
+              </li>
+            </ul>
+          </li>
+          <li class=" nav-item"><a class="d-flex align-items-center" href="maps-leaflet.html"><i data-feather="map"></i><span class="menu-title text-truncate" data-i18n="Leaflet Maps">Leaflet Maps</span></a>
+          </li>
+          <li class=" navigation-header"><span data-i18n="Misc">Misc</span><i data-feather="more-horizontal"></i>
+          </li>
+          <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i data-feather="menu"></i><span class="menu-title text-truncate" data-i18n="Menu Levels">Menu Levels</span></a>
+            <ul class="menu-content">
+              <li><a class="d-flex align-items-center" href="#"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Second Level">Second Level 2.1</span></a>
+              </li>
+              <li><a class="d-flex align-items-center" href="#"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Second Level">Second Level 2.2</span></a>
+                <ul class="menu-content">
+                  <li><a class="d-flex align-items-center" href="#"><span class="menu-item text-truncate" data-i18n="Third Level">Third Level 3.1</span></a>
+                  </li>
+                  <li><a class="d-flex align-items-center" href="#"><span class="menu-item text-truncate" data-i18n="Third Level">Third Level 3.2</span></a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li class="disabled nav-item"><a class="d-flex align-items-center" href="#"><i data-feather="eye-off"></i><span class="menu-title text-truncate" data-i18n="Disabled Menu">Disabled Menu</span></a>
+          </li>
+          <li class=" nav-item"><a class="d-flex align-items-center" href="https://pixinvent.com/demo/vuexy-html-bootstrap-admin-template/documentation" target="_blank"><i data-feather="folder"></i><span class="menu-title text-truncate" data-i18n="Documentation">Documentation</span></a>
+          </li>
+          <li class=" nav-item"><a class="d-flex align-items-center" href="https://pixinvent.ticksy.com/" target="_blank"><i data-feather="life-buoy"></i><span class="menu-title text-truncate" data-i18n="Raise Support">Raise Support</span></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <!-- END: Main Menu-->
+
+    <!-- BEGIN: Content-->
+    <div class="app-content content email-application">
+      <div class="content-overlay"></div>
+      <div class="header-navbar-shadow"></div>
+      <div class="content-area-wrapper container-xxl p-0">
+        <div class="sidebar-left">
+          <div class="sidebar"><div class="sidebar-content email-app-sidebar">
+  <div class="email-app-menu">
+    <div class="form-group-compose text-center compose-btn">
+      <button
+        type="button"
+        class="compose-email btn btn-primary w-100"
+        data-bs-backdrop="false"
+        data-bs-toggle="modal"
+        data-bs-target="#compose-mail"
+      >
+        Compose
+      </button>
+    </div>
+    <div class="sidebar-menu-list">
+      <div class="list-group list-group-messages">
+        <a href="#" class="list-group-item list-group-item-action active">
+          <i data-feather="mail" class="font-medium-3 me-50"></i>
+          <span class="align-middle">Inbox</span>
+          <span class="badge badge-light-primary rounded-pill float-end">3</span>
+        </a>
+        <a href="#" class="list-group-item list-group-item-action">
+          <i data-feather="send" class="font-medium-3 me-50"></i>
+          <span class="align-middle">Sent</span>
+        </a>
+        <a href="#" class="list-group-item list-group-item-action">
+          <i data-feather="edit-2" class="font-medium-3 me-50"></i>
+          <span class="align-middle">Draft</span>
+          <span class="badge badge-light-warning rounded-pill float-end">2</span>
+        </a>
+        <a href="#" class="list-group-item list-group-item-action">
+          <i data-feather="star" class="font-medium-3 me-50"></i>
+          <span class="align-middle">Starred</span>
+        </a>
+        <a href="#" class="list-group-item list-group-item-action">
+          <i data-feather="info" class="font-medium-3 me-50"></i>
+          <span class="align-middle">Spam</span>
+          <span class="badge badge-light-danger rounded-pill float-end">5</span>
+        </a>
+        <a href="#" class="list-group-item list-group-item-action">
+          <i data-feather="trash" class="font-medium-3 me-50"></i>
+          <span class="align-middle">Trash</span>
+        </a>
+      </div>
+      <!-- <hr /> -->
+      <h6 class="section-label mt-3 mb-1 px-2">Labels</h6>
+      <div class="list-group list-group-labels">
+        <a href="#" class="list-group-item list-group-item-action"
+          ><span class="bullet bullet-sm bullet-success me-1"></span>Personal</a
+        >
+        <a href="#" class="list-group-item list-group-item-action"
+          ><span class="bullet bullet-sm bullet-primary me-1"></span>Company</a
+        >
+        <a href="#" class="list-group-item list-group-item-action"
+          ><span class="bullet bullet-sm bullet-warning me-1"></span>Important</a
+        >
+        <a href="#" class="list-group-item list-group-item-action"
+          ><span class="bullet bullet-sm bullet-danger me-1"></span>Private</a
+        >
+      </div>
+    </div>
+  </div>
+</div>
+
+          </div>
+        </div>
+        <div class="content-right">
+          <div class="content-wrapper container-xxl p-0">
+            <div class="content-header row">
+            </div>
+            <div class="content-body"><div class="body-content-overlay"></div>
+<!-- Email list Area -->
+<div class="email-app-list">
+  <!-- Email search starts -->
+  <div class="app-fixed-search d-flex align-items-center">
+    <div class="sidebar-toggle d-block d-lg-none ms-1">
+      <i data-feather="menu" class="font-medium-5"></i>
+    </div>
+    <div class="d-flex align-content-center justify-content-between w-100">
+      <div class="input-group input-group-merge">
+        <span class="input-group-text"><i data-feather="search" class="text-muted"></i></span>
+        <input
+          type="text"
+          class="form-control"
+          id="email-search"
+          placeholder="Search email"
+          aria-label="Search..."
+          aria-describedby="email-search"
+        />
+      </div>
+    </div>
+  </div>
+  <!-- Email search ends -->
+
+  <!-- Email actions starts -->
+  <div class="app-action">
+    <div class="action-left">
+      <div class="form-check selectAll">
+        <input type="checkbox" class="form-check-input" id="selectAllCheck" />
+        <label class="form-check-label fw-bolder ps-25" for="selectAllCheck">Select All</label>
+      </div>
+    </div>
+    <div class="action-right">
+      <ul class="list-inline m-0">
+        <li class="list-inline-item">
+          <div class="dropdown">
+            <a
+              href="#"
+              class="dropdown-toggle"
+              id="folder"
+              data-bs-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              <i data-feather="folder" class="font-medium-2"></i>
+            </a>
+            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="folder">
+              <a class="dropdown-item d-flex align-items-center" href="#">
+                <i data-feather="edit-2" class="font-small-4 me-50"></i>
+                <span>Draft</span>
+              </a>
+              <a class="dropdown-item d-flex align-items-center" href="#">
+                <i data-feather="info" class="font-small-4 me-50"></i>
+                <span>Spam</span>
+              </a>
+              <a class="dropdown-item d-flex align-items-center" href="#">
+                <i data-feather="trash" class="font-small-4 me-50"></i>
+                <span>Trash</span>
+              </a>
+            </div>
+          </div>
+        </li>
+        <li class="list-inline-item">
+          <div class="dropdown">
+            <a
+              href="#"
+              class="dropdown-toggle"
+              id="tag"
+              data-bs-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              <i data-feather="tag" class="font-medium-2"></i>
+            </a>
+            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="tag">
+              <a href="#" class="dropdown-item"><span class="me-50 bullet bullet-success bullet-sm"></span>Personal</a>
+              <a href="#" class="dropdown-item"><span class="me-50 bullet bullet-primary bullet-sm"></span>Company</a>
+              <a href="#" class="dropdown-item"><span class="me-50 bullet bullet-warning bullet-sm"></span>Important</a>
+              <a href="#" class="dropdown-item"><span class="me-50 bullet bullet-danger bullet-sm"></span>Private</a>
+            </div>
+          </div>
+        </li>
+        <li class="list-inline-item mail-unread">
+          <span class="action-icon"><i data-feather="mail" class="font-medium-2"></i></span>
+        </li>
+        <li class="list-inline-item mail-delete">
+          <span class="action-icon"><i data-feather="trash-2" class="font-medium-2"></i></span>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <!-- Email actions ends -->
+
+  <!-- Email list starts -->
+  <div class="email-user-list">
+    <ul class="email-media-list">
+      <li class="d-flex user-mail mail-read">
+        <div class="mail-left pe-50">
+          <div class="avatar">
+            <img src="../../../app-assets/images/portrait/small/avatar-s-20.jpg" alt="avatar img holder" />
+          </div>
+          <div class="user-action">
+            <div class="form-check">
+              <input type="checkbox" class="form-check-input" id="customCheck1" />
+              <label class="form-check-label" for="customCheck1"></label>
+            </div>
+            <span class="email-favorite"><i data-feather="star"></i></span>
+          </div>
+        </div>
+        <div class="mail-body">
+          <div class="mail-details">
+            <div class="mail-items">
+              <h5 class="mb-25">Tonny Deep</h5>
+              <span class="text-truncate">🎯 Focused impactful open system </span>
+            </div>
+            <div class="mail-meta-item">
+              <span class="me-50 bullet bullet-success bullet-sm"></span>
+              <span class="mail-date">4:14 AM</span>
+            </div>
+          </div>
+          <div class="mail-message">
+            <p class="text-truncate mb-0">
+              Hey John, bah kivu decrete epanorthotic unnotched Argyroneta nonius veratrine preimaginary saunders
+              demidolmen Chaldaic allusiveness lorriker unworshipping ribaldish tableman hendiadys outwrest unendeavored
+              fulfillment scientifical Pianokoto CheloniaFreudian sperate unchary hyperneurotic phlogiston duodecahedron
+              unflown Paguridea catena disrelishable Stygian paleopsychology cantoris phosphoritic disconcord fruited
+              inblow somewhatly ilioperoneal forrard palfrey Satyrinae outfreeman melebiose
+            </p>
+          </div>
+        </div>
+      </li>
+      <li class="d-flex user-mail">
+        <div class="mail-left pe-50">
+          <div class="avatar">
+            <img src="../../../app-assets/images/portrait/small/avatar-s-17.jpg" alt="Generic placeholder image" />
+          </div>
+          <div class="user-action">
+            <div class="form-check">
+              <input type="checkbox" class="form-check-input" id="customCheck2" />
+              <label class="form-check-label" for="customCheck2"></label>
+            </div>
+            <span class="email-favorite"><i data-feather="star"></i></span>
+          </div>
+        </div>
+        <div class="mail-body">
+          <div class="mail-details">
+            <div class="mail-items">
+              <h5 class="mb-25">Louis Welch</h5>
+              <span class="text-truncate">Thanks, Let's do it.🤩</span>
+            </div>
+            <div class="mail-meta-item">
+              <span class="me-50 bullet bullet-danger bullet-sm"></span>
+              <span class="mail-date">2:15 AM</span>
+            </div>
+          </div>
+          <div class="mail-message">
+            <p class="mb-0 text-truncate">
+              Hi, Can we connect today? Cheesecake croissant jelly beans. Cake caramels pie chocolate. Muffin jujubes
+              dragée carrot cake candy icing bonbon. Danish caramels topping oat cake sweet roll liquorice tootsie roll
+              halvah.Chocolate bar jujubes jelly-o tart tiramisu croissant dragée cupcake jelly.
+            </p>
+          </div>
+        </div>
+      </li>
+      <li class="d-flex user-mail mail-read">
+        <div class="mail-left pe-50">
+          <div class="avatar">
+            <img src="../../../app-assets/images/portrait/small/avatar-s-7.jpg" alt="Generic placeholder image" />
+          </div>
+          <div class="user-action">
+            <div class="form-check">
+              <input type="checkbox" class="form-check-input" id="customCheck3" />
+              <label class="form-check-label" for="customCheck3"></label>
+            </div>
+            <span class="email-favorite"><i data-feather="star"></i></span>
+          </div>
+        </div>
+        <div class="mail-body">
+          <div class="mail-details">
+            <div class="mail-items">
+              <h5 class="mb-25">Envato Market</h5>
+              <span class="text-truncate">👋 You have new comment...</span>
+            </div>
+            <div class="mail-meta-item">
+              <span class="me-50 bullet bullet-success bullet-sm"></span>
+              <span class="mail-date">2:15 AM</span>
+            </div>
+          </div>
+          <div class="mail-message">
+            <p class="mb-0 text-truncate">
+              Hi There, Cotton candy jujubes ice cream candy. Oat cake jelly jelly brownie danish marzipan gummi bears.
+              Cupcake sweet bonbon tart. Sweet croissant jelly beans dragée chocolate cake gingerbread topping chocolate
+              bar lemon drops.
+            </p>
+          </div>
+        </div>
+      </li>
+      <li class="d-flex user-mail mail-read">
+        <div class="mail-left pe-50">
+          <div class="avatar">
+            <img src="../../../app-assets/images/portrait/small/avatar-s-5.jpg" alt="Generic placeholder image" />
+          </div>
+          <div class="user-action">
+            <div class="form-check">
+              <input type="checkbox" class="form-check-input" id="customCheck4" />
+              <label class="form-check-label" for="customCheck4"></label>
+            </div>
+            <span class="email-favorite"><i data-feather="star"></i></span>
+          </div>
+        </div>
+        <div class="mail-body">
+          <div class="mail-details">
+            <div class="mail-items">
+              <h5 class="mb-25">Sarah Montgomery</h5>
+              <span class="text-truncate">Your New UI.</span>
+            </div>
+            <div class="mail-meta-item">
+              <span class="me-50 bullet bullet-warning bullet-sm"></span>
+              <span class="mail-date">Yesterday</span>
+            </div>
+          </div>
+          <div class="mail-message">
+            <p class="text-truncate mb-0">
+              Hello, Everything looks good. Pastry marshmallow sugar plum. Gingerbread bonbon fruitcake gummi bears
+              wafer chocolate cake gummies tart ice cream. Danish topping biscuit dessert donut dessert. Chocolate
+              jelly-o topping marzipan fruitcake.
+            </p>
+          </div>
+        </div>
+      </li>
+      <li class="d-flex user-mail">
+        <div class="mail-left pe-50">
+          <div class="avatar">
+            <img src="../../../app-assets/images/portrait/small/avatar-s-3.jpg" alt="Generic placeholder image" />
+          </div>
+          <div class="user-action">
+            <div class="form-check">
+              <input type="checkbox" class="form-check-input" id="customCheck5" />
+              <label class="form-check-label" for="customCheck5"></label>
+            </div>
+            <span class="email-favorite"><i data-feather="star"></i></span>
+          </div>
+        </div>
+        <div class="mail-body">
+          <div class="mail-details">
+            <div class="mail-items">
+              <h5 class="mb-25">Ardis Balderson</h5>
+              <span class="text-truncate mb-0">Focused impactful open system</span>
+            </div>
+            <div class="mail-meta-item">
+              <i data-feather="paperclip"></i>
+              <span class="mx-50 bullet bullet-warning bullet-sm"></span>
+              <span class="mail-date">15 July</span>
+            </div>
+          </div>
+          <div class="mail-message">
+            <p class="mb-0 text-truncate">
+              Hey John, bah kivu decrete epanorthotic unnotched Argyroneta nonius veratrine preimaginary saunders
+              demidolmen Chaldaic allusiveness lorriker unworshipping ribaldish tableman hendiadys outwrest unendeavored
+              fulfillment scientifical Pianokoto CheloniaFreudian sperate unchary hyperneurotic phlogiston duodecahedron
+              unflown Paguridea catena disrelishable Stygian paleopsychology cantoris phosphoritic disconcord fruited
+              inblow somewhatly ilioperoneal forrard palfrey
+            </p>
+          </div>
+        </div>
+      </li>
+      <li class="d-flex user-mail">
+        <div class="mail-left pe-50">
+          <div class="avatar">
+            <img src="../../../app-assets/images/portrait/small/avatar-s-8.jpg" alt="Generic placeholder image" />
+          </div>
+          <div class="user-action">
+            <div class="form-check">
+              <input type="checkbox" class="form-check-input" id="customCheck6" />
+              <label class="form-check-label" for="customCheck6"></label>
+            </div>
+            <span class="email-favorite"><i data-feather="star"></i></span>
+          </div>
+        </div>
+        <div class="mail-body">
+          <div class="mail-details">
+            <div class="mail-items">
+              <h5 class="mb-25">Modestine Spat</h5>
+              <span class="text-truncate mb-0">Profound systemic alliance 🎉</span>
+            </div>
+            <div class="mail-meta-item">
+              <span class="mx-50 bullet bullet-primary bullet-sm"></span>
+              <span class="mail-date">11 July</span>
+            </div>
+          </div>
+          <div class="mail-message">
+            <p class="mb-0 text-truncate">
+              Hey John, Parthenopean logeion chipwood tonsilitic cockleshell substance Stilbum dismayed tape Alderamin
+              Phororhacos bridewain zoonomia lujaurite printline extraction weanedness charterless splitmouth bindoree
+              unfit philological Pythonissa scintillescentcinchonism sabbaton thyrocricoid dissuasively schematograph
+              immerse pristane stimulability unreligion uncomplemental uteritis nef bavenite Hachiman teleutosorus
+              anterolateral infirmate Nahani Hyla barile farthing
+            </p>
+          </div>
+        </div>
+      </li>
+      <li class="d-flex user-mail mail-read">
+        <div class="mail-left pe-50">
+          <div class="avatar">
+            <img src="../../../app-assets/images/portrait/small/avatar-s-11.jpg" alt="Generic placeholder image" />
+          </div>
+          <div class="user-action">
+            <div class="form-check">
+              <input type="checkbox" class="form-check-input" id="customCheck7" />
+              <label class="form-check-label" for="customCheck7"></label>
+            </div>
+            <span class="email-favorite"><i data-feather="star"></i></span>
+          </div>
+        </div>
+        <div class="mail-body">
+          <div class="mail-details">
+            <div class="mail-items">
+              <h5 class="mb-25">Eb Begg</h5>
+              <span class="text-truncate mb-0">Organized value-added model</span>
+            </div>
+            <div class="mail-meta-item">
+              <span class="mx-50 bullet bullet-success bullet-sm"></span>
+              <span class="mail-date">1 July</span>
+            </div>
+          </div>
+          <div class="mail-message">
+            <p class="mb-0 text-truncate">
+              Hello Sir, Lituola restrengthen bathofloric manciple decaffeinize Debby aciliated eatage proscribe
+              prejurisdiction buttle quacky hyposecretion indemonstrableness schelling lymphopathy consumptivity
+              nonappointment filminess spumiform erotogenicity equestrianize boneflower interlardationallocate ponzite
+              cote guilder tuff strind blamefully cocaine monstrously apocalyptically sublanate cherubimical
+              oligoplasmia Miltonian hydrazyl unbeset statured Unami Cordeau strouthiocamelian geitjie
+            </p>
+          </div>
+        </div>
+      </li>
+      <li class="d-flex user-mail mail-read">
+        <div class="mail-left pe-50">
+          <div class="avatar">
+            <img src="../../../app-assets/images/portrait/small/avatar-s-10.jpg" alt="Generic placeholder image" />
+          </div>
+          <div class="user-action">
+            <div class="form-check">
+              <input type="checkbox" class="form-check-input" id="customCheck8" />
+              <label class="form-check-label" for="customCheck8"></label>
+            </div>
+            <span class="email-favorite"><i data-feather="star"></i></span>
+          </div>
+        </div>
+        <div class="mail-body">
+          <div class="mail-details">
+            <div class="mail-items">
+              <h5 class="mb-25">Waldemar Mannering</h5>
+              <span class="text-truncate mb-0">Quality-focused methodical flexibility</span>
+            </div>
+            <div class="mail-meta-item">
+              <span class="mx-50 bullet bullet-danger bullet-sm"></span>
+              <span class="mail-date">19 Jun</span>
+            </div>
+          </div>
+          <div class="mail-message">
+            <p class="mb-0 text-truncate">
+              Hi John, wartproof ketoheptose incomplicate hyomental organal supermaterial monogene sophister nizamate
+              rightle multifilament phloroglucic overvehement boatloading derelictly probudgeting archantiquary
+              unknighted pallograph Volcanalia Jacobitiana ethyl neth Jugataenoumenalize irredential energeia
+              phlebotomist galp dactylitis unparticipated solepiece demure metarhyolite toboggan unpleased perilaryngeal
+              binoxalate rabbitry atomic duali dihexahedron Pseudogryphus boomboat obelisk
+            </p>
+          </div>
+        </div>
+      </li>
+      <li class="d-flex user-mail mail-read">
+        <div class="mail-left pe-50">
+          <div class="avatar">
+            <img src="../../../app-assets/images/portrait/small/avatar-s-6.jpg" alt="Generic placeholder image" />
+          </div>
+          <div class="user-action">
+            <div class="form-check">
+              <input type="checkbox" class="form-check-input" id="customCheck9" />
+              <label class="form-check-label" for="customCheck9"></label>
+            </div>
+            <span class="email-favorite"><i data-feather="star"></i></span>
+          </div>
+        </div>
+        <div class="mail-body">
+          <div class="mail-details">
+            <div class="mail-items">
+              <h5 class="mb-25">Louetta Esses</h5>
+              <span class="text-truncate mb-0">Company Report</span>
+            </div>
+            <div class="mail-meta-item">
+              <span class="mx-50 bullet bullet-primary bullet-sm"></span>
+              <span class="mail-date">2 Jun</span>
+            </div>
+          </div>
+          <div class="mail-message">
+            <p class="mb-0 text-truncate">
+              Hi John,Biscuit lemon drops marshmallow. Cotton candy marshmallow bear claw. Dragée tiramisu cookie cotton
+              candy. Carrot cake sweet roll I love macaroon wafer jelly soufflé I love dragée. Jujubes jelly I love
+              carrot cake topping I love. Sweet candy I love
+            </p>
+          </div>
+        </div>
+      </li>
+      <li class="d-flex user-mail">
+        <div class="mail-left pe-50">
+          <div class="avatar">
+            <img src="../../../app-assets/images/portrait/small/avatar-s-9.jpg" alt="Generic placeholder image" />
+          </div>
+          <div class="user-action">
+            <div class="form-check">
+              <input type="checkbox" class="form-check-input" id="customCheck10" />
+              <label class="form-check-label" for="customCheck10"></label>
+            </div>
+            <span class="email-favorite"><i data-feather="star"></i></span>
+          </div>
+        </div>
+        <div class="mail-body">
+          <div class="mail-details">
+            <div class="mail-items">
+              <h5 class="mb-25">Tressa Gass</h5>
+              <span class="text-truncate mb-0">Theme Update</span>
+            </div>
+            <div class="mail-meta-item">
+              <span class="mx-50 bullet bullet-primary bullet-sm"></span>
+              <span class="mail-date">29 May</span>
+            </div>
+          </div>
+          <div class="mail-message">
+            <p class="mb-0 text-truncate">
+              Hello John,Chocolate bar chupa chups sweet roll chocolate muffin macaroon liquorice tart. Carrot cake
+              topping jelly-o cupcake sweet apple pie jelly I love. Chocolate cake I love dessert carrot cake tootsie
+              roll chocolate I love. Tootsie roll pie marzipan sesame snaps.
+            </p>
+          </div>
+        </div>
+      </li>
+      <li class="d-flex user-mail">
+        <div class="mail-left pe-50">
+          <div class="avatar">
+            <img src="../../../app-assets/images/portrait/small/avatar-s-20.jpg" alt="Generic placeholder image" />
+          </div>
+          <div class="user-action">
+            <div class="form-check">
+              <input type="checkbox" class="form-check-input" id="customCheck11" />
+              <label class="form-check-label" for="customCheck11"></label>
+            </div>
+            <span class="email-favorite"><i data-feather="star"></i></span>
+          </div>
+        </div>
+        <div class="mail-body">
+          <div class="mail-details">
+            <div class="mail-items">
+              <h5 class="mb-25">Tommy Sicilia</h5>
+              <span class="text-truncate mb-0">Thanks, Let's do it.</span>
+            </div>
+            <div class="mail-meta-item">
+              <span class="mx-50 bullet bullet-warning bullet-sm"></span>
+              <span class="mail-date">17 May</span>
+            </div>
+          </div>
+          <div class="mail-message">
+            <p class="mb-0 text-truncate">
+              Hi John,Biscuit lemon drops marshmallow. Cotton candy marshmallow bear claw. Dragée tiramisu cookie cotton
+              candy. Carrot cake sweet roll I love macaroon wafer jelly soufflé I love dragée. Jujubes jelly I love
+              carrot cake topping I love. Sweet candy I love.
+            </p>
+          </div>
+        </div>
+      </li>
+      <li class="d-flex user-mail mail-read">
+        <div class="mail-left pe-50">
+          <div class="avatar">
+            <img src="../../../app-assets/images/portrait/small/avatar-s-17.jpg" alt="Generic placeholder image" />
+          </div>
+          <div class="user-action">
+            <div class="form-check">
+              <input type="checkbox" class="form-check-input" id="customCheck12" />
+              <label class="form-check-label" for="customCheck12"></label>
+            </div>
+            <span class="email-favorite"><i data-feather="star"></i></span>
+          </div>
+        </div>
+        <div class="mail-body">
+          <div class="mail-details">
+            <div class="mail-items">
+              <h5 class="mb-25">Heather Howell</h5>
+              <span class="text-truncate mb-0">Thanks, Let's do it.</span>
+            </div>
+            <div class="mail-meta-item">
+              <span class="mx-50 bullet bullet-warning bullet-sm"></span>
+              <span class="mail-date">21 Mar</span>
+            </div>
+          </div>
+          <div class="mail-message">
+            <p class="mb-0 text-truncate">
+              Hi John,Biscuit lemon drops marshmallow. Marzipan carrot cake soufflé. Toffee tiramisu pudding cotton
+              candy powder jujubes pie. Topping danish sweet croissant liquorice lemon drops cake oat cake brownie.
+              Cupcake liquorice tart tootsie roll sugar plum chocolate bar oat cake sweet roll.
+            </p>
+          </div>
+        </div>
+      </li>
+    </ul>
+    <div class="no-results">
+      <h5>No Items Found</h5>
+    </div>
+  </div>
+  <!-- Email list ends -->
+</div>
+<!--/ Email list Area -->
+<!-- Detailed Email View -->
+<div class="email-app-details">
+  <!-- Detailed Email Header starts -->
+  <div class="email-detail-header">
+    <div class="email-header-left d-flex align-items-center">
+      <span class="go-back me-1"><i data-feather="chevron-left" class="font-medium-4"></i></span>
+      <h4 class="email-subject mb-0">Focused open system 😃</h4>
+    </div>
+    <div class="email-header-right ms-2 ps-1">
+      <ul class="list-inline m-0">
+        <li class="list-inline-item">
+          <span class="action-icon favorite"><i data-feather="star" class="font-medium-2"></i></span>
+        </li>
+        <li class="list-inline-item">
+          <div class="dropdown no-arrow">
+            <a href="#" class="dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <i data-feather="folder" class="font-medium-2"></i>
+            </a>
+            <div class="dropdown-menu" aria-labelledby="folder">
+              <a class="dropdown-item d-flex align-items-center" href="#">
+                <i data-feather="edit-2" class="font-medium-3 me-50"></i>
+                <span>Draft</span>
+              </a>
+              <a class="dropdown-item d-flex align-items-center" href="#">
+                <i data-feather="info" class="font-medium-3 me-50"></i>
+                <span>Spam</span>
+              </a>
+              <a class="dropdown-item d-flex align-items-center" href="#">
+                <i data-feather="trash" class="font-medium-3 me-50"></i>
+                <span>Trash</span>
+              </a>
+            </div>
+          </div>
+        </li>
+        <li class="list-inline-item">
+          <div class="dropdown no-arrow">
+            <a href="#" class="dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <i data-feather="tag" class="font-medium-2"></i>
+            </a>
+            <div class="dropdown-menu" aria-labelledby="tag">
+              <a href="#" class="dropdown-item"><span class="me-50 bullet bullet-success bullet-sm"></span>Personal</a>
+              <a href="#" class="dropdown-item"><span class="me-50 bullet bullet-primary bullet-sm"></span>Company</a>
+              <a href="#" class="dropdown-item"><span class="me-50 bullet bullet-warning bullet-sm"></span>Important</a>
+              <a href="#" class="dropdown-item"><span class="me-50 bullet bullet-danger bullet-sm"></span>Private</a>
+            </div>
+          </div>
+        </li>
+        <li class="list-inline-item">
+          <span class="action-icon"><i data-feather="mail" class="font-medium-2"></i></span>
+        </li>
+        <li class="list-inline-item">
+          <span class="action-icon"><i data-feather="trash" class="font-medium-2"></i></span>
+        </li>
+        <li class="list-inline-item email-prev">
+          <span class="action-icon"><i data-feather="chevron-left" class="font-medium-2"></i></span>
+        </li>
+        <li class="list-inline-item email-next">
+          <span class="action-icon"><i data-feather="chevron-right" class="font-medium-2"></i></span>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <!-- Detailed Email Header ends -->
+
+  <!-- Detailed Email Content starts -->
+  <div class="email-scroll-area">
+    <div class="row">
+      <div class="col-12">
+        <div class="email-label">
+          <span class="mail-label badge rounded-pill badge-light-primary">Company</span>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <div class="card">
+          <div class="card-header email-detail-head">
+            <div class="user-details d-flex justify-content-between align-items-center flex-wrap">
+              <div class="avatar me-75">
+                <img
+                  src="../../../app-assets/images/portrait/small/avatar-s-9.jpg"
+                  alt="avatar img holder"
+                  width="48"
+                  height="48"
+                />
+              </div>
+              <div class="mail-items">
+                <h5 class="mb-0">Carlos Williamson</h5>
+                <div class="email-info-dropup dropdown">
+                  <span
+                    role="button"
+                    class="dropdown-toggle font-small-3 text-muted"
+                    id="card_top01"
+                    data-bs-toggle="dropdown"
+                    aria-haspopup="true"
+                    aria-expanded="false"
+                  >
+                    carlos@gmail.com
+                  </span>
+                  <div class="dropdown-menu" aria-labelledby="card_top01">
+                    <table class="table table-sm table-borderless">
+                      <tbody>
+                        <tr>
+                          <td class="text-end">From:</td>
+                          <td>carlos@gmail.com</td>
+                        </tr>
+                        <tr>
+                          <td class="text-end">To:</td>
+                          <td>johndoe@ow.ly</td>
+                        </tr>
+                        <tr>
+                          <td class="text-end">Date:</td>
+                          <td>14:58, 29 Aug 2020</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="mail-meta-item d-flex align-items-center">
+              <small class="mail-date-time text-muted">29 Aug, 2020, 14:58</small>
+              <div class="dropdown ms-50">
+                <div
+                  role="button"
+                  class="dropdown-toggle hide-arrow"
+                  id="email_more"
+                  data-bs-toggle="dropdown"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                >
+                  <i data-feather="more-vertical" class="font-medium-2"></i>
+                </div>
+                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="email_more">
+                  <div class="dropdown-item"><i data-feather="corner-up-left" class="me-50"></i>Reply</div>
+                  <div class="dropdown-item"><i data-feather="corner-up-right" class="me-50"></i>Forward</div>
+                  <div class="dropdown-item"><i data-feather="trash-2" class="me-50"></i>Delete</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card-body mail-message-wrapper pt-2">
+            <div class="mail-message">
+              <p class="card-text">Hey John,</p>
+              <p class="card-text">
+                bah kivu decrete epanorthotic unnotched Argyroneta nonius veratrine preimaginary saunders demidolmen
+                Chaldaic allusiveness lorriker unworshipping ribaldish tableman hendiadys outwrest unendeavored
+                fulfillment scientifical Pianokoto Chelonia
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <div class="card">
+          <div class="card-header email-detail-head">
+            <div class="user-details d-flex justify-content-between align-items-center flex-wrap">
+              <div class="avatar me-75">
+                <img
+                  src="../../../app-assets/images/portrait/small/avatar-s-18.jpg"
+                  alt="avatar img holder"
+                  width="48"
+                  height="48"
+                />
+              </div>
+              <div class="mail-items">
+                <h5 class="mb-0">Ardis Balderson</h5>
+                <div class="email-info-dropup dropdown">
+                  <span
+                    role="button"
+                    class="dropdown-toggle font-small-3 text-muted"
+                    id="dropdownMenuButton200"
+                    data-bs-toggle="dropdown"
+                    aria-haspopup="true"
+                    aria-expanded="false"
+                  >
+                    abaldersong@utexas.edu
+                  </span>
+                  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton200">
+                    <table class="table table-sm table-borderless">
+                      <tbody>
+                        <tr>
+                          <td class="text-end">From:</td>
+                          <td>abaldersong@utexas.edu</td>
+                        </tr>
+                        <tr>
+                          <td class="text-end">To:</td>
+                          <td>johndoe@ow.ly</td>
+                        </tr>
+                        <tr>
+                          <td class="text-end">Date:</td>
+                          <td>4:25 AM 13 Jan 2018</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="mail-meta-item d-flex align-items-center">
+              <small class="mail-date-time text-muted">17 May, 2020, 4:14</small>
+              <div class="dropdown ms-50">
+                <div
+                  role="button"
+                  class="dropdown-toggle hide-arrow"
+                  id="email_more_2"
+                  data-bs-toggle="dropdown"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                >
+                  <i data-feather="more-vertical" class="font-medium-2"></i>
+                </div>
+                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="email_more_2">
+                  <div class="dropdown-item"><i data-feather="corner-up-left" class="me-50"></i>Reply</div>
+                  <div class="dropdown-item"><i data-feather="corner-up-right" class="me-50"></i>Forward</div>
+                  <div class="dropdown-item"><i data-feather="trash-2" class="me-50"></i>Delete</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card-body mail-message-wrapper pt-2">
+            <div class="mail-message">
+              <p class="card-text">Hey John,</p>
+              <p class="card-text">
+                bah kivu decrete epanorthotic unnotched Argyroneta nonius veratrine preimaginary saunders demidolmen
+                Chaldaic allusiveness lorriker unworshipping ribaldish tableman hendiadys outwrest unendeavored
+                fulfillment scientifical Pianokoto Chelonia
+              </p>
+              <p class="card-text">
+                Freudian sperate unchary hyperneurotic phlogiston duodecahedron unflown Paguridea catena disrelishable
+                Stygian paleopsychology cantoris phosphoritic disconcord fruited inblow somewhatly ilioperoneal forrard
+                palfrey Satyrinae outfreeman melebiose
+              </p>
+            </div>
+          </div>
+          <div class="card-footer">
+            <div class="mail-attachments">
+              <div class="d-flex align-items-center mb-1">
+                <i data-feather="paperclip" class="font-medium-1 me-50"></i>
+                <h5 class="fw-bolder text-body mb-0">2 Attachments</h5>
+              </div>
+              <div class="d-flex flex-column">
+                <a href="#" class="mb-50">
+                  <img src="../../../app-assets/images/icons/doc.png" class="me-25" alt="png" height="18" />
+                  <small class="text-muted fw-bolder">interdum.docx</small>
+                </a>
+                <a href="#">
+                  <img src="../../../app-assets/images/icons/jpg.png" class="me-25" alt="png" height="18" />
+                  <small class="text-muted fw-bolder">image.png</small>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <div class="card">
+          <div class="card-body">
+            <div class="d-flex justify-content-between">
+              <h5 class="mb-0">
+                Click here to
+                <a href="#">Reply</a>
+                or
+                <a href="#">Forward</a>
+              </h5>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Detailed Email Content ends -->
+</div>
+<!--/ Detailed Email View -->
+
+<!-- compose email -->
+<div class="modal modal-sticky" id="compose-mail" data-bs-keyboard="false">
+  <div class="modal-dialog modal-lg modal-dialog-scrollable">
+    <div class="modal-content p-0">
+      <div class="modal-header">
+        <h5 class="modal-title">Compose Mail</h5>
+        <div class="modal-actions">
+          <a href="#" class="text-body me-75"><i data-feather="minus"></i></a>
+          <a href="#" class="text-body me-75 compose-maximize"><i data-feather="maximize-2"></i></a>
+          <a class="text-body" href="#" data-bs-dismiss="modal" aria-label="Close"><i data-feather="x"></i></a>
+        </div>
+      </div>
+      <div class="modal-body flex-grow-1 p-0">
+        <form class="compose-form">
+          <div class="compose-mail-form-field select2-primary">
+            <label for="email-to" class="form-label">To: </label>
+            <div class="flex-grow-1">
+              <select class="select2 form-select w-100" id="email-to" multiple>
+                <option data-avatar="1-small.png" value="Jane Foster">Jane Foster</option>
+                <option data-avatar="3-small.png" value="Donna Frank">Donna Frank</option>
+                <option data-avatar="5-small.png" value="Gabrielle Robertson">Gabrielle Robertson</option>
+                <option data-avatar="7-small.png" value="Lori Spears">Lori Spears</option>
+              </select>
+            </div>
+            <div>
+              <a class="toggle-cc text-body me-1" href="#">Cc</a>
+              <a class="toggle-bcc text-body" href="#">Bcc</a>
+            </div>
+          </div>
+          <div class="compose-mail-form-field cc-wrapper">
+            <label for="emailCC" class="form-label">Cc: </label>
+            <div class="flex-grow-1">
+              <!-- <input type="text" id="emailCC" class="form-control" placeholder="CC"/> -->
+              <select class="select2 form-select w-100" id="emailCC" multiple>
+                <option data-avatar="1-small.png" value="Jane Foster">Jane Foster</option>
+                <option data-avatar="3-small.png" value="Donna Frank">Donna Frank</option>
+                <option data-avatar="5-small.png" value="Gabrielle Robertson">Gabrielle Robertson</option>
+                <option data-avatar="7-small.png" value="Lori Spears">Lori Spears</option>
+              </select>
+            </div>
+            <a class="text-body toggle-cc" href="#"><i data-feather="x"></i></a>
+          </div>
+          <div class="compose-mail-form-field bcc-wrapper">
+            <label for="emailBCC" class="form-label">Bcc: </label>
+            <div class="flex-grow-1">
+              <!-- <input type="text" id="emailBCC" class="form-control" placeholder="BCC"/> -->
+              <select class="select2 form-select w-100" id="emailBCC" multiple>
+                <option data-avatar="1-small.png" value="Jane Foster">Jane Foster</option>
+                <option data-avatar="3-small.png" value="Donna Frank">Donna Frank</option>
+                <option data-avatar="5-small.png" value="Gabrielle Robertson">Gabrielle Robertson</option>
+                <option data-avatar="7-small.png" value="Lori Spears">Lori Spears</option>
+              </select>
+            </div>
+            <a class="text-body toggle-bcc" href="#"><i data-feather="x"></i></a>
+          </div>
+          <div class="compose-mail-form-field">
+            <label for="emailSubject" class="form-label">Subject: </label>
+            <input type="text" id="emailSubject" class="form-control" placeholder="Subject" name="emailSubject" />
+          </div>
+          <div id="message-editor">
+            <div class="editor" data-placeholder="Type message..."></div>
+            <div class="compose-editor-toolbar">
+              <span class="ql-formats me-0">
+                <select class="ql-font">
+                  <option selected>Sailec Light</option>
+                  <option value="sofia">Sofia Pro</option>
+                  <option value="slabo">Slabo 27px</option>
+                  <option value="roboto">Roboto Slab</option>
+                  <option value="inconsolata">Inconsolata</option>
+                  <option value="ubuntu">Ubuntu Mono</option>
+                </select>
+              </span>
+              <span class="ql-formats me-0">
+                <button class="ql-bold"></button>
+                <button class="ql-italic"></button>
+                <button class="ql-underline"></button>
+                <button class="ql-link"></button>
+              </span>
+            </div>
+          </div>
+          <div class="compose-footer-wrapper">
+            <div class="btn-wrapper d-flex align-items-center">
+              <div class="btn-group dropup me-1">
+                <button type="button" class="btn btn-primary">Send</button>
+                <button
+                  type="button"
+                  class="btn btn-primary dropdown-toggle dropdown-toggle-split"
+                  data-bs-toggle="dropdown"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                  data-reference="parent"
+                >
+                  <span class="visually-hidden">Toggle Dropdown</span>
+                </button>
+                <div class="dropdown-menu">
+                  <a class="dropdown-item" href="#"> Schedule Send</a>
+                </div>
+              </div>
+              <!-- add attachment -->
+              <div class="email-attachement">
+                <label for="file-input" class="form-label">
+                  <i data-feather="paperclip" width="17" height="17" class="ms-50"></i>
+                </label>
+
+                <input id="file-input" type="file" class="d-none" />
+              </div>
+            </div>
+            <div class="footer-action d-flex align-items-center">
+              <div class="dropup d-inline-block">
+                <i
+                  class="font-medium-2 cursor-pointer me-50"
+                  data-feather="more-vertical"
+                  role="button"
+                  id="composeActions"
+                  data-bs-toggle="dropdown"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                >
+                </i>
+                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="composeActions">
+                  <a class="dropdown-item" href="#">
+                    <span class="align-middle">Add Label</span>
+                  </a>
+                  <a class="dropdown-item" href="#">
+                    <span class="align-middle">Plain text mode</span>
+                  </a>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" href="#">
+                    <span class="align-middle">Print</span>
+                  </a>
+                  <a class="dropdown-item" href="#">
+                    <span class="align-middle">Check Spelling</span>
+                  </a>
+                </div>
+              </div>
+              <i data-feather="trash" class="font-medium-2 cursor-pointer" data-bs-dismiss="modal"></i>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<!--/ compose email -->
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- END: Content-->
+
+
+    <!-- BEGIN: Customizer-->
+    <div class="customizer d-none d-md-block"><a class="customizer-toggle d-flex align-items-center justify-content-center" href="#"><i class="spinner" data-feather="settings"></i></a><div class="customizer-content">
+  <!-- Customizer header -->
+  <div class="customizer-header px-2 pt-1 pb-0 position-relative">
+    <h4 class="mb-0">Theme Customizer</h4>
+    <p class="m-0">Customize & Preview in Real Time</p>
+
+    <a class="customizer-close" href="#"><i data-feather="x"></i></a>
+  </div>
+
+  <hr />
+
+  <!-- Styling & Text Direction -->
+  <div class="customizer-styling-direction px-2">
+    <p class="fw-bold">Skin</p>
+    <div class="d-flex">
+      <div class="form-check me-1">
+        <input
+          type="radio"
+          id="skinlight"
+          name="skinradio"
+          class="form-check-input layout-name"
+          checked
+          data-layout=""
+        />
+        <label class="form-check-label" for="skinlight">Light</label>
+      </div>
+      <div class="form-check me-1">
+        <input
+          type="radio"
+          id="skinbordered"
+          name="skinradio"
+          class="form-check-input layout-name"
+          data-layout="bordered-layout"
+        />
+        <label class="form-check-label" for="skinbordered">Bordered</label>
+      </div>
+      <div class="form-check me-1">
+        <input
+          type="radio"
+          id="skindark"
+          name="skinradio"
+          class="form-check-input layout-name"
+          data-layout="dark-layout"
+        />
+        <label class="form-check-label" for="skindark">Dark</label>
+      </div>
+      <div class="form-check">
+        <input
+          type="radio"
+          id="skinsemidark"
+          name="skinradio"
+          class="form-check-input layout-name"
+          data-layout="semi-dark-layout"
+        />
+        <label class="form-check-label" for="skinsemidark">Semi Dark</label>
+      </div>
+    </div>
+  </div>
+
+  <hr />
+
+  <!-- Menu -->
+  <div class="customizer-menu px-2">
+    <div id="customizer-menu-collapsible" class="d-flex">
+      <p class="fw-bold me-auto m-0">Menu Collapsed</p>
+      <div class="form-check form-check-primary form-switch">
+        <input type="checkbox" class="form-check-input" id="collapse-sidebar-switch" />
+        <label class="form-check-label" for="collapse-sidebar-switch"></label>
+      </div>
+    </div>
+  </div>
+  <hr />
+
+  <!-- Layout Width -->
+  <div class="customizer-footer px-2">
+    <p class="fw-bold">Layout Width</p>
+    <div class="d-flex">
+      <div class="form-check me-1">
+        <input type="radio" id="layout-width-full" name="layoutWidth" class="form-check-input" checked />
+        <label class="form-check-label" for="layout-width-full">Full Width</label>
+      </div>
+      <div class="form-check me-1">
+        <input type="radio" id="layout-width-boxed" name="layoutWidth" class="form-check-input" />
+        <label class="form-check-label" for="layout-width-boxed">Boxed</label>
+      </div>
+    </div>
+  </div>
+  <hr />
+
+  <!-- Navbar -->
+  <div class="customizer-navbar px-2">
+    <div id="customizer-navbar-colors">
+      <p class="fw-bold">Navbar Color</p>
+      <ul class="list-inline unstyled-list">
+        <li class="color-box bg-white border selected" data-navbar-default=""></li>
+        <li class="color-box bg-primary" data-navbar-color="bg-primary"></li>
+        <li class="color-box bg-secondary" data-navbar-color="bg-secondary"></li>
+        <li class="color-box bg-success" data-navbar-color="bg-success"></li>
+        <li class="color-box bg-danger" data-navbar-color="bg-danger"></li>
+        <li class="color-box bg-info" data-navbar-color="bg-info"></li>
+        <li class="color-box bg-warning" data-navbar-color="bg-warning"></li>
+        <li class="color-box bg-dark" data-navbar-color="bg-dark"></li>
+      </ul>
+    </div>
+
+    <p class="navbar-type-text fw-bold">Navbar Type</p>
+    <div class="d-flex">
+      <div class="form-check me-1">
+        <input type="radio" id="nav-type-floating" name="navType" class="form-check-input" checked />
+        <label class="form-check-label" for="nav-type-floating">Floating</label>
+      </div>
+      <div class="form-check me-1">
+        <input type="radio" id="nav-type-sticky" name="navType" class="form-check-input" />
+        <label class="form-check-label" for="nav-type-sticky">Sticky</label>
+      </div>
+      <div class="form-check me-1">
+        <input type="radio" id="nav-type-static" name="navType" class="form-check-input" />
+        <label class="form-check-label" for="nav-type-static">Static</label>
+      </div>
+      <div class="form-check">
+        <input type="radio" id="nav-type-hidden" name="navType" class="form-check-input" />
+        <label class="form-check-label" for="nav-type-hidden">Hidden</label>
+      </div>
+    </div>
+  </div>
+  <hr />
+
+  <!-- Footer -->
+  <div class="customizer-footer px-2">
+    <p class="fw-bold">Footer Type</p>
+    <div class="d-flex">
+      <div class="form-check me-1">
+        <input type="radio" id="footer-type-sticky" name="footerType" class="form-check-input" />
+        <label class="form-check-label" for="footer-type-sticky">Sticky</label>
+      </div>
+      <div class="form-check me-1">
+        <input type="radio" id="footer-type-static" name="footerType" class="form-check-input" checked />
+        <label class="form-check-label" for="footer-type-static">Static</label>
+      </div>
+      <div class="form-check me-1">
+        <input type="radio" id="footer-type-hidden" name="footerType" class="form-check-input" />
+        <label class="form-check-label" for="footer-type-hidden">Hidden</label>
+      </div>
+    </div>
+  </div>
+</div>
+
+    </div>
+    <!-- End: Customizer-->
+
+    <!-- Buynow Button-->
+    <div class="buy-now"><a href="https://1.envato.market/vuexy_admin" target="_blank" class="btn btn-danger">Buy Now</a>
+
+    </div>
+    <div class="sidenav-overlay"></div>
+    <div class="drag-target"></div>
+
+    <!-- BEGIN: Footer-->
+    <footer class="footer footer-static footer-light">
+      <p class="clearfix mb-0"><span class="float-md-start d-block d-md-inline-block mt-25">COPYRIGHT  &copy; 2021<a class="ms-25" href="https://1.envato.market/pixinvent_portfolio" target="_blank">Pixinvent</a><span class="d-none d-sm-inline-block">, All rights Reserved</span></span><span class="float-md-end d-none d-md-block">Hand-crafted & Made with<i data-feather="heart"></i></span></p>
+    </footer>
+    <button class="btn btn-primary btn-icon scroll-top" type="button"><i data-feather="arrow-up"></i></button>
+    <!-- END: Footer-->
+
+
+    <!-- BEGIN: Vendor JS-->
+    <script src="../../../app-assets/vendors/js/vendors.min.js"></script>
+    <!-- BEGIN Vendor JS-->
+
+    <!-- BEGIN: Page Vendor JS-->
+    <script src="../../../app-assets/vendors/js/editors/quill/katex.min.js"></script>
+    <script src="../../../app-assets/vendors/js/editors/quill/highlight.min.js"></script>
+    <script src="../../../app-assets/vendors/js/editors/quill/quill.min.js"></script>
+    <script src="../../../app-assets/vendors/js/extensions/toastr.min.js"></script>
+    <script src="../../../app-assets/vendors/js/forms/select/select2.full.min.js"></script>
+    <!-- END: Page Vendor JS-->
+
+    <!-- BEGIN: Theme JS-->
+    <script src="../../../app-assets/js/core/app-menu.min.js"></script>
+    <script src="../../../app-assets/js/core/app.min.js"></script>
+    <script src="../../../app-assets/js/scripts/customizer.min.js"></script>
+    <!-- END: Theme JS-->
+
+    <!-- BEGIN: Page JS-->
+    <script src="../../../app-assets/js/scripts/pages/app-email.min.js"></script>
+    <!-- END: Page JS-->
+
+    <script>
+      $(window).on('load',  function(){
+        if (feather) {
+          feather.replace({ width: 14, height: 14 });
+        }
+      })
+    </script>
+  </body>
+  <!-- END: Body-->
+
+<!-- Mirrored from pixinvent.com/demo/vuexy-html-bootstrap-admin-template/html/ltr/vertical-menu-template/app-email.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 15 Aug 2021 07:34:00 GMT -->
+</html>
