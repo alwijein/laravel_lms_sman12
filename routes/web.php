@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\UserManagement\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -20,6 +21,8 @@ Route::middleware(['auth'])->group(function(){
     });
     Route::get('/show-siswa',[UserController::class, 'showSiswa'])->name('show-siswa');
     Route::get('/show-guru',[UserController::class, 'showGuru'])->name('show-guru');
+
+    Route::post('/show-siswa', [UserController::class, 'store']);
 });
 
 

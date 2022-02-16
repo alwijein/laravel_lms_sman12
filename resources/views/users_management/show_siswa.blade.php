@@ -24,30 +24,46 @@
                               <div class="modal-dialog modal-dialog-centered">
                                 <div class="modal-content">
                                   <div class="modal-header">
-                                    <h4 class="modal-title" id="myModalLabel33">Inline Login Form</h4>
+                                    <h4 class="modal-title" id="myModalLabel33">Tambahkan Akun Siswa</h4>
                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                   </div>
-                                  <form action="#" method="POST">
+                                  <form action="{{route('show-siswa')}}" method="POST">
+                                    @csrf
                                     <div class="modal-body">
                                       <label>Nama: </label>
                                       <div class="mb-1">
                                         <input type="text" name="name" placeholder="Masukkan Nama" class="form-control" />
                                       </div>
+                                      @error('name')
+                                      <div class="text-danger mt-1">
+                                          {{ $message }}
+                                      </div>
+                                  @enderror
                                       <label>Email: </label>
                                       <div class="mb-1">
-                                        <input type="email" name="email" placeholder="Masukkan Alamat Email" class="form-control" />
+                                        <input type="text" name="email" placeholder="Masukkan Alamat Email" class="form-control" />
                                       </div>
+                                      @error('email')
+                                      <div class="text-danger mt-1">
+                                          {{ $message }}
+                                      </div>
+                                  @enderror
                                       <label hidden>Status: </label>
-                                      <div class="mb-1" hidden>
-                                        <input type="text" value="Siswa" placeholder="Email Address" class="form-control" />
+                                      <div class="mb-1">
+                                        <input hidden type="text" value="Siswa" name="status" placeholder="Email Address" class="form-control" />
                                       </div>
                                       <label>Password: </label>
                                       <div class="mb-1">
                                         <input type="password" name="password" placeholder="Masukkan Password" class="form-control" />
                                       </div>
+                                      @error('password')
+                                      <div class="text-danger mt-1">
+                                          {{ $message }}
+                                      </div>
+                                  @enderror
                                     </div>
                                     <div class="modal-footer">
-                                      <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Daftar</button>
+                                      <button type="submit" class="btn btn-primary">Daftar</button>
                                     </div>
                                   </form>
                                 </div>
