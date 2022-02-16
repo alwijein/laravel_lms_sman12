@@ -22,7 +22,23 @@ class UserController extends Controller
         return view('users_management.show_guru', compact('users'));
     }
 
-    public function store(Request $request){
+    public function storeSiswa(Request $request){
+        $request->validate([
+            'name' => ['required',  'min:3'],
+            'email' => ['required', 'unique:users' , 'email'],
+            'password' => ['required', 'min:8'],
+        ]);
+
+        $user = User::create([
+                'name' => $request->name,
+                'email' => $request->email,
+                'status' => $request->status,
+                'password' => Hash::make($request->password)
+            ]);
+            return redirect('/show-siswa');
+    }
+
+    public function storeGuru(Request $request){
         $request->validate([
             'name' => ['required',  'min:3'],
             'email' => ['required', 'unique:users' , 'email'],

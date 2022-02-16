@@ -7,8 +7,69 @@
                 <div class="card">
 
                     <div class="card-header">
-                        <h4 class="card-title">Daftar Siswa</h4>
-                        <div class="btn btn-primary">Tambah Siswa</div>
+                        <h4 class="card-title">Daftar Guru</h4>
+                        <div class="form-modal-ex">
+                            <!-- Button trigger modal -->
+                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#inlineForm">
+                              Tambah Guru
+                            </button>
+                            <!-- Modal -->
+                            <div
+                              class="modal fade text-start"
+                              id="inlineForm"
+                              tabindex="-1"
+                              aria-labelledby="myModalLabel33"
+                              aria-hidden="true"
+                            >
+                              <div class="modal-dialog modal-dialog-centered">
+                                <div class="modal-content">
+                                  <div class="modal-header">
+                                    <h4 class="modal-title" id="myModalLabel33">Tambahkan Akun Guru</h4>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                  </div>
+                                  <form action="{{route('show-guru')}}" method="POST">
+                                    @csrf
+                                    <div class="modal-body">
+                                      <label>Nama: </label>
+                                      <div class="mb-1">
+                                        <input type="text" name="name" placeholder="Masukkan Nama" class="form-control" />
+                                      </div>
+                                      @error('name')
+                                      <div class="text-danger mt-1">
+                                          {{ $message }}
+                                      </div>
+                                  @enderror
+                                      <label>Email: </label>
+                                      <div class="mb-1">
+                                        <input type="text" name="email" placeholder="Masukkan Alamat Email" class="form-control" />
+                                      </div>
+                                      @error('email')
+                                      <div class="text-danger mt-1">
+                                          {{ $message }}
+                                      </div>
+                                  @enderror
+                                      <label hidden>Status: </label>
+                                      <div class="mb-1">
+                                        <input hidden type="text" value="Guru" name="status" placeholder="Email Address" class="form-control" />
+                                      </div>
+                                      <label>Password: </label>
+                                      <div class="mb-1">
+                                        <input type="password" name="password" placeholder="Masukkan Password" class="form-control" />
+                                      </div>
+                                      @error('password')
+                                      <div class="text-danger mt-1">
+                                          {{ $message }}
+                                      </div>
+                                  @enderror
+                                    </div>
+                                    <div class="modal-footer">
+                                      <button type="submit" class="btn btn-primary">Daftar</button>
+                                    </div>
+                                  </form>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
                     </div>
                     <div class="table-responsive">
                         <table class="table">
