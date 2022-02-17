@@ -17,7 +17,7 @@ class CreateGuruTable extends Migration
             $table->id();
             $table->string('nip');
             $table->string('nama_guru');
-            $table->foreignId('kode_pelajaran')->unsigned();
+            $table->foreignId('kode_pelajaran')->nullable();
             $table->string('alamat');
             $table->string('hp');
             $table->timestamps();
