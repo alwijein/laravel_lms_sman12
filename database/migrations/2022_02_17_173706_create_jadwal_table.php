@@ -2,7 +2,6 @@
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
-use Illuminate\Database\Schema\ForeignIdColumnDefinition;
 use Illuminate\Support\Facades\Schema;
 
 class CreateJadwalTable extends Migration
@@ -16,18 +15,19 @@ class CreateJadwalTable extends Migration
     {
         Schema::create('jadwal', function (Blueprint $table) {
             $table->id();
-            $table->string('hari');
+            $table->foreignId('kode_hari')->nullable();
             $table->string('jam');
-            // $table->foreignId('kode_pelajaran')->unsigned()->nullable();
-            $table->foreignId('kode_guru')->unsigned()->nullable();
-            // $table->foreignId('kode_kelas')->unsigned()->nullable();
+            $table->foreignId('kode_pelajaran')->nullable();
+            $table->foreignId('kode_guru')->nullable();
+            $table->foreignId('kode_kelas')->nullable();
             $table->timestamps();
         });
 
                 Schema::table('jadwal', function($table) {
-            // $table->foreign('kode_pelajaran')->references('id')->on('pelajaran');
+            $table->foreign('kode_pelajaran')->references('id')->on('pelajaran');
             $table->foreign('kode_guru')->references('id')->on('guru');
-            // $table->foreign('kode_kelas')->references('id')->on('pelajaran');
+            $table->foreign('kode_kelas')->references('id')->on('kelas');
+            $table->foreign('kode_hari')->references('id')->on('hari');
         });
     }
 

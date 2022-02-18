@@ -101,14 +101,18 @@
                                                     <i data-feather="more-vertical"></i>
                                                 </button>
                                                 <div class="dropdown-menu">
-                                                    <a class="dropdown-item" href="#">
+                                                    <a class="dropdown-item" href="{{ route('edit-guru', ['id'=>$user->id]) }}">
                                                         <i data-feather="edit-2" class="me-50"></i>
                                                         <span>Edit</span>
                                                     </a>
-                                                    <a class="dropdown-item" href="#">
-                                                        <i data-feather="trash" class="me-50"></i>
-                                                        <span>Delete</span>
-                                                    </a>
+                                                    <form action="{{ route('delete', ['id'=>$user->id]) }}" method="POST">
+                                                        @method('delete')
+                                                        @csrf
+                                                        <button class="dropdown-item" type="submit">
+                                                            <i data-feather="trash" class="me-50"></i>
+                                                            <span>Delete</span>
+                                                        </button>
+                                                    </form>
                                                 </div>
                                             </div>
                                         </td>

@@ -11,13 +11,13 @@ class Guru extends Model
 
     protected $table = 'guru';
 
-    protected $fillable = ['title', 'nama_guru', 'alamat', 'hp'];
+    protected $fillable = ['no_induk', 'nama_guru', 'jk', 'telp', 'kode_pelajaran', 'alamat'];
 
     public function pelajaran(){
-        return $this->belongsTo(Pelajaran::class, '');
+        return $this->belongsTo(Pelajaran::class, 'kode_pelajaran');
     }
 
     public function jadwal(){
-        return $this->belongsTo(Jadwal::class);
+        return $this->hasMany(Jadwal::class);
     }
 }

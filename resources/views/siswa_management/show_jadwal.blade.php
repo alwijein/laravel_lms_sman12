@@ -31,7 +31,7 @@
                                                     <i data-feather="more-vertical"></i>
                                                 </button>
                                                 <div class="dropdown-menu">
-                                                    <a class="dropdown-item" href="{{ route('detail-jadwal') }}">
+                                                    <a class="dropdown-item" href="{{ route('detail-jadwal', ['id'=>$data->id]) }}">
                                                         <i data-feather="eye" class="me-50"></i>
                                                         <span>Lihat</span>
                                                     </a>

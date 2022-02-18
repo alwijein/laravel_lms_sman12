@@ -21,126 +21,118 @@
     <section id="knowledge-base-content">
         <div class="row kb-search-content-info match-height">
             <!-- begin card -->
-            <div class="col-md-4 col-sm-6 col-12 kb-search-content">
-                <div class="card">
-                    <div class="card-body ">
-                        <h4 class="mb-2">Senin</h4>
-                        @foreach ($senin as $item)
-                            <div class="employee-task d-flex justify-content-between align-items-center mb-1">
-                                <div class="d-flex flex-row">
-                                    <div class="my-auto">
-                                        <h6 class="mb-0">{{ $item->pelajaran->mata_pelajaran }}</h6>
-                                    </div>
-                                </div>
-                                <div class="d-flex align-items-center">
-                                    <small class="text-muted me-75">{{ $item->jam }}</small>
-                                    <div class="employee-task-chart-primary-1"></div>
-                                </div>
-                            </div>
-                        @endforeach
+            @foreach ($hari as $data)
+                <div class="col-md-6 col-sm-8 col-12 kb-search-content">
+                    <div class="card">
+                        <div class="card-body ">
+                            <h4 class="mb-2 text-uppercase">{{ $data->nama_hari }}</h4>
+                            @switch($data->id)
+                                @case(1)
+                                    @foreach ($senin as $item)
+                                        <div class="employee-task d-flex justify-content-between align-items-center mb-1">
+                                            <div class="d-flex flex-row">
+                                                <div class="my-auto">
+                                                    <h6 class="mb-0">{{ $item->pelajaran->mata_pelajaran }}</h6>
+                                                </div>
+                                            </div>
+                                            <div class="d-flex align-items-center">
+                                                <small class="text-muted me-75">{{ $item->guru->nama_guru }}</small>
+                                                <div class="employee-task-chart-primary-1"></div>
+                                            </div>
+                                            <div class="d-flex align-items-center">
+                                                <small class="text-muted me-75">({{ $item->jam }})</small>
+                                                <div class="employee-task-chart-primary-1"></div>
+                                            </div>
+                                            <div class="dropdown">
+                                                <button type="button" class="btn btn-sm dropdown-toggle hide-arrow"
+                                                    data-bs-toggle="dropdown">
+                                                    <i data-feather="more-vertical"></i>
+                                                </button>
+                                                <div class="dropdown-menu">
+                                                    <a class="dropdown-item" href="{{ route('edit-jadwal', ['id'=>1]) }}">
+                                                        <i data-feather="edit-2" class="me-50"></i>
+                                                        <span>Edit</span>
+                                                    </a>
+                                                    <form action="" method="POST">
+                                                        @method('delete')
+                                                        @csrf
+                                                        <button class="dropdown-item" type="submit">
+                                                            <i data-feather="trash" class="me-50"></i>
+                                                            <span>Delete</span>
+                                                        </button>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    @endforeach
+                                @break
+                                @case(2)
+                                    @foreach ($selasa as $item)
+                                        <div class="employee-task d-flex justify-content-between align-items-center mb-1">
+                                            <div class="d-flex flex-row">
+                                                <div class="my-auto">
+                                                    <h6 class="mb-0">{{ $item->pelajaran->mata_pelajaran }}</h6>
+                                                </div>
+                                            </div>
+                                            <div class="d-flex align-items-center">
+                                                <small class="text-muted me-75">{{ $item->jam }}</small>
+                                                <div class="employee-task-chart-primary-1"></div>
+                                            </div>
+                                        </div>
+                                    @endforeach
+                                @break
+                                @case(3)
+                                    @foreach ($rabu as $item)
+                                        <div class="employee-task d-flex justify-content-between align-items-center mb-1">
+                                            <div class="d-flex flex-row">
+                                                <div class="my-auto">
+                                                    <h6 class="mb-0">{{ $item->pelajaran->mata_pelajaran }}</h6>
+                                                </div>
+                                            </div>
+                                            <div class="d-flex align-items-center">
+                                                <small class="text-muted me-75">{{ $item->jam }}</small>
+                                                <div class="employee-task-chart-primary-1"></div>
+                                            </div>
+                                        </div>
+                                    @endforeach
+                                @break
+                                @case(4)
+                                    @foreach ($kamis as $item)
+                                        <div class="employee-task d-flex justify-content-between align-items-center mb-1">
+                                            <div class="d-flex flex-row">
+                                                <div class="my-auto">
+                                                    <h6 class="mb-0">{{ $item->pelajaran->mata_pelajaran }}</h6>
+                                                </div>
+                                            </div>
+                                            <div class="d-flex align-items-center">
+                                                <small class="text-muted me-75">{{ $item->jam }}</small>
+                                                <div class="employee-task-chart-primary-1"></div>
+                                            </div>
+                                        </div>
+                                    @endforeach
+                                @break
+                                @case(5)
+                                    @foreach ($jumat as $item)
+                                        <div class="employee-task d-flex justify-content-between align-items-center mb-1">
+                                            <div class="d-flex flex-row">
+                                                <div class="my-auto">
+                                                    <h6 class="mb-0">{{ $item->pelajaran->mata_pelajaran }}</h6>
+                                                </div>
+                                            </div>
+                                            <div class="d-flex align-items-center">
+                                                <small class="text-muted me-75">{{ $item->jam }}</small>
+                                                <div class="employee-task-chart-primary-1"></div>
+                                            </div>
+                                        </div>
+                                    @endforeach
+                                @break
+                                @default
+                            @endswitch
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-md-4 col-sm-6 col-12 kb-search-content">
-                <div class="card">
-                    <div class="card-body ">
-                        <h4 class="mb-2">Selasa</h4>
-                        @foreach ($selasa as $item)
-                            <div class="employee-task d-flex justify-content-between align-items-center mb-1">
-                                <div class="d-flex flex-row">
-                                    <div class="my-auto">
-                                        <h6 class="mb-0">{{ $item->pelajaran->mata_pelajaran }}</h6>
-                                    </div>
-                                </div>
-                                <div class="d-flex align-items-center">
-                                    <small class="text-muted me-75">{{ $item->jam }}</small>
-                                    <div class="employee-task-chart-primary-1"></div>
-                                </div>
-                            </div>
-                        @endforeach
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 col-sm-6 col-12 kb-search-content">
-                <div class="card">
-                    <div class="card-body ">
-                        <h4 class="mb-2">Rabu</h4>
-                        @foreach ($rabu as $item)
-                            <div class="employee-task d-flex justify-content-between align-items-center mb-1">
-                                <div class="d-flex flex-row">
-                                    <div class="my-auto">
-                                        <h6 class="mb-0">{{ $item->pelajaran->mata_pelajaran }}</h6>
-                                    </div>
-                                </div>
-                                <div class="d-flex align-items-center">
-                                    <small class="text-muted me-75">{{ $item->jam }}</small>
-                                    <div class="employee-task-chart-primary-1"></div>
-                                </div>
-                            </div>
-                        @endforeach
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 col-sm-6 col-12 kb-search-content">
-                <div class="card">
-                    <div class="card-body ">
-                        <h4 class="mb-2">Kamis</h4>
-                        @foreach ($kamis as $item)
-                            <div class="employee-task d-flex justify-content-between align-items-center mb-1">
-                                <div class="d-flex flex-row">
-                                    <div class="my-auto">
-                                        <h6 class="mb-0">{{ $item->pelajaran->mata_pelajaran }}</h6>
-                                    </div>
-                                </div>
-                                <div class="d-flex align-items-center">
-                                    <small class="text-muted me-75">{{ $item->jam }}</small>
-                                    <div class="employee-task-chart-primary-1"></div>
-                                </div>
-                            </div>
-                        @endforeach
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 col-sm-6 col-12 kb-search-content">
-                <div class="card">
-                    <div class="card-body ">
-                        <h4 class="mb-2">Jumat</h4>
-                        @foreach ($jumat as $item)
-                            <div class="employee-task d-flex justify-content-between align-items-center mb-1">
-                                <div class="d-flex flex-row">
-                                    <div class="my-auto">
-                                        <h6 class="mb-0">{{ $item->pelajaran->mata_pelajaran }}</h6>
-                                    </div>
-                                </div>
-                                <div class="d-flex align-items-center">
-                                    <small class="text-muted me-75">{{ $item->jam }}</small>
-                                    <div class="employee-task-chart-primary-1"></div>
-                                </div>
-                            </div>
-                        @endforeach
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 col-sm-6 col-12 kb-search-content">
-                <div class="card">
-                    <div class="card-body ">
-                        <h4 class="mb-2">Sabtu</h4>
-                        @foreach ($sabtu as $item)
-                            <div class="employee-task d-flex justify-content-between align-items-center mb-1">
-                                <div class="d-flex flex-row">
-                                    <div class="my-auto">
-                                        <h6 class="mb-0">{{ $item->pelajaran->mata_pelajaran }}</h6>
-                                    </div>
-                                </div>
-                                <div class="d-flex align-items-center">
-                                    <small class="text-muted me-75">{{ $item->jam }}</small>
-                                    <div class="employee-task-chart-primary-1"></div>
-                                </div>
-                            </div>
-                        @endforeach
-                    </div>
-                </div>
-            </div>
+            @endforeach
+
         </div>
     </section>
 @endsection

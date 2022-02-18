@@ -13,7 +13,7 @@ class Jadwal extends Model
 
 
     protected $fillable = [
-        'hari',
+        'kode_hari',
         'jam',
         'kode_pelajaran',
         'kode_guru',
@@ -30,5 +30,9 @@ class Jadwal extends Model
 
     public function kelas(){
         return $this->belongsTo(Kelas::class, 'kode_kelas');
+    }
+
+    public function hari(){
+        return $this->belongsTo(Hari::class, 'kode_hari');
     }
 }
