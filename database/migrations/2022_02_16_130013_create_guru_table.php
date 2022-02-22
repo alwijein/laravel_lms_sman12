@@ -25,7 +25,7 @@ class CreateGuruTable extends Migration
         });
 
         Schema::table('guru', function($table) {
-            $table->foreign('kode_pelajaran')->references('id')->on('pelajaran');
+            $table->foreign('kode_pelajaran')->references('id')->on('pelajaran')->onDelete('cascade');
         });
     }
 

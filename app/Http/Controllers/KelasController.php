@@ -23,4 +23,11 @@ class KelasController extends Controller
 
         return redirect('show-kelas');
     }
+
+    public function destroy($id){
+        $kelas = Kelas::where('id', $id)->first();
+        $kelas->delete();
+
+        return redirect('show-kelas');
+    }
 }

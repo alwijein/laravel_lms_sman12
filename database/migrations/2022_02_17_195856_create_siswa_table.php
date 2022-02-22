@@ -19,9 +19,14 @@ class CreateSiswaTable extends Migration
             $table->string('nama_siswa');
             $table->string('jk');
             $table->string('telp');
+            $table->foreignId('kode_kelas')->nullable();
             $table->string('tmp_lahir');
             $table->date('tgl_lahir');
             $table->timestamps();
+        });
+
+        Schema::table('siswa', function($table) {
+            $table->foreign('kode_kelas')->references('id')->on('kelas');
         });
     }
 

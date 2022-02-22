@@ -55,6 +55,7 @@
                                 <tr>
                                     <th>No</th>
                                     <th>Kelas</th>
+                                    <th>Aksi</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -63,6 +64,25 @@
                                         <td>{{ $kls->id }}</td>
 
                                         <td>{{ $kls->kelas }}</td>
+
+                                        <td>
+                                            <div class="dropdown">
+                                                <button type="button" class="btn btn-sm dropdown-toggle hide-arrow"
+                                                    data-bs-toggle="dropdown">
+                                                    <i data-feather="more-vertical"></i>
+                                                </button>
+                                                <div class="dropdown-menu">
+                                                    <form action="{{ route('delete-kelas', ['id'=>$kls->id]) }}" method="POST">
+                                                        @method('delete')
+                                                        @csrf
+                                                        <button class="dropdown-item" type="submit">
+                                                            <i data-feather="trash" class="me-50"></i>
+                                                            <span>Delete</span>
+                                                        </button>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </td>
                                     </tr>
                                 @endforeach
 

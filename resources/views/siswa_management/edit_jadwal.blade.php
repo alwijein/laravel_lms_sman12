@@ -14,6 +14,7 @@
                             @method('put')
                             @csrf
                             <div class="row">
+
                                 <div class="col-md-6 col-12">
                                     <div class="mb-1">
                                         <label class="form-label" for="basicSelect">Pilih Hari</label>
@@ -27,17 +28,7 @@
                                         </select>
                                     </div>
                                 </div>
-                                <div class="col-md-6 col-12">
-                                    <div class="mb-1">
-                                        <label class="form-label" for="basicSelect">Pilih Jam</label>
-                                        <select class="form-select" id="basicSelect" name="jam">
-                                            <option value="{{$jadwal->jam}}">{{$jadwal->jam}}</option>
-                                            <option value="08:00 - 09:00">08:00 - 09:00</option>
-                                            <option value="09:00 - 10:00">09:00 - 10:00</option>
-                                            <option value="10:00 - 11:00">10:00 - 11:00</option>
-                                        </select>
-                                    </div>
-                                </div>
+
                                 <div class="col-md-6 col-12">
                                     <div class="mb-1">
                                         <label class="form-label" for="basicSelect">Pilih Mata Pelajaran</label>
@@ -51,6 +42,28 @@
                                             @endforeach
                                         </select>
                                     </div>
+                                </div>
+                                <div class="col-md-6 col-12">
+                                    <div class="mb-1">
+                                        <label class="form-label" for="basicSelect">Pilih Jam Mulai</label>
+                                        <input value="{{$jamStart}}" name="jamStart" type="text" id="fp-time" class="form-control flatpickr-time text-start" placeholder="HH:MM" />
+                                    </div>
+                                    @error('jamStart')
+                                    <div class="text-danger mt-1">
+                                        {{ $message }}
+                                    </div>
+                                   @enderror
+                                </div>
+                                <div class="col-md-6 col-12">
+                                    <div class="mb-1">
+                                        <label class="form-label" for="basicSelect">Pilih Jam Berakhir</label>
+                                        <input name="jamEnd" value="{{$jamEnd}}" type="text" id="fp-time" class="form-control flatpickr-time text-start" placeholder="HH:MM" />
+                                    </div>
+                                    @error('jamEnd')
+                                    <div class="text-danger mt-1">
+                                        {{ $message }}
+                                    </div>
+                                   @enderror
                                 </div>
                                 <div class="col-md-6 col-12">
                                     <div class="mb-1">

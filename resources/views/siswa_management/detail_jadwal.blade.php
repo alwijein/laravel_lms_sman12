@@ -25,14 +25,14 @@
                 <div class="col-md-6 col-sm-8 col-12 kb-search-content">
                     <div class="card">
                         <div class="card-body ">
-                            <h4 class="mb-2 text-uppercase">{{ $data->nama_hari }}</h4>
+                            <h4 class="mb-2 text-uppercase text-center">{{ $data->nama_hari }}</h4>
                             @switch($data->id)
                                 @case(1)
                                     @foreach ($senin as $item)
                                         <div class="employee-task d-flex justify-content-between align-items-center mb-1">
                                             <div class="d-flex flex-row">
                                                 <div class="my-auto">
-                                                    <h6 class="mb-0">{{ $item->pelajaran->mata_pelajaran }}</h6>
+                                                    <h6 class="mb-0 ">{{ $item->pelajaran->mata_pelajaran }}</h6>
                                                 </div>
                                             </div>
                                             <div class="d-flex align-items-center">
@@ -43,17 +43,18 @@
                                                 <small class="text-muted me-75">({{ $item->jam }})</small>
                                                 <div class="employee-task-chart-primary-1"></div>
                                             </div>
+                                            @if (Auth::user()->role == 'Admin')
                                             <div class="dropdown">
                                                 <button type="button" class="btn btn-sm dropdown-toggle hide-arrow"
                                                     data-bs-toggle="dropdown">
                                                     <i data-feather="more-vertical"></i>
                                                 </button>
                                                 <div class="dropdown-menu">
-                                                    <a class="dropdown-item" href="{{ route('edit-jadwal', ['id'=>1]) }}">
+                                                    <a class="dropdown-item" href="{{ route('edit-jadwal', ['id' => 1]) }}">
                                                         <i data-feather="edit-2" class="me-50"></i>
                                                         <span>Edit</span>
                                                     </a>
-                                                    <form action="" method="POST">
+                                                    <form action="{{ route('delete-jadwal', ['id' => $data->id]) }}" method="POST">
                                                         @method('delete')
                                                         @csrf
                                                         <button class="dropdown-item" type="submit">
@@ -63,9 +64,11 @@
                                                     </form>
                                                 </div>
                                             </div>
+                                            @endif
                                         </div>
                                     @endforeach
                                 @break
+
                                 @case(2)
                                     @foreach ($selasa as $item)
                                         <div class="employee-task d-flex justify-content-between align-items-center mb-1">
@@ -81,6 +84,7 @@
                                         </div>
                                     @endforeach
                                 @break
+
                                 @case(3)
                                     @foreach ($rabu as $item)
                                         <div class="employee-task d-flex justify-content-between align-items-center mb-1">
@@ -96,6 +100,7 @@
                                         </div>
                                     @endforeach
                                 @break
+
                                 @case(4)
                                     @foreach ($kamis as $item)
                                         <div class="employee-task d-flex justify-content-between align-items-center mb-1">
@@ -111,6 +116,7 @@
                                         </div>
                                     @endforeach
                                 @break
+
                                 @case(5)
                                     @foreach ($jumat as $item)
                                         <div class="employee-task d-flex justify-content-between align-items-center mb-1">
@@ -126,6 +132,7 @@
                                         </div>
                                     @endforeach
                                 @break
+
                                 @default
                             @endswitch
                         </div>

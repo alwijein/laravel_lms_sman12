@@ -50,7 +50,7 @@
                                   @enderror
                                       <label hidden>Status: </label>
                                       <div class="mb-1">
-                                        <input hidden type="text" value="Siswa" name="status" placeholder="Email Address" class="form-control" />
+                                        <input hidden type="text" value="Siswa" name="role" placeholder="Email Address" class="form-control" />
                                       </div>
                                       <label>Password: </label>
                                       <div class="mb-1">
@@ -92,7 +92,7 @@
                                             {{ $user->email }}
                                         </td>
                                         <td><span
-                                                class="badge rounded-pill badge-light-primary me-1">{{ $user->status }}</span>
+                                                class="badge rounded-pill badge-light-primary me-1">{{ $user->role }}</span>
                                         </td>
                                         <td>
                                             <div class="dropdown">

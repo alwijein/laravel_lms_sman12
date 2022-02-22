@@ -32,6 +32,7 @@ class CreatePelajaranTable extends Migration
         Schema::dropIfExists('jadwal');
         Schema::dropIfExists('kelas');
         Schema::dropIfExists('hari');
+        Schema::dropIfExists('jadwal_ujian');
         Schema::dropIfExists('pelajaran');
     }
 }

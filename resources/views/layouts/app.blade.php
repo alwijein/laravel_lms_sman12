@@ -28,6 +28,9 @@ $user = auth()->user();
     <link rel="stylesheet" type="text/css" href={{ asset('app-assets/vendors/css/vendors.min.css') }}>
     <link rel="stylesheet" type="text/css" href={{ asset('app-assets/vendors/css/charts/apexcharts.css') }}>
     <link rel="stylesheet" type="text/css" href={{ asset('app-assets/vendors/css/extensions/toastr.min.css') }}>
+    <link rel="stylesheet" type="text/css" href={{asset('app-assets/vendors/css/vendors.min.css')}}>
+    <link rel="stylesheet" type="text/css" href={{asset('app-assets/vendors/css/pickers/pickadate/pickadate.css')}}>
+    <link rel="stylesheet" type="text/css" href={{asset('app-assets/vendors/css/pickers/flatpickr/flatpickr.min.css')}}>
     <!-- END: Vendor CSS-->
 
     {{-- BEGIN: Vendor DataTables --}}
@@ -56,12 +59,16 @@ $user = auth()->user();
     <link rel="stylesheet" type="text/css" href={{ asset('app-assets/css/plugins/charts/chart-apex.min.css') }}>
     <link rel="stylesheet" type="text/css"
         href={{ asset('app-assets/css/plugins/extensions/ext-component-toastr.min.css') }}>
-    <link rel="stylesheet" type="text/css" href="{{ asset('app-assets/css/plugins/forms/form-validation.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('app-assets/css/pages/app-user.min.css') }}">
+    <link rel="stylesheet" type="text/css" href={{ asset('app-assets/css/plugins/forms/form-validation.css') }}>
+    <link rel="stylesheet" type="text/css" href={{ asset('app-assets/css/pages/app-user.min.css') }}>
+    <link rel="stylesheet" type="text/css" href={{asset('app-assets/css/plugins/forms/pickers/form-flat-pickr.min.css')}}>
+    <link rel="stylesheet" type="text/css" href={{asset('app-assets/css/plugins/forms/pickers/form-pickadate.min.css')}}>
     <!-- END: Page CSS-->
 
     <!-- BEGIN: Custom CSS-->
     <link rel="stylesheet" type="text/css" href={{ asset('assets/css/style.css') }}>
+
+
     <!-- END: Custom CSS-->
 
 </head>
@@ -82,44 +89,33 @@ $user = auth()->user();
                                 data-feather="menu"></i></a></li>
                 </ul>
                 <ul class="nav navbar-nav bookmark-icons">
-                    <li class="nav-item d-none d-lg-block"><a class="nav-link" href="app-email.html"
-                            data-bs-toggle="tooltip" data-bs-placement="bottom" title="Email"><i class="ficon"
-                                data-feather="mail"></i></a></li>
-                    <li class="nav-item d-none d-lg-block"><a class="nav-link" href="app-chat.html"
-                            data-bs-toggle="tooltip" data-bs-placement="bottom" title="Chat"><i class="ficon"
-                                data-feather="message-square"></i></a></li>
-                    <li class="nav-item d-none d-lg-block"><a class="nav-link" href="app-calendar.html"
-                            data-bs-toggle="tooltip" data-bs-placement="bottom" title="Calendar"><i
+                    <li class="nav-item d-none d-lg-block"><a class="nav-link" href={{route('show-jadwal-belajar')}}
+                            data-bs-toggle="tooltip" data-bs-placement="bottom" title="Jadwal Belajar"><i
                                 class="ficon" data-feather="calendar"></i></a></li>
                 </ul>
             </div>
             <ul class="nav navbar-nav align-items-center ms-auto">
-                <li class="nav-item d-none d-lg-block"><a class="nav-link nav-link-style"><i class="ficon"
-                            data-feather="moon"></i></a></li>
+                {{-- <li class="nav-item d-none d-lg-block"><a class="nav-link nav-link-style"><i class="ficon"
+                            data-feather="moon"></i></a></li> --}}
                 <li class="nav-item dropdown dropdown-user"><a class="nav-link dropdown-toggle dropdown-user-link"
                         id="dropdown-user" href="#" data-bs-toggle="dropdown" aria-haspopup="true"
                         aria-expanded="false">
                         <div class="user-nav d-sm-flex d-none"><span
                                 class="user-name fw-bolder">{{ $user->name }}</span><span
-                                class="user-status">{{ $user->status }}</span></div><span
+                                class="user-status">{{ $user->role }}</span></div><span
                             class="avatar"><img class="round"
-                                src="app-assets/images/portrait/small/avatar-s-11.jpg" alt="avatar" height="40"
-                                width="40"><span class="avatar-status-online"></span></span>
+                                src="{{ asset('app-assets/images/portrait/small/avatar-s-11.jpg') }}" alt="avatar"
+                                height="40" width="40"></span>
                     </a>
                     <div class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdown-user"><a
-                            class="dropdown-item" href="page-profile.html"><i class="me-50"
-                                data-feather="user"></i> Profile</a><a class="dropdown-item" href="app-email.html"><i
-                                class="me-50" data-feather="mail"></i> Inbox</a><a class="dropdown-item"
-                            href="app-todo.html"><i class="me-50" data-feather="check-square"></i> Task</a><a
-                            class="dropdown-item" href="app-chat.html"><i class="me-50"
-                                data-feather="message-square"></i> Chats</a>
-                        <div class="dropdown-divider"></div><a class="dropdown-item"
-                            href="page-account-settings.html"><i class="me-50" data-feather="settings"></i>
-                            Settings</a><a class="dropdown-item" href="page-pricing.html"><i class="me-50"
-                                data-feather="credit-card"></i> Pricing</a><a class="dropdown-item"
-                            href="page-faq.html"><i class="me-50" data-feather="help-circle"></i> FAQ</a><a
-                            class="dropdown-item" href="page-auth-login-v2.html"><i class="me-50"
-                                data-feather="power"></i> Logout</a>
+                            class="dropdown-item" href={{route('show-profile')}}><i class="me-50"
+                                data-feather="user"></i> Profile</a>
+                        <div class="dropdown-divider">
+                                <form action="{{route('logout')}}" method="POST">
+                                    @csrf
+                            </div><button type="submit" class="dropdown-item" href="page-account-settings.html">
+                                <i class="me-50" data-feather="power"></i> Logout</a>
+                            </form>
                     </div>
                 </li>
             </ul>
@@ -138,10 +134,10 @@ $user = auth()->user();
                             <img src="{{ asset('app-assets/images/logo/logo.png') }}" alt="" srcset=""></span>
                         <h2 class="brand-text">SMAN 12</h2>
                     </a></li>
-                <li class="nav-item nav-toggle"><a class="nav-link modern-nav-toggle pe-0" data-bs-toggle="collapse"><i
+                {{-- <li class="nav-item nav-toggle"><a class="nav-link modern-nav-toggle pe-0" data-bs-toggle="collapse"><i
                             class="d-block d-xl-none text-primary toggle-icon font-medium-4" data-feather="x"></i><i
                             class="d-none d-xl-block collapse-toggle-icon font-medium-4  text-primary"
-                            data-feather="disc" data-ticon="disc"></i></a></li>
+                            data-feather="disc" data-ticon="disc"></i></a></li> --}}
             </ul>
         </div>
         <div class="shadow-bottom"></div>
@@ -157,6 +153,8 @@ $user = auth()->user();
                                     data-i18n="eCommerce">SMAN 12</span></a></li>
                     </ul>
                 </li>
+                @if (Auth::user()->role == 'Admin')
+
                 <li class=" navigation-header"><span data-i18n="Apps &amp; Pages">User Management</span><i
                         data-feather="more-horizontal"></i>
                 </li>
@@ -174,9 +172,9 @@ $user = auth()->user();
                                     data-feather="circle"></i><span class="menu-item text-truncate"
                                     data-i18n="View">Daftar Guru</span></a>
                         </li>
-
                     </ul>
                 </li>
+                @endif
                 <li class=" navigation-header"><span data-i18n="User Interface">Siswa Management</span><i
                         data-feather="more-horizontal"></i>
                 </li>
@@ -184,19 +182,23 @@ $user = auth()->user();
                             data-feather="calendar"></i><span class="menu-title text-truncate" data-i18n="User">Jadwal
                             Siswa</span></a>
                     <ul class="menu-content">
+                        @if (Auth::user()->role == 'Admin')
+
                         <li class="{{ request()->is('input-jadwal*') ? 'active' : '' }}"><a
                                 class="d-flex align-items-center" href="{{ route('input-jadwal') }}"><i
                                     data-feather="circle"></i><span class="menu-item text-truncate"
                                     data-i18n="List">Input Jadwal</span></a>
                         </li>
-                        <li class="{{ request()->is('show-jadwal*') ? 'active' : '' }}"><a
-                                class="d-flex align-items-center" href="{{ route('show-jadwal') }}"><i
+                        @endif
+                        <li class="{{ request()->is('show-jadwal/belajar*') ? 'active' : '' }}"><a
+                                class="d-flex align-items-center" href="{{ route('show-jadwal-belajar') }}"><i
                                     data-feather="circle"></i><span class="menu-item text-truncate"
                                     data-i18n="List">Lihat Jadwal</span></a>
                         </li>
                 </li>
             </ul>
             </li>
+            @if (Auth::user()->role == 'Admin')
             <li class=" nav-item"><a class="d-flex align-items-center mt-1" href="#"><i
                         data-feather="book-open"></i><span class="menu-title text-truncate" data-i18n="User">Kelas
                         Siswa</span></a>
@@ -207,101 +209,117 @@ $user = auth()->user();
                                 Kelas</span></a>
                     </li>
             </li>
-            </ul>
-            <li class=" nav-item"><a class="d-flex align-items-center mt-1" href="#"><i
-                        data-feather="database"></i><span class="menu-title text-truncate" data-i18n="User">Data Siswa</span></a>
+        </ul>
+        <li class=" nav-item"><a class="d-flex align-items-center mt-1" href="#"><i
+            data-feather="database"></i><span class="menu-title text-truncate" data-i18n="User">Data
+                Siswa</span></a>
                 <ul class="menu-content">
                     <li class="{{ request()->is('show-data-siswa*') ? 'active' : '' }}"><a
-                            class="d-flex align-items-center" href="{{ route('show-data-siswa') }}"><i
-                                data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="List">Daftar Siswa</span></a>
+                        class="d-flex align-items-center" href="{{ route('show-data-siswa') }}"><i
+                        data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="List">Daftar
+                            Siswa</span></a>
+                        </li>
                     </li>
+                </ul>
             </li>
-            </ul>
+            @endif
+            @if (Auth::user()->role == 'Admin' || Auth::user()->role == 'Guru')
+
+            <li class=" navigation-header"><span data-i18n="User Interface">Guru Management</span><i
+                    data-feather="more-horizontal"></i>
             </li>
-                <li class=" navigation-header"><span data-i18n="User Interface">Guru Management</span><i
-                        data-feather="more-horizontal"></i>
-                </li>
-                <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i
-                            data-feather="calendar"></i><span class="menu-title text-truncate" data-i18n="User">Jadwal
-                            Mengajar</span></a>
-                    <ul class="menu-content">
-                        <li class="{{ request()->is('input-jadwal*') ? 'active' : '' }}"><a
-                                class="d-flex align-items-center" href="{{ route('input-jadwal') }}"><i
-                                    data-feather="circle"></i><span class="menu-item text-truncate"
-                                    data-i18n="List">Input Jadwal</span></a>
-                        </li>
-                        <li class="{{ request()->is('show-jadwal*') ? 'active' : '' }}"><a
-                                class="d-flex align-items-center" href="{{ route('show-jadwal') }}"><i
-                                    data-feather="circle"></i><span class="menu-item text-truncate"
-                                    data-i18n="List">Lihat Jadwal</span></a>
-                        </li>
-                </li>
-            </ul>
-            </li>
-            <li class=" nav-item"><a class="d-flex align-items-center mt-1" href="#"><i
-                        data-feather="book-open"></i><span class="menu-title text-truncate" data-i18n="User">Kelas
-                        Siswa</span></a>
+            <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i
+                        data-feather="calendar"></i><span class="menu-title text-truncate" data-i18n="User">Jadwal
+                        Mengajar</span></a>
                 <ul class="menu-content">
-                    <li class="{{ request()->is('show-kelas*') ? 'active' : '' }}"><a
-                            class="d-flex align-items-center" href="{{ route('show-kelas') }}"><i
+                    <li class="{{ request()->is('show-jadwal/mengajar*') ? 'active' : '' }}"><a
+                            class="d-flex align-items-center" href="{{ route('show-jadwal-mengajar') }}"><i
                                 data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="List">Lihat
-                                Kelas</span></a>
+                                Jadwal</span></a>
                     </li>
             </li>
             </ul>
             <li class=" nav-item"><a class="d-flex align-items-center mt-1" href="#"><i
-                        data-feather="database"></i><span class="menu-title text-truncate" data-i18n="User">Data Guru</span></a>
+                        data-feather="check-circle"></i><span class="menu-title text-truncate" data-i18n="User">Absensi</span></a>
+                        <ul class="menu-content">
+                            <li class="{{ request()->is('show-absensi-siswa*') ? 'active' : '' }}"><a
+                                class="d-flex align-items-center" href="{{ route('show-absensi-siswa') }}"><i
+                                data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="List">Absen Siswa</span></a>
+                            </li>
+                        </li>
+                    </ul>
+                </li>
+                @endif
+             @if (Auth::user()->role == 'Admin' || Auth::user()->role == 'Guru' || Auth::user()->role == 'Siswa')
+
+            <li class=" nav-item"><a class="d-flex align-items-center mt-1" href="#"><i
+                        data-feather="database"></i><span class="menu-title text-truncate" data-i18n="User">Data
+                        Guru</span></a>
                 <ul class="menu-content">
                     <li class="{{ request()->is('show-data-guru*') ? 'active' : '' }}"><a
                             class="d-flex align-items-center" href="{{ route('show-data-guru') }}"><i
-                                data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="List">Daftar Guru</span></a>
+                                data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="List">Daftar
+                                Guru</span></a>
                     </li>
             </li>
             </ul>
             </li>
+            @endif
+            @if (Auth::user()->role == 'Admin')
             <li class=" navigation-header"><span data-i18n="User Interface">Pelajaran Management</span><i
                     data-feather="more-horizontal"></i>
             </li>
             <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i data-feather="book"></i><span
                         class="menu-title text-truncate" data-i18n="User">Pelajaran Siswa</span></a>
                 <ul class="menu-content">
-                    <li><a class="d-flex align-items-center" href="app-user-list.html"><i
-                                data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="List">Input
+                    <li class="{{ request()->is('input-pelajaran*') ? 'active' : '' }}"><a class="d-flex align-items-center"
+                            href="{{ route('input-pelajaran') }}"><i data-feather="circle"></i><span
+                                class="menu-item text-truncate" data-i18n="List">Input
                                 Pelajaran</span></a>
                     </li>
-                    <li><a class="d-flex align-items-center" href="app-user-list.html"><i
-                                data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="List">Lihat
+                    <li class="{{ request()->is('show-pelajaran*') ? 'active' : '' }}"><a class="d-flex align-items-center"
+                            href="{{ route('show-pelajaran') }}"><i data-feather="circle"></i><span
+                                class="menu-item text-truncate" data-i18n="List">Lihat
                                 Daftar Pelajaran</span></a>
-                    </li>
-                    <li><a class="d-flex align-items-center" href="app-user-list.html"><i
-                                data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="List">Lihat
-                                Daftar Guru</span></a>
                     </li>
             </li>
             </ul>
             </li>
-            <li class=" navigation-header"><span data-i18n="User Interface">Info Management</span><i
+            @endif
+            <li class=" navigation-header"><span data-i18n="User Interface">Ujian Management</span><i
                     data-feather="more-horizontal"></i>
             </li>
-            <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i data-feather="book"></i><span
-                        class="menu-title text-truncate" data-i18n="User">Penilaian Siswa</span></a>
+            <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i data-feather="calendar"></i><span
+                        class="menu-title text-truncate" data-i18n="User">Jadwal Ujian</span></a>
+                <ul class="menu-content">
+                    <li class="{{ request()->is('input-ujian*') ? 'active' : '' }}" ><a class="d-flex align-items-center" href="{{route('input-ujian')}}"><i
+                                data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="List">Input
+                                Jadwal Ujian</span></a>
+                    </li>
+                    <li class="{{ request()->is('show-ujian*') ? 'active' : '' }}" ><a class="d-flex align-items-center" href="{{route('show-ujian')}}"><i
+                                data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="List">Daftar
+                                Jadwal Ujian</span></a>
+                    </li>
+            </li>
+            </ul>
+            <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i data-feather="clipboard"></i><span
+                        class="menu-title text-truncate" data-i18n="User">Hasil Ujian</span></a>
                 <ul class="menu-content">
                     <li><a class="d-flex align-items-center" href="app-user-list.html"><i
                                 data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="List">Input
-                                Nilai</span></a>
+                                Nilai Ujian</span></a>
                     </li>
                     <li><a class="d-flex align-items-center" href="app-user-list.html"><i
-                                data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="List">Daftar
-                                Nilai</span></a>
+                                data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="List">Lihat Nilai Ujian</span></a>
                     </li>
             </li>
             </ul>
             </li>
-            <li class=" navigation-header"><span data-i18n="User Interface">SPP Management</span><i
+            <li class=" navigation-header"><span data-i18n="User Interface">Nilai Management</span><i
                     data-feather="more-horizontal"></i>
             </li>
             <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i data-feather="book"></i><span
-                        class="menu-title text-truncate" data-i18n="User">Penilaian Siswa</span></a>
+                        class="menu-title text-truncate" data-i18n="User">Nilai Rapor</span></a>
                 <ul class="menu-content">
                     <li><a class="d-flex align-items-center" href="app-user-list.html"><i
                                 data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="List">Input
@@ -347,18 +365,26 @@ $user = auth()->user();
                 <script src={{ asset('app-assets/vendors/js/vendors.min.js') }}></script>
                 <!-- BEGIN Vendor JS-->
 
+
                 <!-- BEGIN: Page Vendor JS-->
                 <script src={{ asset('app-assets/vendors/js/tables/datatable/jquery.dataTables.min.js') }}></script>
                 <script src={{ asset('app-assets/vendors/js/tables/datatable/dataTables.bootstrap5.min.js') }}></script>
                 <script src={{ asset('app-assets/vendors/js/tables/datatable/dataTables.responsive.min.js') }}></script>
                 <script src={{ asset('app-assets/vendors/js/tables/datatable/responsive.bootstrap4.js') }}></script>
-                <script src={{ asset('app-assets/vendors/js/tables/datatable/responsive.bootstrap4.js') }}></script>
                 <script src={{ asset('app-assets/vendors/js/tables/datatable/datatables.buttons.min.js') }}></script>
-                <script src={{ asset('app-assets/vendors/js/tables/datatable/buttons.bootstrap5.min.js') }}></script>
                 <script src={{ asset('app-assets/vendors/js/forms/validation/jquery.validate.min.js') }}></script>
-
                 <script src={{ asset('app-assets/vendors/js/charts/apexcharts.min.js') }}></script>
-                <script src="{{ asset('app-assets/vendors/js/forms/select/select2.full.min.js') }}"></script>
+                <script src={{ asset('app-assets/vendors/js/forms/select/select2.full.min.js') }}></script>
+
+                <script src={{asset('app-assets/vendors/js/pickers/pickadate/picker.js')}}></script>
+                <script src={{asset('app-assets/vendors/js/pickers/pickadate/picker.date.js')}}></script>
+                <script src={{asset('app-assets/vendors/js/pickers/pickadate/picker.time.js')}}></script>
+                <script src={{asset('app-assets/vendors/js/pickers/pickadate/legacy.js')}}></script>
+                <script src={{asset('app-assets/vendors/js/pickers/flatpickr/flatpickr.min.js')}}></script>
+
+
+
+
 
                 <!-- END: Page Vendor JS-->
 
@@ -368,11 +394,17 @@ $user = auth()->user();
                 <script src={{ asset('app-assets/js/scripts/customizer.min.js') }}></script>
                 <!-- END: Theme JS-->
 
+
                 <!-- BEGIN: Page JS-->
                 <script src={{ asset('app-assets/js/scripts/forms/form-select2.min.js') }}></script>
                 <script src={{ asset('app-assets/js/scripts/pages/dashboard-ecommerce.min.js') }}></script>
                 <script src={{ asset('app-assets/js/scripts/pages/app-user-list.min.js') }}></script>
+                <script src={{ asset('app-assets/js/scripts/tables/table-datatables-advanced.min.js') }}></script>
+                <script src={{ asset('app-assets/js/scripts/forms/pickers/form-pickers.min.js') }}></script>
+
                 <!-- END: Page JS-->
+
+
 
                 <script>
                     $(window).on('load', function() {

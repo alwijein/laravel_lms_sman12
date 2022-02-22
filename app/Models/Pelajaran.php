@@ -11,6 +11,11 @@ class Pelajaran extends Model
 
     protected $table = 'pelajaran';
 
+    protected $fillable = [
+        'mata_pelajaran',
+        'jumlah_jam'
+    ];
+
 
     public function guru(){
         return $this->hasMany(Guru::class);
@@ -18,5 +23,9 @@ class Pelajaran extends Model
 
     public function jadwal(){
         return $this->hasMany(Jadwal::class);
+    }
+
+    public function jadwalUjian(){
+        return $this->hasMany(JadwalUjian::class);
     }
 }

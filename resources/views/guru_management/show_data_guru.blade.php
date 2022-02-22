@@ -114,7 +114,9 @@
                                     <th>Nomor Telpon</th>
                                     <th>Mata Pelajaran</th>
                                     <th>Alamat</th>
+                                    @if (Auth::user()->role == 'Admin')
                                     <th>aksi</th>
+                                    @endif
                                 </tr>
                             </thead>
                             <tbody>
@@ -123,7 +125,7 @@
                                         <td>{{ $data->no_induk}}</td>
                                         <td>{{ $data->nama_guru }}</td>
                                         <td><span
-                                            class="badge rounded-pill {{ $data->jk == 'perempuan' ? 'badge-light-danger' : 'badge-light-primary' }}  me-1">{{ $data->jk }}</span>
+                                            class="badge rounded-pill {{ $data->jk == 'wanita' ? 'badge-light-danger' : 'badge-light-primary' }}  me-1">{{ $data->jk }}</span>
                                         </td>
                                         <td>{{ $data->telp }}</td>
                                         <td>
@@ -132,6 +134,8 @@
                                         <td>
                                             {{ $data->alamat }}
                                         </td>
+
+                                        @if (Auth::user()->role == 'Admin')
                                         <td>
                                             <div class="dropdown">
                                                 <button type="button" class="btn btn-sm dropdown-toggle hide-arrow"
@@ -139,17 +143,24 @@
                                                     <i data-feather="more-vertical"></i>
                                                 </button>
                                                 <div class="dropdown-menu">
-                                                    <a class="dropdown-item" href="#">
+                                                    <a class="dropdown-item" href="{{ route('edit-data-guru', ['id'=>$data->id]) }}">
                                                         <i data-feather="edit-2" class="me-50"></i>
                                                         <span>Edit</span>
                                                     </a>
-                                                    <a class="dropdown-item" href="#">
-                                                        <i data-feather="trash" class="me-50"></i>
-                                                        <span>Delete</span>
-                                                    </a>
+                                                    <div class="dropdown-menu">
+                                                        <form action="{{ route('delete-data-guru', ['id'=>$data->id]) }}" method="POST">
+                                                            @method('delete')
+                                                            @csrf
+                                                            <button class="dropdown-item" type="submit">
+                                                                <i data-feather="trash" class="me-50"></i>
+                                                                <span>Delete</span>
+                                                            </button>
+                                                        </form>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </td>
+                                        @endif
                                     </tr>
                                 @endforeach
                             </tbody>

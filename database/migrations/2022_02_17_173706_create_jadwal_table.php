@@ -24,9 +24,9 @@ class CreateJadwalTable extends Migration
         });
 
                 Schema::table('jadwal', function($table) {
-            $table->foreign('kode_pelajaran')->references('id')->on('pelajaran');
-            $table->foreign('kode_guru')->references('id')->on('guru');
-            $table->foreign('kode_kelas')->references('id')->on('kelas');
+            $table->foreign('kode_pelajaran')->references('id')->on('pelajaran')->onDelete('cascade');
+            $table->foreign('kode_guru')->references('id')->on('guru')->onDelete('cascade');
+            $table->foreign('kode_kelas')->references('id')->on('kelas')->onDelete('cascade');
             $table->foreign('kode_hari')->references('id')->on('hari');
         });
     }

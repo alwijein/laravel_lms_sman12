@@ -7,6 +7,7 @@ use App\Models\Guru;
 use App\Models\Siswa;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 
@@ -16,7 +17,7 @@ class UserController extends Controller
     // funtion for siswa
 
     public function showSiswa(){
-        $users = DB::table('users')->where('status' ,'=', 'Siswa')->get();
+        $users = DB::table('users')->where('role' ,'=', 'Siswa')->get();
         return view('users_management.show_siswa', compact('users'));
     }
 
@@ -30,7 +31,7 @@ class UserController extends Controller
         $user = User::create([
                 'name' => $request->name,
                 'email' => $request->email,
-                'status' => $request->status,
+                'role' => $request->role,
                 'password' => Hash::make($request->password)
             ]);
             return redirect('/show-siswa');
@@ -63,7 +64,7 @@ class UserController extends Controller
     // function for guru
 
     public function showGuru(){
-        $users = DB::table('users')->where('status' ,'=', 'Guru')->get();
+        $users = DB::table('users')->where('role' ,'=', 'Guru')->get();
         return view('users_management.show_guru', compact('users'));
     }
 
@@ -78,7 +79,7 @@ class UserController extends Controller
         $user = User::create([
                 'name' => $request->name,
                 'email' => $request->email,
-                'status' => $request->status,
+                'role' => $request->role,
                 'password' => Hash::make($request->password)
             ]);
             return redirect('/show-siswa');
@@ -112,10 +113,54 @@ class UserController extends Controller
     public function destroy($id){
         $user = User::where('id', $id)->first();
         $user->delete();
-        if($user->status == "Guru"){
+        if($user->role == "Guru"){
             return redirect('show-guru');
         }else{
             return redirect('show-siswa');
         }
+    }
+
+    public function logout(){
+        Auth::logout();
+
+        return redirect('/');
+    }
+
+    public function profile(){
+        $user = Auth::user();
+        return view('users_management.setting_profile', compact('user'));
+    }
+
+    public function updateGeneral(Request $request){
+
+        $request->validate([
+            'name' => ['required',  'min:3'],
+            'email' => ['required' , 'email'],
+        ]);
+
+        User::where('id', Auth::user()->id)->update([
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' => Hash::make(Auth::user()->password),
+        ]);
+
+        return redirect("show-profile");
+    }
+
+    public function updatePassword(Request $request){
+
+        $request->validate([
+            'new_password' =>  'min:8',
+            'confirm_new_password' => 'required_with:new_password|same:new_password|min:6',
+        ]);
+
+        User::where('id', Auth::user()->id)->update([
+            'name' => Auth::user()->name,
+            'email' => Auth::user()->email,
+            'password' => Hash::make($request->new_password),
+        ]);
+
+
+        return redirect("show-profile");
     }
 }

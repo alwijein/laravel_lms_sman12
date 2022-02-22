@@ -32,7 +32,7 @@
                                             <div class="modal-body">
                                                 <label>Nomor Induk: </label>
                                                 <div class="mb-1">
-                                                    <input type="number" name="no_induk" placeholder="Masukkan Nomor Induk"
+                                                    <input type="number" name="no_induk" value="{{old('no_induk')}}" placeholder="Masukkan Nomor Induk"
                                                         class="form-control" />
                                                 </div>
                                                 @error('no_induk')
@@ -42,7 +42,7 @@
                                                 @enderror
                                                 <label>Nama Siswa: </label>
                                                 <div class="mb-1">
-                                                    <input type="text" name="nama_siswa" placeholder="Masukkan Nama Siswa"
+                                                    <input type="text" name="nama_siswa" value="{{old('nama_siswa')}}" placeholder="Masukkan Nama Siswa"
                                                         class="form-control" />
                                                 </div>
                                                 @error('nama_siswa')
@@ -63,17 +63,28 @@
                                                 @enderror
                                                 <label>Nomor Telepon: </label>
                                                 <div class="mb-1">
-                                                    <input type="number" name="telp" placeholder="Masukkan Nomor Telepon"
-                                                        class="form-control" />
+                                                    <input type="number" name="telp" value="{{old('telp')}}" placeholder="Masukkan Nomor Telepon" class="form-control" />
                                                 </div>
                                                 @error('telp')
                                                     <div class="text-danger mt-1">
                                                         {{ $message }}
                                                     </div>
                                                 @enderror
+                                                <label>Pilih Kelas: </label>
+                                                <select class="form-select mb-1" id="basicSelect" name="kode_kelas">
+                                                    <option disabled selected>Pilih Kelas</option>
+                                                    @foreach ($kelas as $data)
+                                                    <option value="{{$data->id}}">{{$data->kelas}}</option>
+                                                    @endforeach
+                                                </select>
+                                                @error('kode_kelas')
+                                                    <div class="text-danger mt-1">
+                                                        {{ $message }}
+                                                    </div>
+                                                @enderror
                                                 <label>Tempat Lahir: </label>
                                                 <div class="mb-1">
-                                                    <input type="text" name="tmp_lahir" placeholder="Masukkan Tempat Lahir"
+                                                    <input type="text" name="tmp_lahir" value="{{old('tmp_lahir')}}" placeholder="Masukkan Tempat Lahir"
                                                         class="form-control" />
                                                 </div>
                                                 @error('tmp_lahir')
@@ -83,7 +94,7 @@
                                                 @enderror
                                                 <label>Tanggal Lahir: </label>
                                                 <div class="mb-1">
-                                                    <input type="date" name="tgl_lahir" placeholder="Masukkan Tempat Lahir"
+                                                    <input type="date" name="tgl_lahir" placeholder="Tanggal Lahir"
                                                         class="form-control" />
                                                 </div>
                                                 @error('tgl_lahir')
@@ -120,7 +131,7 @@
                                         <td>{{ $data->no_induk}}</td>
                                         <td>{{ $data->nama_siswa }}</td>
                                         <td><span
-                                            class="badge rounded-pill {{ $data->jk == 'perempuan' ? 'badge-light-danger' : 'badge-light-primary' }}  me-1">{{ $data->jk }}</span>
+                                            class="badge rounded-pill {{ $data->jk == 'wanita' ? 'badge-light-danger' : 'badge-light-primary' }}  me-1">{{ $data->jk }}</span>
                                         </td>
                                         <td>{{ $data->telp }}</td>
                                         <td>
@@ -136,14 +147,20 @@
                                                     <i data-feather="more-vertical"></i>
                                                 </button>
                                                 <div class="dropdown-menu">
-                                                    <a class="dropdown-item" href="#">
+                                                    <a class="dropdown-item" href="{{ route('edit-data-siswa', ['id'=>$data->id]) }}">
                                                         <i data-feather="edit-2" class="me-50"></i>
                                                         <span>Edit</span>
                                                     </a>
-                                                    <a class="dropdown-item" href="#">
-                                                        <i data-feather="trash" class="me-50"></i>
-                                                        <span>Delete</span>
-                                                    </a>
+                                                    <div class="dropdown-menu">
+                                                        <form action="{{ route('delete-data-siswa', ['id'=>$data->id]) }}" method="POST">
+                                                            @method('delete')
+                                                            @csrf
+                                                            <button class="dropdown-item" type="submit">
+                                                                <i data-feather="trash" class="me-50"></i>
+                                                                <span>Delete</span>
+                                                            </button>
+                                                        </form>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </td>

@@ -16,4 +16,12 @@ class Kelas extends Model
     public function jadwal(){
         return $this->hasMany(Jadwal::class);
     }
+
+    public function siswa(){
+        return $this->hasMany(Siswa::class);
+    }
+
+    public function pertemuan(){
+        return $this->hasMany(Pertemuan::class, 'kode_pertemuan');
+    }
 }

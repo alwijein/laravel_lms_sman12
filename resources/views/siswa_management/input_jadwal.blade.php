@@ -21,22 +21,15 @@
                                             @foreach ($hari as $data)
                                             <option value="{{$data->id}}">{{$data->nama_hari}}</option>
                                             @endforeach
-
                                         </select>
                                     </div>
-                                </div>
-                                <div class="col-md-6 col-12">
-                                    <div class="mb-1">
-                                        <label class="form-label" for="basicSelect">Pilih Jam</label>
-                                        <select class="form-select" id="basicSelect" name="jam">
-                                            <option disabled selected>Pilih Jam</option>
-
-                                            <option value="08:00 - 09:00">08:00 - 09:00</option>
-                                            <option value="09:00 - 10:00">09:00 - 10:00</option>
-                                            <option value="10:00 - 11:00">10:00 - 11:00</option>
-                                        </select>
+                                    @error('hari')
+                                    <div class="text-danger mt-1">
+                                        {{ $message }}
                                     </div>
+                                   @enderror
                                 </div>
+
                                 <div class="col-md-6 col-12">
                                     <div class="mb-1">
                                         <label class="form-label" for="basicSelect">Pilih Mata Pelajaran</label>
@@ -48,6 +41,33 @@
                                             @endforeach
                                         </select>
                                     </div>
+                                    @error('matapelajaran')
+                                    <div class="text-danger mt-1">
+                                        {{ $message }}
+                                    </div>
+                                   @enderror
+                                </div>
+                                <div class="col-md-6 col-12">
+                                    <div class="mb-1">
+                                        <label class="form-label" for="basicSelect">Pilih Jam Mulai</label>
+                                        <input name="jamStart" type="text" id="fp-time" class="form-control flatpickr-time text-start" placeholder="HH:MM" />
+                                    </div>
+                                    @error('jamStart')
+                                    <div class="text-danger mt-1">
+                                        {{ $message }}
+                                    </div>
+                                   @enderror
+                                </div>
+                                <div class="col-md-6 col-12">
+                                    <div class="mb-1">
+                                        <label class="form-label" for="basicSelect">Pilih Jam Berakhir</label>
+                                        <input name="jamEnd" type="text" id="fp-time" class="form-control flatpickr-time text-start" placeholder="HH:MM" />
+                                    </div>
+                                    @error('jamEnd')
+                                    <div class="text-danger mt-1">
+                                        {{ $message }}
+                                    </div>
+                                   @enderror
                                 </div>
                                 <div class="col-md-6 col-12">
                                     <div class="mb-1">
@@ -60,6 +80,11 @@
                                             @endforeach
                                         </select>
                                     </div>
+                                    @error('guru')
+                                    <div class="text-danger mt-1">
+                                        {{ $message }}
+                                    </div>
+                                   @enderror
                                 </div>
                                 <div class="col-md-6 col-12">
                                     <div class="mb-1">
@@ -72,6 +97,11 @@
                                             @endforeach
                                         </select>
                                     </div>
+                                    @error('kelas')
+                                    <div class="text-danger mt-1">
+                                        {{ $message }}
+                                    </div>
+                                   @enderror
                                 </div>
 
                                 <div class="col-12 text-center mt-1">
