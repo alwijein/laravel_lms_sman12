@@ -28,4 +28,8 @@ class Pelajaran extends Model
     public function jadwalUjian(){
         return $this->hasMany(JadwalUjian::class);
     }
+
+    public function nilai(){
+        return $this->hasMany(Nilai::class);
+    }
 }

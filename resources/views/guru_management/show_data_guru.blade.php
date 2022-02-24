@@ -11,6 +11,8 @@
                 <div class="card">
                     <div class="card-header">
                         <h4 class="card-title">Daftar Siswa</h4>
+                        @if (Auth::user()->role == 'Admin')
+
                         <div class="form-modal-ex">
                             <!-- Button trigger modal -->
                             <button type="button" class="btn btn-primary" data-bs-toggle="modal"
@@ -103,6 +105,8 @@
                                 </div>
                             </div>
                         </div>
+                        @endif
+
                     </div>
                     <div class="table-responsive">
                         <table class="table">

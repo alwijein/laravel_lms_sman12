@@ -20,4 +20,8 @@ class Guru extends Model
     public function jadwal(){
         return $this->hasMany(Jadwal::class);
     }
+
+    public function nilai(){
+        return $this->hasMany(Nilai::class);
+    }
 }

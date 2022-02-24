@@ -24,7 +24,7 @@ use Illuminate\Support\Facades\Route;
 */
 Route::middleware(['auth'])->group(function(){
     Route::get('/', function () {
-        return view('home.index');
+        return view('home.home');
     })->name('dashboard');
 
     // akses area untuk admin
@@ -107,18 +107,13 @@ Route::middleware(['auth'])->group(function(){
 
     Route::get('/detail-jadwal/{id}/detail',[JadwalController::class, 'detailJadwal'])->name('detail-jadwal');
 
-
-
-
-
     Route::post('/logout', [UserController::class, 'logout'])->name('logout');
-
 
     Route::get('show-profile', [UserController::class, 'profile'])->name('show-profile');
     Route::put('show-profile', [UserController::class, 'updateGeneral']);
     Route::put('show-profile', [UserController::class, 'updatePassword'])->name('edit-password');
 
-
+    Route::get('input-ujian', [UjianContoller::class, 'inputNilaiUjian'])->name('input-ujian');
 
 
 });

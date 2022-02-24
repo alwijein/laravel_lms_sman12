@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Hari;
 use App\Models\JadwalUjian;
+use App\Models\Kelas;
 use App\Models\Pelajaran;
 use Illuminate\Http\Request;
 
@@ -48,5 +49,15 @@ class UjianContoller extends Controller
 
         return redirect('show-ujian');
     }
+
+
+    // Nilai Ujian Controller
+
+    public function inputNilaiUjian(){
+        $kelas = Kelas::all();
+        return view('ujian_management.input_nilai_ujian', compact('kelas'));
+    }
+
+    // ...
 
 }

@@ -24,4 +24,8 @@ class Kelas extends Model
     public function pertemuan(){
         return $this->hasMany(Pertemuan::class, 'kode_pertemuan');
     }
+
+    public function nilai(){
+        return $this->hasMany(Nilai::class);
+    }
 }
