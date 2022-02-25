@@ -20,6 +20,7 @@ class CreateNilaiTable extends Migration
             $table->foreignId('kode_guru')->nullable();
             $table->foreignId('kode_pelajaran')->nullable();
             $table->string('semester');
+            $table->integer('nilai');
             $table->timestamps();
         });
         Schema::table('nilai', function($table) {

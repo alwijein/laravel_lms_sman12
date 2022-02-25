@@ -113,7 +113,12 @@ Route::middleware(['auth'])->group(function(){
     Route::put('show-profile', [UserController::class, 'updateGeneral']);
     Route::put('show-profile', [UserController::class, 'updatePassword'])->name('edit-password');
 
-    Route::get('input-ujian', [UjianContoller::class, 'inputNilaiUjian'])->name('input-ujian');
+    Route::get('input-nilai-ujian', [UjianContoller::class, 'inputNilaiUjian'])->name('input-nilai-ujian');
+    Route::get('input-nilai-ujian/{id}/detail', [UjianContoller::class, 'detailNilaiUjian'])->name('detail-nilai-ujian');
+    Route::post('input-nilai-ujian/{id}/detail', [UjianContoller::class, 'storeNilaiUjian']);
+
+    Route::get('show-nilai-ujian', [UjianContoller::class, 'showNilaiUjian'])->name('show-nilai-ujian');
+    Route::post('show-nilai-ujian/siswa', [UjianContoller::class, 'showNilaiUjianSiswa'])->name('show-nilai-ujian-siswa');
 
 
 });

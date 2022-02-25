@@ -17,6 +17,7 @@ class Nilai extends Model
         'kode_guru',
         'kode_pelajaran',
         'semester',
+        'nilai',
     ];
 
     public function pelajaran(){
