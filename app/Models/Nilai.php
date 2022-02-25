@@ -18,6 +18,9 @@ class Nilai extends Model
         'kode_pelajaran',
         'semester',
         'nilai',
+        'predikat',
+        'desk_pengetahuan',
+        'desk_keterampilan'
     ];
 
     public function pelajaran(){

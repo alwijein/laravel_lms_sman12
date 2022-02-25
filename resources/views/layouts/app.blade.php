@@ -1,5 +1,6 @@
 @php
 $user = auth()->user();
+$avatar = substr(Auth::user()->name, 0, 2);
 @endphp
 
 <!DOCTYPE html>
@@ -103,9 +104,7 @@ $user = auth()->user();
                         <div class="user-nav d-sm-flex d-none"><span
                                 class="user-name fw-bolder">{{ $user->name }}</span><span
                                 class="user-status">{{ $user->role }}</span></div><span
-                            class="avatar"><img class="round"
-                                src="{{ asset('app-assets/images/portrait/small/avatar-s-11.jpg') }}" alt="avatar"
-                                height="40" width="40"></span>
+                            class="avatar bg-light-primary"><div class="avatar-content">{{$avatar}}</div></span>
                     </a>
                     <div class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdown-user"><a
                             class="dropdown-item" href={{route('show-profile')}}><i class="me-50"
@@ -147,10 +146,18 @@ $user = auth()->user();
                             data-feather="home"></i><span class="menu-title text-truncate"
                             data-i18n="Dashboards">Dashboards</span></a>
                     <ul class="menu-content">
-                        <li class="{{ request()->is('/*') ? 'active' : '' }}"><a class="d-flex align-items-center" href="{{route('dashboard')}}"><i
+                        <li class="{{ request()->is('/*') ? 'active' : '' }}"><a class="d-flex align-items-center" href="{{route('home')}}"><i
                                     data-feather="circle"></i><span class="menu-item text-truncate"
                                     data-i18n="eCommerce">SMAN 12</span></a></li>
                     </ul>
+                    @if (Auth::user()->role == 'Admin')
+
+                    <ul class="menu-content">
+                        <li class="{{ request()->is('dashboard*') ? 'active' : '' }}"><a class="d-flex align-items-center" href="{{route('dashboard')}}"><i
+                                    data-feather="circle"></i><span class="menu-item text-truncate"
+                                    data-i18n="eCommerce">Admin Dashboard</span></a></li>
+                    </ul>
+                    @endif
                 </li>
                 @if (Auth::user()->role == 'Admin')
 
@@ -314,22 +321,30 @@ $user = auth()->user();
             </li>
             </ul>
             </li>
+            @if (Auth::user()->role == 'Admin')
+
             <li class=" navigation-header"><span data-i18n="User Interface">Nilai Management</span><i
                     data-feather="more-horizontal"></i>
             </li>
-            <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i data-feather="book"></i><span
-                        class="menu-title text-truncate" data-i18n="User">Nilai Rapor</span></a>
+            <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i data-feather="thumbs-up"></i><span
+                        class="menu-title text-truncate" data-i18n="User">Nilai Sikap</span></a>
                 <ul class="menu-content">
-                    <li><a class="d-flex align-items-center" href="app-user-list.html"><i
+                    <li class="{{ request()->is('input-nilai/sikap*') ? 'active' : '' }}" ><a class="d-flex align-items-center" href="{{route('input-nilai-sikap')}}"><i
                                 data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="List">Input
-                                Nilai</span></a>
+                                Nilai Sikap</span></a>
                     </li>
-                    <li><a class="d-flex align-items-center" href="app-user-list.html"><i
+            </li>
+            </ul>
+            <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i data-feather="award"></i><span
+                        class="menu-title text-truncate" data-i18n="User">Nilai Lapor</span></a>
+                <ul class="menu-content">
+                    <li class="{{ request()->is('show-nilai/lapor*') ? 'active' : '' }}" ><a class="d-flex align-items-center" href="{{route('show-nilai-lapor')}}"><i
                                 data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="List">Daftar
                                 Nilai</span></a>
                     </li>
             </li>
             </ul>
+            @endif
             </li>
 
             {{-- OPTIONAL FOR FETURE --}}

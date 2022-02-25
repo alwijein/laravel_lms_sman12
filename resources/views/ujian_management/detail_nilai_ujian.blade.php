@@ -17,8 +17,8 @@
                                     <label class="form-label" for="fp-default">Pilih Jenis Ujian</label>
                                     <select class="form-select" id="basicSelect" name="semester">
                                         <option disabled selected>Pilih Semester</option>
-                                        <option value="semester 1">Semester 1</option>
-                                        <option value="semester 2">Semester 2</option>
+                                        <option value="1(Ganjil)">1(Ganjil)</option>
+                                        <option value="2(Genap)">2(Genap)</option>
                                     </select>
                                     @error('semester')
                                         <div class="text-danger mt-1">
@@ -82,6 +82,48 @@
                                             placeholder="Masukkan Nilai Siswa" />
                                     </div>
                                     @error('nilai')
+                                        <div class="text-danger mt-1">
+                                            {{ $message }}
+                                        </div>
+                                    @enderror
+                                </div>
+
+                                <div class="col-md-6 col-12">
+                                    <div class="form-floating mt-1">
+                                      <textarea
+                                        data-length="255"
+                                        class="form-control char-textarea"
+                                        id="textarea-counter"
+                                        rows="3"
+                                        placeholder="Counter"
+                                        style="height: 100px"
+                                        name="desk_pengetahuan"
+                                      ></textarea>
+                                      <label for="textarea-counter">Deskripsi Pengetahuan</label>
+                                    </div>
+                                    <small class="textarea-counter-value float-end"><span class="char-count">0</span> / 255 </small>
+                                    @error('desk_pengetahuan')
+                                        <div class="text-danger mt-1 mb-1">
+                                            {{ $message }}
+                                        </div>
+                                    @enderror
+                                </div>
+                                <div class="col-md-6 col-12"></div>
+                                <div class="col-md-6 col-12">
+                                    <div class="form-floating mb-1 mt-1">
+                                      <textarea
+                                        data-length="255"
+                                        class="form-control char-textarea"
+                                        id="textarea-counter"
+                                        rows="3"
+                                        placeholder="Counter"
+                                        style="height: 100px"
+                                        name="desk_keterampilan"
+                                      ></textarea>
+                                      <label for="textarea-counter">Deskripsi Keterampilan</label>
+                                    </div>
+                                    <small class="textarea-counter-value float-end"><span class="char-count">0</span> / 255 </small>
+                                    @error('desk_keterampilan')
                                         <div class="text-danger mt-1">
                                             {{ $message }}
                                         </div>

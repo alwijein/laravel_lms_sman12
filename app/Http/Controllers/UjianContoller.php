@@ -62,7 +62,7 @@ class UjianContoller extends Controller
     }
 
     public function detailNilaiUjian($id){
-        $siswa = Siswa::where('id', $id)->get();
+        $siswa = Siswa::where('kode_kelas', $id)->get();
         $guru = Guru::all();
         $pelajaran = Pelajaran::all();
         $kode_kelas = $id;
@@ -78,7 +78,24 @@ class UjianContoller extends Controller
             'kode_pelajaran' => ['required'],
             'semester' => ['required'],
             'nilai' => ['required', 'max:3'],
+            'desk_pengetahuan' => ['required', 'max:255'],
+            'desk_keterampilan' => ['required', 'max:255'],
         ]);
+
+        $nilai = $request->nilai;
+        if($nilai >= 92){
+            $predikat = 'A';
+        }
+        else if($nilai >= 83 && $nilai < 92){
+            $predikat = 'B';
+        }
+        else if($nilai >= 75 && $nilai < 83){
+            $predikat = 'C';
+
+        }
+        else if($nilai < 75){
+            $predikat = 'D';
+        }
 
         Nilai::create([
             'kode_siswa' => $request->kode_siswa,
@@ -87,6 +104,9 @@ class UjianContoller extends Controller
             'kode_pelajaran' => $request->kode_pelajaran,
             'semester' => $request->semester,
             'nilai' => $request->nilai,
+            'predikat' => $predikat,
+            'desk_pengetahuan'  => $request->desk_pengetahuan,
+            'desk_keterampilan'  => $request->desk_keterampilan,
         ]);
 
         return redirect(route('detail-nilai-ujian', ['id' => $id]));

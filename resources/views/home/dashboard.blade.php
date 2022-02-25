@@ -54,7 +54,7 @@
                                             </div>
                                         </div>
                                         <div class="my-auto">
-                                            <h4 class="fw-bolder mb-0">700</h4>
+                                            {{-- <h4 class="fw-bolder mb-0">{{$siswa->id}}</h4> --}}
                                             <p class="card-text font-small-3 mb-0">Users</p>
                                         </div>
                                     </div>
@@ -67,8 +67,8 @@
                                             </div>
                                         </div>
                                         <div class="my-auto">
-                                            <h4 class="fw-bolder mb-0">1.423k</h4>
-                                            <p class="card-text font-small-3 mb-0">Products</p>
+                                            {{-- <h4 class="fw-bolder mb-0">{{$siswa}}</h4> --}}
+                                            <p class="card-text font-small-3 mb-0">Siswa</p>
                                         </div>
                                     </div>
                                 </div>

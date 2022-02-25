@@ -24,7 +24,7 @@
                                         <td>{{ $data->id }}</td>
                                         <td>{{ $data->kelas }}</td>
                                         <td>
-                                            <a  href="{{ route('detail-nilai-ujian', ['id'=>$data->id]) }}">
+                                            <a  href="{{ route('detail-nilai-sikap', ['id'=>$data->id]) }}">
                                                 <i data-feather="edit" class="me-50"></i>
                                                 <span>Input</span>
                                             </a>

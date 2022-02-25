@@ -2,7 +2,7 @@
 
 
 @section('content')
-    <form class="faq-search-input row mb-3" action="{{ route('show-nilai-ujian-siswa') }}" method="post">
+    <form class="faq-search-input row mb-3" action="{{ route('show-nilai-lapor-siswa') }}" method="post">
         @csrf
         <div class="input-group input-group-merge col">
             <div class="input-group-text">

@@ -17,7 +17,7 @@ class CreateSiswaTable extends Migration
             $table->id();
             $table->string('no_induk');
             $table->string('nama_siswa');
-            $table->string('jk');
+            $table->enum('jk', array('pria', 'wanita'));
             $table->string('telp');
             $table->foreignId('kode_kelas')->nullable();
             $table->string('tmp_lahir');
@@ -38,5 +38,6 @@ class CreateSiswaTable extends Migration
     public function down()
     {
         Schema::dropIfExists('siswa');
+
     }
 }

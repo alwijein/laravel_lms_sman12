@@ -12,7 +12,7 @@ class Siswa extends Model
     protected $fillable = ['no_induk', 'nama_siswa', 'jk', 'kode_kelas' ,'telp', 'tmp_lahir', 'tgl_lahir'];
 
     public function kelas(){
-        return $this->belongsTo(Kelas::class);
+        return $this->belongsTo(Kelas::class, 'kode_kelas');
     }
 
     public function absensiSiswa(){
@@ -21,5 +21,9 @@ class Siswa extends Model
 
     public function nilai(){
         return $this->hasMany(Nilai::class);
+    }
+
+    public function nilaiSikap(){
+        return $this->hasMany(NilaiSikap::class);
     }
 }
