@@ -8,7 +8,7 @@
                 <div class="card">
 
                     <div class="card-header">
-                        <h4 class="card-title">Daftar Jadwal</h4>
+                        <h4 class="card-title">Daftar Pelajaran</h4>
                     </div>
                     <div class="table-responsive">
                         <table class="table">

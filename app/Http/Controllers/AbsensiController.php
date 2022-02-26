@@ -70,10 +70,11 @@ class AbsensiController extends Controller
         return redirect("show-absensi-siswa/$id/detail/$kode_pertemuan");
     }
 
-    public function destroy($id){
-        $pertemuan = Pertemuan::where('id', $id)->first();
+    public function destroy($id, $kode_pertemuan){
+        $pertemuan = AbsensiSiswa::where('id', $id)->where('kode_pertemuan',$kode_pertemuan)->first();
         $pertemuan->delete();
 
-        return redirect(route('detail-absen',[ 'id'=>$id]));
+        return redirect("show-absensi-siswa/$id/detail/$kode_pertemuan");
+
     }
 }

@@ -346,8 +346,7 @@ $avatar = substr(Auth::user()->name, 0, 2);
                         class="menu-title text-truncate" data-i18n="User">Nilai Lapor</span></a>
                 <ul class="menu-content">
                     <li class="{{ request()->is('show-nilai/lapor*') ? 'active' : '' }}" ><a class="d-flex align-items-center" href="{{route('show-nilai-lapor')}}"><i
-                                data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="List">Daftar
-                                Nilai</span></a>
+                                data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="List">Lihat Lapor</span></a>
                     </li>
             </li>
             </ul>

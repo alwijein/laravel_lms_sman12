@@ -102,6 +102,7 @@ Route::middleware(['auth'])->group(function(){
             Route::post('/show-absensi-siswa', [AbsensiController::class, 'storePertemuan'])->name('input-pertemuan');
             Route::get('/show-absensi-siswa/{id}/detail/{kode_pertemuan}', [AbsensiController::class, 'absensiSiswa'])->name('absensi-siswa');
             Route::post('/show-absensi-siswa/{id}/detail/{kode_pertemuan}', [AbsensiController::class, 'storeAbsen'])->name('input-absen');
+            Route::delete('/show-absensi-siswa/{id}/detail/{kode_pertemuan}', [AbsensiController::class, 'destroy']);
 
 
             Route::get('/input-ujian',[UjianContoller::class, 'inputUjian'])->name('input-ujian');

@@ -27,7 +27,7 @@ class CreateSiswaTable extends Migration
         });
 
         Schema::table('siswa', function($table) {
-            $table->foreign('kode_kelas')->references('id')->on('kelas');
+            $table->foreign('kode_kelas')->references('id')->on('kelas')->onDelete('cascade');
         });
     }
 

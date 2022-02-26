@@ -82,21 +82,11 @@
                                     <tr>
                                         <td>{{ $data->siswa->nama_siswa }}</td>
                                         <td><span
-                                                class="badge rounded-pill badge-light-primary me-1">{{ $data->kehadiran->ket }}</span>
+                                                class="badge rounded-pill me-1" style="background: #{{$data->kehadiran->color}}">{{ $data->kehadiran->ket }}</span>
                                         </td>
                                         <td>
                                             <div class="dropdown">
-                                                <button type="button" class="btn btn-sm dropdown-toggle hide-arrow"
-                                                    data-bs-toggle="dropdown">
-                                                    <i data-feather="more-vertical"></i>
-                                                </button>
-                                                <div class="dropdown-menu">
-                                                    <a class="dropdown-item"
-                                                        href="{{ route('edit-siswa', ['id' => $data->id]) }}">
-                                                        <i data-feather="edit-2" class="me-50"></i>
-                                                        <span>Edit</span>
-                                                    </a>
-                                                    <form action="{{ route('delete', ['id' => $data->id]) }}" method="POST">
+                                                    <form action="{{ route('input-absen', ['id' => $data->id, 'kode_pertemuan' => $kode_pertemuan]) }}" method="POST">
                                                         @method('delete')
                                                         @csrf
                                                         <button class="dropdown-item" type="submit">
@@ -104,7 +94,6 @@
                                                             <span>Delete</span>
                                                         </button>
                                                     </form>
-                                                </div>
                                             </div>
                                         </td>
                                     </tr>

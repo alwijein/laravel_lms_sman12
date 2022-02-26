@@ -76,8 +76,7 @@
                             <thead>
                                 <tr>
                                     <th>Nama</th>
-                                    <th>Kelas</th>
-                                    <th>Angkatan</th>
+                                    <th>Email</th>
                                     <th>Status</th>
                                     <th>Actions</th>
                                 </tr>
@@ -85,8 +84,6 @@
                             <tbody>
                                 @foreach ($users as $user)
                                     <tr>
-                                        <td>{{ $user->name }}</td>
-
                                         <td>{{ $user->name }}</td>
                                         <td>
                                             {{ $user->email }}

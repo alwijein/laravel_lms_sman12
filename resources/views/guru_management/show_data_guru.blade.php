@@ -17,7 +17,7 @@
                             <!-- Button trigger modal -->
                             <button type="button" class="btn btn-primary" data-bs-toggle="modal"
                                 data-bs-target="#inlineForm">
-                                Tambah Siswa
+                                Tambah Guru
                             </button>
                             <!-- Modal -->
                             <div class="modal fade text-start" id="inlineForm" tabindex="-1" aria-labelledby="myModalLabel33"
@@ -25,7 +25,7 @@
                                 <div class="modal-dialog modal-dialog-centered">
                                     <div class="modal-content">
                                         <div class="modal-header">
-                                            <h4 class="modal-title" id="myModalLabel33">Tambahkan Data Siswa</h4>
+                                            <h4 class="modal-title" id="myModalLabel33">Tambahkan Data Guru</h4>
                                             <button type="button" class="btn-close" data-bs-dismiss="modal"
                                                 aria-label="Close"></button>
                                         </div>
