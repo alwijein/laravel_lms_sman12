@@ -298,12 +298,14 @@ $avatar = substr(Auth::user()->name, 0, 2);
             <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i data-feather="calendar"></i><span
                         class="menu-title text-truncate" data-i18n="User">Jadwal Ujian</span></a>
                 <ul class="menu-content">
+                    @if(Auth::user()->role == 'Admin')
                     <li class="{{ request()->is('input-ujian*') ? 'active' : '' }}" ><a class="d-flex align-items-center" href="{{route('input-ujian')}}"><i
                                 data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="List">Input
                                 Jadwal Ujian</span></a>
                     </li>
+                    @endif
                     <li class="{{ request()->is('show-ujian*') ? 'active' : '' }}" ><a class="d-flex align-items-center" href="{{route('show-ujian')}}"><i
-                                data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="List">Daftar
+                                data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="List">
                                 Jadwal Ujian</span></a>
                     </li>
             </li>
@@ -311,21 +313,24 @@ $avatar = substr(Auth::user()->name, 0, 2);
             <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i data-feather="clipboard"></i><span
                         class="menu-title text-truncate" data-i18n="User">Hasil Ujian</span></a>
                 <ul class="menu-content">
+                    @if(Auth::user()->role == 'Admin' || Auth::user()->role == 'Guru' )
+
                     <li class="{{ request()->is('input-nilai-ujian*') ? 'active' : '' }}"><a class="d-flex align-items-center" href="{{route('input-nilai-ujian')}}"><i
                                 data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="List">Input
                                 Nilai Ujian</span></a>
                     </li>
-                    <li class="{{ request()->is('show-nilai-ujian*') ? 'active' : '' }}"><a class="d-flex align-items-center" href="{{route('show-nilai-ujian')}}"><i
+                    @endif
+                    <li class="{{ request()->is('show-nilai/ujian*') ? 'active' : '' }}"><a class="d-flex align-items-center" href="{{route('show-nilai-ujian')}}"><i
                                 data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="List">Lihat Nilai Ujian</span></a>
                     </li>
             </li>
             </ul>
             </li>
-            @if (Auth::user()->role == 'Admin')
 
             <li class=" navigation-header"><span data-i18n="User Interface">Nilai Management</span><i
-                    data-feather="more-horizontal"></i>
+                data-feather="more-horizontal"></i>
             </li>
+            @if (Auth::user()->role == 'Admin')
             <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i data-feather="thumbs-up"></i><span
                         class="menu-title text-truncate" data-i18n="User">Nilai Sikap</span></a>
                 <ul class="menu-content">
@@ -334,7 +339,9 @@ $avatar = substr(Auth::user()->name, 0, 2);
                                 Nilai Sikap</span></a>
                     </li>
             </li>
-            </ul>
+        </ul>
+        @endif
+
             <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i data-feather="award"></i><span
                         class="menu-title text-truncate" data-i18n="User">Nilai Lapor</span></a>
                 <ul class="menu-content">
@@ -344,7 +351,6 @@ $avatar = substr(Auth::user()->name, 0, 2);
                     </li>
             </li>
             </ul>
-            @endif
             </li>
 
             {{-- OPTIONAL FOR FETURE --}}
@@ -396,6 +402,8 @@ $avatar = substr(Auth::user()->name, 0, 2);
                 <script src={{asset('app-assets/vendors/js/pickers/pickadate/legacy.js')}}></script>
                 <script src={{asset('app-assets/vendors/js/pickers/flatpickr/flatpickr.min.js')}}></script>
 
+                <script src={{asset('app-assets/vendors/js/charts/apexcharts.min.js')}}></script>
+
 
 
 
@@ -410,6 +418,8 @@ $avatar = substr(Auth::user()->name, 0, 2);
 
 
                 <!-- BEGIN: Page JS-->
+
+                <script src={{ asset('app-assets/js/scripts/cards/card-analytics.min.js') }}></script>
                 <script src={{ asset('app-assets/js/scripts/forms/form-select2.min.js') }}></script>
                 <script src={{ asset('app-assets/js/scripts/pages/dashboard-ecommerce.min.js') }}></script>
                 <script src={{ asset('app-assets/js/scripts/pages/app-user-list.min.js') }}></script>

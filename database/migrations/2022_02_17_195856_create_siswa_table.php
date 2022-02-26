@@ -20,6 +20,7 @@ class CreateSiswaTable extends Migration
             $table->enum('jk', array('pria', 'wanita'));
             $table->string('telp');
             $table->foreignId('kode_kelas')->nullable();
+            $table->string('alamat');
             $table->string('tmp_lahir');
             $table->date('tgl_lahir');
             $table->timestamps();

@@ -10,7 +10,7 @@
             <div class="col-12">
                 <div class="card">
                     <div class="card-header">
-                        <h4 class="card-title">Daftar Siswa</h4>
+                        <h4 class="card-title">Daftar Guru</h4>
                         @if (Auth::user()->role == 'Admin')
 
                         <div class="form-modal-ex">

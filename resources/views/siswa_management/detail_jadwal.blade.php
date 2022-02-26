@@ -7,7 +7,7 @@
                 <div class="card knowledge-base-bg text-center"
                     style="background-image: url('../../../app-assets/images/banner/banner.png')">
                     <div class="card-body">
-                        <h2 class="text-primary mb-3">Jadwal Mata Pelajaran Kelas XII</h2>
+                        <h2 class="text-primary mb-3">Jadwal Mata Pelajaran Kelas {{$title}}</h2>
                         <img src="{{ asset('app-assets/images/illustrator/date-illustrator.svg') }}" width="200rem"
                             alt="">
                     </div>

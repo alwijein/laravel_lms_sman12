@@ -27,6 +27,7 @@ class DataController extends Controller
             'jk' => ['required'],
             'telp' => ['required', 'min:12'],
             'kode_kelas' => ['required'],
+            'alamat' => ['required'],
             'tmp_lahir' => ['required'],
             'tgl_lahir' => ['required'],
         ]);
@@ -38,6 +39,7 @@ class DataController extends Controller
             'jk' => $request->jk,
             'telp' => $request->telp,
             'kode_kelas' => $request->kode_kelas,
+            'alamat' => $request->alamat,
             'tmp_lahir' => $request->tmp_lahir,
             'tgl_lahir' => $request->tgl_lahir,
         ]);

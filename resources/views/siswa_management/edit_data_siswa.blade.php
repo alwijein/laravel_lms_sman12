@@ -111,6 +111,23 @@
                                 <div class="col-12">
                                     <div class="mb-1 row">
                                         <div class="col-sm-3">
+                                            <label class="col-form-label" for="first-name">Alamat</label>
+                                        </div>
+                                        <div class="col-sm-9">
+                                            <input value="{{ $siswa->alamat }}" type="text" id="first-name"
+                                                class="form-control text-lowercase" name="alamat"
+                                                placeholder="Alamat" />
+                                            @error('alamat')
+                                                <div class="text-danger mt-1">
+                                                    {{ $message }}
+                                                </div>
+                                            @enderror
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="mb-1 row">
+                                        <div class="col-sm-3">
                                             <label class="col-form-label" for="first-name">Tempat Lahir</label>
                                         </div>
                                         <div class="col-sm-9">

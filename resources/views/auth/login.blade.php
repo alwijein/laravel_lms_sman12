@@ -42,7 +42,7 @@
                                             </div>
                                         @enderror
                                     </div>
-                                    <div class="mb-1">
+                                    <div class="mb-4">
                                         <label class="form-label" for="password">Password</label>
                                         <div class="input-group input-group-merge form-password-toggle">
                                             <input class="form-control form-control-merge" id="password" type="password"
@@ -67,8 +67,6 @@
                                     </div> --}}
                                     <button class="btn btn-primary w-100" tabindex="5" type="submit">Sign up</button>
                                 </form>
-                                <p class="text-center mt-2"><span>Already have an account?</span><a
-                                        href="page-auth-login-v2.html"><span>&nbsp;Sign in instead</span></a></p>
                             </div>
                         </div>
                         <!-- /Register-->

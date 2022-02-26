@@ -3,6 +3,7 @@
 use App\Http\Controllers\AbsensiController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\DashboardContoller;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\DataController;
 use App\Http\Controllers\JadwalController;
 use App\Http\Controllers\KelasController;
@@ -26,16 +27,16 @@ use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 |
 */
 Route::middleware(['auth'])->group(function(){
-    Route::get('/dashboard', function () {
-        return view('home.dashboard');
-    })->name('dashboard');
+    Route::get('/', function () {
+        return view('home.home');
+    })->name('home');
 
-    Route::get('/', [DashboardConrtoller::class, 'index'])->name('home');
 
     // akses area untuk admin
     Route::middleware(['isGlobalAccess'])->group(function(){
 
         Route::middleware(['admin'])->group(function(){
+            Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
             Route::get('/show-siswa',[UserController::class, 'showSiswa'])->name('show-siswa');
             Route::post('/show-siswa', [UserController::class, 'storeSiswa']);
@@ -87,8 +88,7 @@ Route::middleware(['auth'])->group(function(){
             Route::get('/input-nilai/sikap/{id}/detail',[NilaiController::class, 'detailNilaiSikap'])->name('detail-nilai-sikap');
             Route::post('/input-nilai/sikap/{id}/detail',[NilaiController::class, 'storeNilaiSikap']);
 
-            Route::get('/show-nilai/lapor',[NilaiController::class, 'showNilaiLapor'])->name('show-nilai-lapor');
-            Route::post('/show-nilai/lapor/siswa',[NilaiController::class, 'showNilaiLaporSiswa'])->name('show-nilai-lapor-siswa');
+
 
         });
 
@@ -107,17 +107,18 @@ Route::middleware(['auth'])->group(function(){
             Route::get('/input-ujian',[UjianContoller::class, 'inputUjian'])->name('input-ujian');
             Route::post('/input-ujian',[UjianContoller::class, 'storeJadwalUjian'])->name('input-ujian');
 
-            Route::get('/show-ujian',[UjianContoller::class, 'showUjian'])->name('show-ujian');
             Route::delete('/show-ujian/{id}',[UjianContoller::class, 'destroy'])->name('delete-ujian');
 
             Route::get('input-nilai-ujian', [UjianContoller::class, 'inputNilaiUjian'])->name('input-nilai-ujian');
             Route::get('input-nilai-ujian/{id}/detail', [UjianContoller::class, 'detailNilaiUjian'])->name('detail-nilai-ujian');
             Route::post('input-nilai-ujian/{id}/detail', [UjianContoller::class, 'storeNilaiUjian']);
 
-            Route::get('show-nilai/ujian', [UjianContoller::class, 'showNilaiUjian'])->name('show-nilai-ujian');
-            Route::post('show-nilai/ujian/siswa', [UjianContoller::class, 'showNilaiUjianSiswa'])->name('show-nilai-ujian-siswa');
+
 
     });
+
+    Route::get('/show-ujian',[UjianContoller::class, 'showUjian'])->name('show-ujian');
+
 
     Route::get('/show-data-guru',[DataController::class, 'showDataGuru'])->name('show-data-guru');
 
@@ -131,7 +132,11 @@ Route::middleware(['auth'])->group(function(){
     Route::put('show-profile', [UserController::class, 'updateGeneral']);
     Route::put('show-profile', [UserController::class, 'updatePassword'])->name('edit-password');
 
+    Route::get('/show-nilai/lapor',[NilaiController::class, 'showNilaiLapor'])->name('show-nilai-lapor');
+    Route::post('/show-nilai/lapor/siswa',[NilaiController::class, 'showNilaiLaporSiswa'])->name('show-nilai-lapor-siswa');
 
+    Route::get('show-nilai/ujian', [UjianContoller::class, 'showNilaiUjian'])->name('show-nilai-ujian');
+    Route::post('show-nilai/ujian/siswa', [UjianContoller::class, 'showNilaiUjianSiswa'])->name('show-nilai-ujian-siswa');
 
 });
 

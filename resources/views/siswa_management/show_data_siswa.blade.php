@@ -82,6 +82,15 @@
                                                         {{ $message }}
                                                     </div>
                                                 @enderror
+                                                <label>Nomor Telepon: </label>
+                                                <div class="mb-1">
+                                                    <input type="text" name="alamat" value="{{old('alamat')}}" placeholder="Masukkan Alamat" class="form-control" />
+                                                </div>
+                                                @error('alamat')
+                                                    <div class="text-danger mt-1">
+                                                        {{ $message }}
+                                                    </div>
+                                                @enderror
                                                 <label>Tempat Lahir: </label>
                                                 <div class="mb-1">
                                                     <input type="text" name="tmp_lahir" value="{{old('tmp_lahir')}}" placeholder="Masukkan Tempat Lahir"
@@ -118,10 +127,11 @@
                                 <tr>
                                     <th>NIK</th>
                                     <th>Nama</th>
-                                    <th>Jenis Kelamin</th>
                                     <th>Nomor Telpon</th>
+                                    <th>Alamat</th>
                                     <th>Tempat Lahir</th>
                                     <th>Tanggal Lahir</th>
+                                    <th>Jenis Kelamin</th>
                                     <th>aksi</th>
                                 </tr>
                             </thead>
@@ -130,15 +140,18 @@
                                     <tr>
                                         <td>{{ $data->no_induk}}</td>
                                         <td>{{ $data->nama_siswa }}</td>
-                                        <td><span
-                                            class="badge rounded-pill {{ $data->jk == 'wanita' ? 'badge-light-danger' : 'badge-light-primary' }}  me-1">{{ $data->jk }}</span>
-                                        </td>
                                         <td>{{ $data->telp }}</td>
+                                        <td>
+                                            {{ $data->alamat }}
+                                        </td>
                                         <td>
                                             {{ $data->tmp_lahir }}
                                         </td>
                                         <td>
                                             {{ $data->tgl_lahir }}
+                                        </td>
+                                        <td><span
+                                            class="badge rounded-pill {{ $data->jk == 'wanita' ? 'badge-light-danger' : 'badge-light-primary' }}  me-1">{{ $data->jk }}</span>
                                         </td>
                                         <td>
                                             <div class="dropdown">
