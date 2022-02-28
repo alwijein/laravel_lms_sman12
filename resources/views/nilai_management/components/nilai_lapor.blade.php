@@ -190,12 +190,12 @@
                                 @php
                                     $count = 1;
                                 @endphp
-                                @foreach ($nilai as $data)
+                                @foreach ($ekstrakurikuler as $data)
                                     <tr>
                                         <td>{{ $count }}</td>
-                                        <td>{{ $data->pelajaran->mata_pelajaran }}</td>
+                                        <td>{{ $data->kegiatan }}</td>
                                         <td>{{ $data->nilai }}</td>
-                                        <td>{{ $data->desk_keterampilan }}</td>
+                                        <td>{{ $data->deskripsi }}</td>
                                     </tr>
                                     @php
                                         $count = $count+1;
@@ -224,11 +224,11 @@
                                 @php
                                     $count = 1;
                                 @endphp
-                                @foreach ($nilai as $data)
+                                @foreach ($prestasi as $data)
                                     <tr>
                                         <td>{{ $count }}</td>
-                                        <td>{{ $data->pelajaran->mata_pelajaran }}</td>
-                                        <td>{{ $data->desk_keterampilan }}</td>
+                                        <td>{{ $data->jenisKegiatan }}</td>
+                                        <td>{{ $data->keterangan}}</td>
                                     </tr>
                                     @php
                                         $count = $count+1;

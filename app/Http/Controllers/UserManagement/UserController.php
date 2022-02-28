@@ -138,6 +138,7 @@ class UserController extends Controller
             'email' => ['required' , 'email'],
         ]);
 
+
         User::where('id', Auth::user()->id)->update([
             'name' => $request->name,
             'email' => $request->email,

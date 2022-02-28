@@ -26,4 +26,13 @@ class Siswa extends Model
     public function nilaiSikap(){
         return $this->hasMany(NilaiSikap::class);
     }
+
+    public function nilaiEkstrakurikuler(){
+        return $this->hasMany(NilaiEkstrakurikuler::class);
+    }
+
+    public function nilaiPrestasi(){
+        return $this->hasMany(NilaiPrestasi::class);
+    }
+
 }

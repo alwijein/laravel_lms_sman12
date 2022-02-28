@@ -5,10 +5,12 @@ use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\DashboardContoller;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\DataController;
+use App\Http\Controllers\EkstrakurikulerController;
 use App\Http\Controllers\JadwalController;
 use App\Http\Controllers\KelasController;
 use App\Http\Controllers\NilaiController;
 use App\Http\Controllers\PelajaranController;
+use App\Http\Controllers\PrestasiController;
 use App\Http\Controllers\UjianContoller;
 use App\Http\Controllers\UserManagement\UserController;
 use App\Models\AbsensiSiswa;
@@ -114,6 +116,15 @@ Route::middleware(['auth'])->group(function(){
             Route::get('input-nilai-ujian/{id}/detail', [UjianContoller::class, 'detailNilaiUjian'])->name('detail-nilai-ujian');
             Route::post('input-nilai-ujian/{id}/detail', [UjianContoller::class, 'storeNilaiUjian']);
 
+            Route::get('/input-nilai/ekstrakurikuler', [EkstrakurikulerController::class, 'inputNilai'])->name('input-ekstrakurikuler');
+            Route::get('/input-nilai/ekstrakurikuler/{id}/detail', [EkstrakurikulerController::class, 'detailNilai'])->name('detail-ekstrakurikuler');
+            Route::post('/input-nilai/ekstrakurikuler/{id}/detail', [EkstrakurikulerController::class, 'storeNilai']);
+
+            Route::get('/input-nilai/prestasi', [PrestasiController::class, 'inputNilai'])->name('input-prestasi');
+            Route::get('/input-nilai/prestasi/{id}/detail', [PrestasiController::class, 'detailNilai'])->name('detail-prestasi');
+            Route::post('/input-nilai/prestasi/{id}/detail', [PrestasiController::class, 'storeNilai']);
+
+
 
 
     });
@@ -130,7 +141,7 @@ Route::middleware(['auth'])->group(function(){
     Route::post('/logout', [UserController::class, 'logout'])->name('logout');
 
     Route::get('show-profile', [UserController::class, 'profile'])->name('show-profile');
-    Route::put('show-profile', [UserController::class, 'updateGeneral']);
+    Route::put('show-profile/general', [UserController::class, 'updateGeneral'])->name('edit-general');
     Route::put('show-profile', [UserController::class, 'updatePassword'])->name('edit-password');
 
     Route::get('/show-nilai/lapor',[NilaiController::class, 'showNilaiLapor'])->name('show-nilai-lapor');

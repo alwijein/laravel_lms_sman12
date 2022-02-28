@@ -50,7 +50,7 @@
                 aria-expanded="true"
               >
                 <!-- form -->
-                <form class="validate-form mt-2" action="{{route('show-profile')}}" method="POST">
+                <form class="validate-form mt-2" action="{{route('edit-general')}}" method="POST">
                     @method('put')
                     @csrf
                   <div class="row">

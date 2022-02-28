@@ -340,9 +340,27 @@ $avatar = substr(Auth::user()->name, 0, 2);
                     </li>
             </li>
         </ul>
+            <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i data-feather="target"></i><span
+                        class="menu-title text-truncate" data-i18n="User">Nilai Ekstrakurikuler</span></a>
+                <ul class="menu-content">
+                    <li class="{{ request()->is('input-nilai/ekstrakurikuler*') ? 'active' : '' }}" ><a class="d-flex align-items-center" href="{{route('input-ekstrakurikuler')}}"><i
+                                data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="List">Input
+                                Nilai Ekstrakurikuler</span></a>
+                    </li>
+            </li>
+        </ul>
+            <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i data-feather="award"></i><span
+                        class="menu-title text-truncate" data-i18n="User">Nilai Prestasi</span></a>
+                <ul class="menu-content">
+                    <li class="{{ request()->is('input-nilai/prestasi*') ? 'active' : '' }}" ><a class="d-flex align-items-center" href="{{route('input-prestasi')}}"><i
+                                data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="List">Input
+                                Nilai Prestasi</span></a>
+                    </li>
+            </li>
+        </ul>
         @endif
 
-            <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i data-feather="award"></i><span
+            <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i data-feather="book"></i><span
                         class="menu-title text-truncate" data-i18n="User">Nilai Lapor</span></a>
                 <ul class="menu-content">
                     <li class="{{ request()->is('show-nilai/lapor*') ? 'active' : '' }}" ><a class="d-flex align-items-center" href="{{route('show-nilai-lapor')}}"><i

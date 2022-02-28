@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateNilaiSikapTable extends Migration
+class CreateNilaiPrestasiTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,19 +13,18 @@ class CreateNilaiSikapTable extends Migration
      */
     public function up()
     {
-        Schema::dropIfExists('nilai_sikap');
+        Schema::dropIfExists('nilai_prestasi');
 
-        Schema::create('nilai_sikap', function (Blueprint $table) {
+        Schema::create('nilai_prestasi', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('kode_siswa')->nullable();
-            $table->enum('jenis_sikap', array('spritual', 'sosial'));
-            $table->string('predikat');
-            $table->string('desk');
+            $table->foreignId('kode_siswa');
+            $table->string('jenisKegiatan')->nullable();
+            $table->string('keterangan')->nullable();
             $table->enum('semester', array('1(Ganjil)', '2(Genap)'));
             $table->timestamps();
         });
 
-        Schema::table('nilai_sikap', function($table) {
+        Schema::table('nilai_prestasi', function($table) {
             $table->foreign('kode_siswa')->references('id')->on('siswa')->onDelete('cascade');
         });
     }
@@ -37,6 +36,6 @@ class CreateNilaiSikapTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('nilai_sikap');
+        Schema::dropIfExists('nilai_prestasi');
     }
 }

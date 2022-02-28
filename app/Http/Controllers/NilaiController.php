@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\AbsensiSiswa;
 use App\Models\Kelas;
 use App\Models\Nilai;
+use App\Models\NilaiEkstrakurikuler;
+use App\Models\NilaiPrestasi;
 use App\Models\NilaiSikap;
 use App\Models\Siswa;
 use Illuminate\Http\Request;
@@ -32,6 +34,7 @@ class NilaiController extends Controller
             'jenis_sikap' => ['required'],
             'predikat' => ['required'],
             'desk' => ['required', 'max:255'],
+            'semester' => ['required'],
         ]);
 
 
@@ -40,6 +43,7 @@ class NilaiController extends Controller
             'jenis_sikap' => $request->jenis_sikap,
             'predikat' => $request->predikat,
             'desk' => $request->desk,
+            'semester' => $request->semester,
         ]);
 
         return redirect(route('detail-nilai-sikap', ['id' => $id]));
@@ -58,18 +62,31 @@ class NilaiController extends Controller
             'semester' => ['required'],
         ]);
 
+
         $siswa = Siswa::where('no_induk', $request->no_induk)->first();
         try {
             $nilai = Nilai::where('kode_siswa', $siswa->id)->where('semester', $request->semester)->get();
-            $nilaiSikapSpritual = NilaiSikap::where('kode_siswa', $siswa->id)->where('jenis_sikap', 'spritual')->get();
-            $nilaiSikapSosial = NilaiSikap::where('kode_siswa', $siswa->id)->where('jenis_sikap', 'sosial')->get();
+
+            $nilaiSikapSpritual = NilaiSikap::where('kode_siswa', $siswa->id)->where('jenis_sikap', 'spritual')->where('semester', $request->semester)->get();
+
+            $nilaiSikapSosial = NilaiSikap::where('kode_siswa', $siswa->id)->where('jenis_sikap', 'sosial')->where('semester', $request->semester)->get();
+
             $sakit = AbsensiSiswa::where('kode_siswa', $siswa->id)->where('kode_kehadiran', 4)->count();
+
             $izin = AbsensiSiswa::where('kode_siswa', $siswa->id)->where('kode_kehadiran', 2)->count();
+
             $bertugasKeluar = AbsensiSiswa::where('kode_siswa', $siswa->id)->where('kode_kehadiran', 3)->count();
+
             $terlambat = AbsensiSiswa::where('kode_siswa', $siswa->id)->where('kode_kehadiran', 5)->count();
+
             $tanpaKeterangan = AbsensiSiswa::where('kode_siswa', $siswa->id)->where('kode_kehadiran', 6)->count();
 
             $absen = array("sakit" => $sakit, "izin" => $izin, "bertugasKeluar" => $bertugasKeluar, "terlambat" => $terlambat, "tanpaKeterangan" => $tanpaKeterangan);
+
+            $ekstrakurikuler = NilaiEkstrakurikuler::where('kode_siswa', $siswa->id)->where('semester', $request->semester)->get();
+
+            $prestasi = NilaiPrestasi::where('kode_siswa', $siswa->id)->where('semester', $request->semester)->get();
+
         } catch (\Throwable $th) {
             return view('nilai_management.components.search_not_found');
         }
@@ -78,6 +95,6 @@ class NilaiController extends Controller
 
 
 
-        return view('nilai_management.components.nilai_lapor', compact(['nilai', 'title', 'nilaiSikapSpritual', 'nilaiSikapSosial', 'siswa', 'semester', 'absen']));
+        return view('nilai_management.components.nilai_lapor', compact(['nilai', 'title', 'nilaiSikapSpritual', 'nilaiSikapSosial', 'siswa', 'semester', 'absen', 'ekstrakurikuler', 'prestasi']));
     }
 }

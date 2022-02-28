@@ -7,10 +7,10 @@
             <div class="col-12">
                 <div class="card">
                     <div class="card-header">
-                        <h4 class="card-title">Masukkan Nilai Ujian Siswa</h4>
+                        <h4 class="card-title">Masukkan Nilai Ekstrakurikuler Siswa</h4>
                     </div>
                     <div class="card-body">
-                        <form class="form" action="{{ route('detail-nilai-ujian', ['id' => $kode_kelas]) }}" method="POST">
+                        <form class="form" action="{{ route('detail-ekstrakurikuler', ['id' => $kode_kelas]) }}" method="POST">
                             @csrf
                             <div class="row">
                                 <div class="col-md-6 col-12">
@@ -44,31 +44,12 @@
                                 </div>
                                 <div class="col-md-6 col-12">
                                     <div class="mb-1">
-                                        <label class="form-label" for="basicSelect">Mata Pelajaran</label>
-                                        <select class="form-select" id="basicSelect" name="kode_pelajaran">
-                                            <option disabled selected>Pilih Mata Pelajaran</option>
-                                            @foreach ($pelajaran as $data)
-                                                <option value="{{ $data->id }}">{{ $data->mata_pelajaran }}</option>
-                                            @endforeach
-                                        </select>
+                                        <label class="form-label" for="basicSelect">Kegiatan Ekstrakurikuler</label>
+                                        <input value="{{ old('kegiatan') }}" type="text" id="first-name"
+                                            class="form-control " name="kegiatan"
+                                            placeholder="Masukkan Kegiatan Ekstrakurikuler" />
                                     </div>
-                                    @error('kode_pelajaran')
-                                        <div class="text-danger mt-1">
-                                            {{ $message }}
-                                        </div>
-                                    @enderror
-                                </div>
-                                <div class="col-md-6 col-12">
-                                    <div class="mb-1">
-                                        <label class="form-label" for="basicSelect">Guru Pengajar</label>
-                                        <select class="form-select" id="basicSelect" name="kode_guru">
-                                            <option disabled selected>Pilih Mata Pelajaran</option>
-                                            @foreach ($guru as $data)
-                                                <option value="{{ $data->id }}">{{ $data->nama_guru }}</option>
-                                            @endforeach
-                                        </select>
-                                    </div>
-                                    @error('kode_guru')
+                                    @error('kegiatan')
                                         <div class="text-danger mt-1">
                                             {{ $message }}
                                         </div>
@@ -78,8 +59,8 @@
                                     <div class="mb-1">
                                         <label class="form-label" for="basicSelect">Nilai</label>
                                         <input value="{{ old('nilai') }}" type="number" id="first-name"
-                                            class="form-control text-lowercase" name="nilai"
-                                            placeholder="Masukkan Nilai Siswa" />
+                                            class="form-control " name="nilai"
+                                            placeholder="Masukkan Nilai" />
                                     </div>
                                     @error('nilai')
                                         <div class="text-danger mt-1">
@@ -87,28 +68,6 @@
                                         </div>
                                     @enderror
                                 </div>
-
-                                <div class="col-md-6 col-12">
-                                    <div class="form-floating mt-1">
-                                      <textarea
-                                        data-length="255"
-                                        class="form-control char-textarea"
-                                        id="textarea-counter"
-                                        rows="3"
-                                        placeholder="Counter"
-                                        style="height: 100px"
-                                        name="desk_pengetahuan"
-                                      ></textarea>
-                                      <label for="textarea-counter">Deskripsi Pengetahuan</label>
-                                    </div>
-                                    <small class="textarea-counter-value float-end"><span class="char-count">0</span> / 255 </small>
-                                    @error('desk_pengetahuan')
-                                        <div class="text-danger mt-1 mb-1">
-                                            {{ $message }}
-                                        </div>
-                                    @enderror
-                                </div>
-                                <div class="col-md-6 col-12"></div>
                                 <div class="col-md-6 col-12">
                                     <div class="form-floating mb-1 mt-1">
                                       <textarea
@@ -118,12 +77,12 @@
                                         rows="3"
                                         placeholder="Counter"
                                         style="height: 100px"
-                                        name="desk_keterampilan"
+                                        name="desk"
                                       ></textarea>
-                                      <label for="textarea-counter">Deskripsi Keterampilan</label>
+                                      <label for="textarea-counter">Deskripsi</label>
                                     </div>
                                     <small class="textarea-counter-value float-end"><span class="char-count">0</span> / 255 </small>
-                                    @error('desk_keterampilan')
+                                    @error('desk')
                                         <div class="text-danger mt-1">
                                             {{ $message }}
                                         </div>

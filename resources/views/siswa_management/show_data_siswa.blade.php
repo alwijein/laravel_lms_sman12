@@ -82,7 +82,7 @@
                                                         {{ $message }}
                                                     </div>
                                                 @enderror
-                                                <label>Nomor Telepon: </label>
+                                                <label>Alamat: </label>
                                                 <div class="mb-1">
                                                     <input type="text" name="alamat" value="{{old('alamat')}}" placeholder="Masukkan Alamat" class="form-control" />
                                                 </div>
