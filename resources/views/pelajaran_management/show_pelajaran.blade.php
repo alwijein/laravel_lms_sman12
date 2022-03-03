@@ -16,7 +16,7 @@
                                 <tr>
                                     <th>No</th>
                                     <th>Mata Pelajaran</th>
-                                    <th>Jumlah Jam</th>
+                                    <th>Jumlah Menit</th>
                                     <th>Aksi</th>
                                 </tr>
                             </thead>

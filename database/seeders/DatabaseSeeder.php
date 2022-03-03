@@ -31,9 +31,9 @@ class DatabaseSeeder extends Seeder
         $this->call(HariSeeder::class);
         $this->call(KehadiranSeeder::class);
 
-        Kelas::factory(10)->create();
-        Pelajaran::factory(10)->create();
-        Siswa::factory(10)->create();
-        Guru::factory(10)->create();
+        // Kelas::factory(10)->create();
+        // Pelajaran::factory(10)->create();
+        // Siswa::factory(10)->create();
+        // Guru::factory(10)->create();
     }
 }

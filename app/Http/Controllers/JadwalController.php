@@ -30,17 +30,18 @@ class JadwalController extends Controller
     public function detailJadwal($id)
     {
         $hari = Hari::all();
-        $senin = Jadwal::where('kode_kelas', $id)->where('kode_hari', 1)->get();
-        $selasa = Jadwal::where('kode_kelas', $id)->where('kode_hari', 2)->get();
-        $rabu = Jadwal::where('kode_kelas', $id)->where('kode_hari', 3)->get();
-        $kamis = Jadwal::where('kode_kelas', $id)->where('kode_hari', 4)->get();
-        $jumat = Jadwal::where('kode_kelas', $id)->where('kode_hari', 5)->get();
-        $sabtu = Jadwal::where('kode_kelas', $id)->where('kode_hari', 6)->get();
+        $senin = Jadwal::where('kode_kelas', $id)->where('kode_hari', 1)->orderBy('jam', 'asc')->get();
+        $selasa = Jadwal::where('kode_kelas', $id)->where('kode_hari', 2)->orderBy('jam', 'asc')->get();
+        $rabu = Jadwal::where('kode_kelas', $id)->where('kode_hari', 3)->orderBy('jam', 'asc')->get();
+        $kamis = Jadwal::where('kode_kelas', $id)->where('kode_hari', 4)->orderBy('jam', 'asc')->get();
+        $jumat = Jadwal::where('kode_kelas', $id)->where('kode_hari', 5)->orderBy('jam', 'asc')->get();
         $kelas = Kelas::all();
 
-        $title = $kelas[$id]->kelas;
+        // dd(" $kelas[$id]->kelas");
 
-        return view('siswa_management.detail_jadwal', compact(['hari', 'senin', 'selasa', 'rabu','kamis','jumat','sabtu', 'title']));
+        $title = $kelas[$id - 1]->kelas?? "";
+
+        return view('siswa_management.detail_jadwal', compact(['hari', 'senin', 'selasa', 'rabu','kamis','jumat', 'title']));
     }
 
     public function store(Request $request){
@@ -49,7 +50,6 @@ class JadwalController extends Controller
             'jamStart' => ['required'],
             'jamEnd' => ['required'],
             'matapelajaran' => ['required'],
-            'guru' => ['required'],
             'kelas' => ['required'],
         ]);
 
@@ -64,7 +64,7 @@ class JadwalController extends Controller
             'kode_kelas' => $request->kelas,
         ]);
 
-        return redirect(route('show-jadwal-belajar'));
+        return redirect(route('input-jadwal'));
     }
 
     public function editJadwal($id){
@@ -77,17 +77,18 @@ class JadwalController extends Controller
 
         $jamStart = $jam[0];
         $jamEnd = $jam[1];
+
+
         return view('siswa_management.edit_jadwal', compact(['jadwal','pelajaran', 'guru' , 'kelas', 'hari', 'jamStart', 'jamEnd']));
     }
 
-    public function updateJadwal(Request $request, $id){
+    public function updateJadwal(Request $request, $id, $kode_kelas){
 
         $request->validate([
             'hari' => ['required'],
             'jamStart' => ['required'],
             'jamEnd' => ['required'],
             'matapelajaran' => ['required'],
-            'guru' => ['required'],
             'kelas' => ['required'],
         ]);
 
@@ -95,7 +96,7 @@ class JadwalController extends Controller
 
         Jadwal::where('id', $id)->update([
             'kode_hari' => $request->hari,
-            'jam' => $request->jam,
+            'jam' => $jam,
             'kode_pelajaran' => $request->matapelajaran,
             'kode_guru' => $request->guru,
             'kode_kelas' => $request->kelas,
@@ -103,7 +104,7 @@ class JadwalController extends Controller
 
 
 
-        return redirect("detail-jadwal/$id/detail");
+        return redirect("detail-jadwal/$kode_kelas/detail");
     }
 
     public function showJadwalMengajar()

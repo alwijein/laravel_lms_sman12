@@ -19,14 +19,12 @@ class PelajaranController extends Controller
     public function storePelajaran(Request $request){
         $request->validate([
             'mata_pelajaran' => ['required', 'unique:pelajaran', 'min:3'],
-            'jumlah_jam' => ['required', 'max:1'],
-            'semester' => ['required'],
+            'jumlah_jam' => ['required'],
         ]);
 
         Pelajaran::create([
             'mata_pelajaran' => strtolower($request->mata_pelajaran),
             'jumlah_jam' => $request->jumlah_jam,
-            'semester' => $request->semester,
         ]);
 
         return redirect('show-pelajaran');

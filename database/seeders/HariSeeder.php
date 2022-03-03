@@ -40,11 +40,6 @@ class HariSeeder extends Seeder
                 'created_at' => now(),
                 'updated_at' => now()
             ],
-            [
-                'nama_hari' => 'sabtu',
-                'created_at' => now(),
-                'updated_at' => now()
-            ],
         ])->each(function( $hari){
             DB::table('hari')->insert($hari);
         });

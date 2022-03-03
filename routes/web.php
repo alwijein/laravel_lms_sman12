@@ -57,7 +57,7 @@ Route::middleware(['auth'])->group(function(){
             Route::post('/input-jadwal',[JadwalController::class, 'store']);
 
             Route::get('/detail-jadwal/{id}/edit',[JadwalController::class, 'editJadwal'])->name('edit-jadwal');
-            Route::put('/detail-jadwal/{id}',[JadwalController::class, 'updateJadwal']);
+            Route::put('/detail-jadwal/{id}/edit/{kode_kelas}',[JadwalController::class, 'updateJadwal'])->name('update-jadwal');
             Route::delete('/detail-jadwal/{id}',[JadwalController::class, 'destroy'])->name('delete-jadwal');
 
             Route::post('/show-kelas',[KelasController::class, 'store']);

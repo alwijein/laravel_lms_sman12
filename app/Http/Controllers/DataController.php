@@ -89,7 +89,7 @@ class DataController extends Controller
 
     public function storeGuru(Request $request){
         $request->validate([
-            'no_induk' => ['required', 'min:5'],
+            'no_induk' => ['unique:guru'],
             'nama_guru' => ['required', 'min:3'],
             'jk' => ['required'],
             'telp' => ['required', 'min:12'],
@@ -118,7 +118,7 @@ class DataController extends Controller
 
     public function updateGuru(Request $request, $id){
         $request->validate([
-            'no_induk' => ['required', 'min:5'],
+            // 'no_induk' => ['unique:no_induk'],
             'nama_guru' => ['required', 'min:3'],
             'jk' => ['required'],
             'telp' => ['required', 'min:12'],

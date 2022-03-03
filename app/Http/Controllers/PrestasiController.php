@@ -29,8 +29,6 @@ class PrestasiController extends Controller
             'jenisKegiatan' => ['required'],
             'keterangan' => ['required'],
             'semester' => ['required'],
-
-
         ]);
 
         NilaiPrestasi::create([

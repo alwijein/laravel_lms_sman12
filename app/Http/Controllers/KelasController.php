@@ -14,7 +14,7 @@ class KelasController extends Controller
 
     public function store(Request $request){
         $request->validate([
-            'kelas' => ['required', 'min:2' , 'unique:kelas']
+            'kelas' => ['required' , 'unique:kelas']
         ]);
 
         Kelas::create([

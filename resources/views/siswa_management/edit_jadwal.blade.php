@@ -10,7 +10,7 @@
                         <h4 class="card-title">Edit Jadwal Pelajaran</h4>
                     </div>
                     <div class="card-body">
-                        <form class="form" action="/detail-jadwal/{{$jadwal->id}}" method="POST">
+                        <form class="form" action="{{ route('update-jadwal', ['id'=>$jadwal->id, 'kode_kelas'=> $jadwal->kelas->id])}}" method="POST">
                             @method('put')
                             @csrf
                             <div class="row">
@@ -33,7 +33,7 @@
                                     <div class="mb-1">
                                         <label class="form-label" for="basicSelect">Pilih Mata Pelajaran</label>
                                         <select class="form-select" id="basicSelect" name="matapelajaran">
-                                            <option>{{$jadwal->pelajaran->mata_pelajaran}}</option>
+                                            <option value="{{$jadwal->pelajaran->id}}">{{$jadwal->pelajaran->mata_pelajaran}}</option>
 
                                             @foreach ($pelajaran as $matapelajaran)
                                             @if ($jadwal->pelajaran->mata_pelajaran != $matapelajaran->mata_pelajaran)
@@ -65,11 +65,12 @@
                                     </div>
                                    @enderror
                                 </div>
+                                @if ($jadwal->kode_guru != null)
                                 <div class="col-md-6 col-12">
                                     <div class="mb-1">
                                         <label class="form-label" for="basicSelect">Pilih Guru</label>
                                         <select class="form-select" id="basicSelect" name="guru">
-                                            <option value="{{$jadwal->guru->id}}">{{$jadwal->guru->nama_guru}}</option>
+                                            <option value="{{$jadwal->guru->id }}">{{$jadwal->guru->nama_guru}}</option>
 
                                             @foreach ($guru as $namaguru)
                                             @if ($jadwal->guru->nama_guru != $namaguru->nama_guru)
@@ -79,6 +80,8 @@
                                         </select>
                                     </div>
                                 </div>
+                                @endif
+
                                 <div class="col-md-6 col-12">
                                     <div class="mb-1">
                                         <label class="form-label" for="basicSelect">Pilih Kelas</label>

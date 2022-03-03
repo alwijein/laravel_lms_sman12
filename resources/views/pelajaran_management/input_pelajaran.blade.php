@@ -32,11 +32,11 @@
                                 <div class="col-12">
                                     <div class="mb-1 row">
                                         <div class="col-sm-3">
-                                            <label class="col-form-label" for="email-id">Jumlah Jam</label>
+                                            <label class="col-form-label" for="email-id">Jumlah Menit</label>
                                         </div>
                                         <div class="col-sm-9">
                                             <input value="{{old('jumlah_jam')}}"  type="number" id="email-id" class="form-control" name="jumlah_jam"
-                                                placeholder="Jumlah Jam" />
+                                                placeholder="Jumlah Menit" />
                                                 @error('jumlah_jam')
                                                 <div class="text-danger mt-1">
                                                     {{ $message }}
