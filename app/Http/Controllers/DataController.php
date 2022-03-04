@@ -112,8 +112,9 @@ class DataController extends Controller
     }
 
     public function storeGuru(Request $request){
+
         $request->validate([
-            'no_induk' => ['unique:guru'],
+            'no_induk' => $request->no_induk != null? ['unique:guru'] : [''],
             'nama_guru' => ['required', 'min:3'],
             'jk' => ['required'],
             'telp' => ['required', 'min:12'],
