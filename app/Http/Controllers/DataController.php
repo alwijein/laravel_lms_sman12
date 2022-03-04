@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Guru;
+use App\Models\Jadwal;
 use App\Models\Kelas;
 use App\Models\Pelajaran;
 use App\Models\Siswa;
@@ -11,14 +12,24 @@ use Illuminate\Http\Request;
 
 class DataController extends Controller
 {
-    public function showDataSiswa(){
-        $siswa = Siswa::all();
+    // public function showDataSiswa(){
+    //     $siswa = Siswa::all();
+    //     $kelas = Kelas::all();
+    //     return view('siswa_management.show_data_siswa', compact(['siswa', 'kelas']));
+    // }
+
+    public function showDataSiswa(Request $request)
+    {
         $kelas = Kelas::all();
-        return view('siswa_management.show_data_siswa', compact(['siswa', 'kelas']));
+
+        if($request->nomor != null){
+            $siswa = Siswa::where('no_induk', $request->nomor)->get();
+                return view('siswa_management.show_data_siswa', compact(['siswa', 'kelas']));
+        }else{
+            $siswa = Siswa::all();
+            return view('siswa_management.show_data_siswa', compact(['kelas', 'siswa']));
+        }
     }
-
-
-
 
     public function storeSiswa(Request $request){
         $request->validate([
@@ -81,10 +92,23 @@ class DataController extends Controller
 
     // Controller for guru
 
-    public function showDataGuru(){
-        $guru = Guru::all();
+    // public function showDataGuru(){
+    //     $guru = Guru::all();
+    //     $pelajaran = Pelajaran::all();
+    //     return view('guru_management.show_data_guru', compact(['guru', 'pelajaran']));
+    // }
+
+    public function showDataGuru(Request $request)
+    {
         $pelajaran = Pelajaran::all();
-        return view('guru_management.show_data_guru', compact(['guru', 'pelajaran']));
+
+        if($request->nomor != null){
+            $guru = Guru::where('no_induk', $request->nomor)->get();
+                return view('guru_management.show_data_guru', compact(['guru', 'pelajaran']));
+        }else{
+            $guru = Guru::all();
+            return view('guru_management.show_data_guru', compact(['pelajaran', 'guru']));
+        }
     }
 
     public function storeGuru(Request $request){

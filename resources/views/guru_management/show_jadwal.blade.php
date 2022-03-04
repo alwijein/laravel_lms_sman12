@@ -7,7 +7,7 @@
             <div class="input-group-text">
                 <i data-feather="search"></i>
             </div>
-            <input type="text" value="{{old('no_induk')}}" class="form-control" placeholder="Masukkan Nomor Induk Guru"  name="no_induk"/>
+            <input type="text" value="{{old('nama_guru')}}" class="form-control" placeholder="Masukkan Nama Lengkap Guru"  name="nama_guru"/>
         </div>
         <button type="submit" class="btn btn-primary col-2"> Cari </button>
     </form>

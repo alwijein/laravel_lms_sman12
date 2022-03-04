@@ -116,9 +116,9 @@ class JadwalController extends Controller
     public function showJadwalGuru(Request $request)
     {
         $request->validate([
-            'no_induk' => ['required'],
+            'nama_guru' => ['required'],
         ]);
-        $guru = Guru::where('no_induk', $request->no_induk)->first();
+        $guru = Guru::where('nama_guru', $request->nama_guru)->first();
 
         try {
             $jadwal = Jadwal::where('kode_guru', $guru->id)->get();

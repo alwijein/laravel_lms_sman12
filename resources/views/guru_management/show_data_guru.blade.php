@@ -6,6 +6,18 @@
 
 @section('content')
     <section class="app-user-list">
+
+        <form class="faq-search-input row mb-3" action="{{ route('show-data-guru') }} " method="get">
+            <div class="input-group input-group-merge col">
+                <div class="input-group-text">
+                    <i data-feather="search"></i>
+                </div>
+                <input type="text" value="{{old('nomor')}}" class="form-control" placeholder="Masukkan Nomor Induk Guru"  name="nomor"/>
+            </div>
+            <button type="submit" class="btn btn-primary col-2"> Cari </button>
+        </form>
+
+
         <div class="row" id="basic-table">
             <div class="col-12">
                 <div class="card">
