@@ -86,13 +86,11 @@ Route::middleware(['auth'])->group(function(){
             Route::get('/show-pelajaran',[PelajaranController::class, 'showPelajaran'])->name('show-pelajaran');
             Route::delete('/show-pelajaran/{id}',[PelajaranController::class, 'destroy'])->name('delete-pelajaran');
 
-            Route::get('/input-nilai/sikap',[NilaiController::class, 'inputNilaiSikap'])->name('input-nilai-sikap');
-            Route::get('/input-nilai/sikap/{id}/detail',[NilaiController::class, 'detailNilaiSikap'])->name('detail-nilai-sikap');
-            Route::post('/input-nilai/sikap/{id}/detail',[NilaiController::class, 'storeNilaiSikap']);
-
 
 
         });
+
+
 
             Route::get('/show-jadwal/mengajar',[JadwalController::class, 'showJadwalMengajar'])->name('show-jadwal-mengajar');
 
@@ -112,20 +110,29 @@ Route::middleware(['auth'])->group(function(){
 
             Route::delete('/show-ujian/{id}',[UjianContoller::class, 'destroy'])->name('delete-ujian');
 
-            Route::get('input-nilai-ujian', [UjianContoller::class, 'inputNilaiUjian'])->name('input-nilai-ujian');
-            Route::get('input-nilai-ujian/{id}/detail', [UjianContoller::class, 'detailNilaiUjian'])->name('detail-nilai-ujian');
-            Route::post('input-nilai-ujian/{id}/detail', [UjianContoller::class, 'storeNilaiUjian']);
-
-            Route::get('/input-nilai/ekstrakurikuler', [EkstrakurikulerController::class, 'inputNilai'])->name('input-ekstrakurikuler');
-            Route::get('/input-nilai/ekstrakurikuler/{id}/detail', [EkstrakurikulerController::class, 'detailNilai'])->name('detail-ekstrakurikuler');
-            Route::post('/input-nilai/ekstrakurikuler/{id}/detail', [EkstrakurikulerController::class, 'storeNilai']);
-
-            Route::get('/input-nilai/prestasi', [PrestasiController::class, 'inputNilai'])->name('input-prestasi');
-            Route::get('/input-nilai/prestasi/{id}/detail', [PrestasiController::class, 'detailNilai'])->name('detail-prestasi');
-            Route::post('/input-nilai/prestasi/{id}/detail', [PrestasiController::class, 'storeNilai']);
 
 
 
+
+    });
+
+    Route::middleware(['isWaliKelas'])->group(function(){
+
+        Route::get('/input-nilai/sikap',[NilaiController::class, 'inputNilaiSikap'])->name('input-nilai-sikap');
+        Route::get('/input-nilai/sikap/{id}/detail',[NilaiController::class, 'detailNilaiSikap'])->name('detail-nilai-sikap');
+        Route::post('/input-nilai/sikap/{id}/detail',[NilaiController::class, 'storeNilaiSikap']);
+
+        Route::get('input-nilai-ujian', [UjianContoller::class, 'inputNilaiUjian'])->name('input-nilai-ujian');
+        Route::get('input-nilai-ujian/{id}/detail', [UjianContoller::class, 'detailNilaiUjian'])->name('detail-nilai-ujian');
+        Route::post('input-nilai-ujian/{id}/detail', [UjianContoller::class, 'storeNilaiUjian']);
+
+        Route::get('/input-nilai/ekstrakurikuler', [EkstrakurikulerController::class, 'inputNilai'])->name('input-ekstrakurikuler');
+        Route::get('/input-nilai/ekstrakurikuler/{id}/detail', [EkstrakurikulerController::class, 'detailNilai'])->name('detail-ekstrakurikuler');
+        Route::post('/input-nilai/ekstrakurikuler/{id}/detail', [EkstrakurikulerController::class, 'storeNilai']);
+
+        Route::get('/input-nilai/prestasi', [PrestasiController::class, 'inputNilai'])->name('input-prestasi');
+        Route::get('/input-nilai/prestasi/{id}/detail', [PrestasiController::class, 'detailNilai'])->name('detail-prestasi');
+        Route::post('/input-nilai/prestasi/{id}/detail', [PrestasiController::class, 'storeNilai']);
 
     });
 

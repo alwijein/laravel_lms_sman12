@@ -64,7 +64,7 @@ class UserController extends Controller
     // function for guru
 
     public function showGuru(){
-        $users = DB::table('users')->where('role' ,'=', 'Guru')->get();
+        $users = DB::table('users')->whereIn('role' , ['Guru', 'WaliKelas'])->get();
         return view('users_management.show_guru', compact('users'));
     }
 
@@ -73,6 +73,7 @@ class UserController extends Controller
         $request->validate([
             'name' => ['required',  'min:3'],
             'email' => ['required', 'unique:users' , 'email'],
+            'role' => ['required'],
             'password' => ['required', 'min:8'],
         ]);
 
@@ -82,7 +83,7 @@ class UserController extends Controller
                 'role' => $request->role,
                 'password' => Hash::make($request->password)
             ]);
-            return redirect('/show-siswa');
+            return redirect('/show-guru');
     }
 
 
@@ -95,7 +96,7 @@ class UserController extends Controller
     public function updateGuru(Request $request, $id){
         $request->validate([
             'name' => ['required',  'min:3'],
-            'email' => ['required', 'unique:users' , 'email'],
+            'email' => ['required' , 'email'],
             'password' => ['required', 'min:8'],
         ]);
 

@@ -48,10 +48,12 @@
                                           {{ $message }}
                                       </div>
                                   @enderror
-                                      <label hidden>Status: </label>
-                                      <div class="mb-1">
-                                        <input hidden type="text" value="Guru" name="role" placeholder="Email Address" class="form-control" />
-                                      </div>
+                                      <label class="form-label" for="basicSelect">Status</label>
+                                      <select class="form-select mb-1" id="basicSelect" name="role">
+                                          <option disabled selected>Pilih Status</option>
+                                          <option selected value="Guru">Guru</option>
+                                          <option value="WaliKelas">Wali Kelas</option>
+                                      </select>
                                       <label>Password: </label>
                                       <div class="mb-1">
                                         <input type="password" name="password" placeholder="Masukkan Password" class="form-control" />

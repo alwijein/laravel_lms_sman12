@@ -29,9 +29,10 @@ $avatar = substr(Auth::user()->name, 0, 2);
     <link rel="stylesheet" type="text/css" href={{ asset('app-assets/vendors/css/vendors.min.css') }}>
     <link rel="stylesheet" type="text/css" href={{ asset('app-assets/vendors/css/charts/apexcharts.css') }}>
     <link rel="stylesheet" type="text/css" href={{ asset('app-assets/vendors/css/extensions/toastr.min.css') }}>
-    <link rel="stylesheet" type="text/css" href={{asset('app-assets/vendors/css/vendors.min.css')}}>
-    <link rel="stylesheet" type="text/css" href={{asset('app-assets/vendors/css/pickers/pickadate/pickadate.css')}}>
-    <link rel="stylesheet" type="text/css" href={{asset('app-assets/vendors/css/pickers/flatpickr/flatpickr.min.css')}}>
+    <link rel="stylesheet" type="text/css" href={{ asset('app-assets/vendors/css/vendors.min.css') }}>
+    <link rel="stylesheet" type="text/css" href={{ asset('app-assets/vendors/css/pickers/pickadate/pickadate.css') }}>
+    <link rel="stylesheet" type="text/css"
+        href={{ asset('app-assets/vendors/css/pickers/flatpickr/flatpickr.min.css') }}>
     <!-- END: Vendor CSS-->
 
     {{-- BEGIN: Vendor DataTables --}}
@@ -62,8 +63,10 @@ $avatar = substr(Auth::user()->name, 0, 2);
         href={{ asset('app-assets/css/plugins/extensions/ext-component-toastr.min.css') }}>
     <link rel="stylesheet" type="text/css" href={{ asset('app-assets/css/plugins/forms/form-validation.css') }}>
     <link rel="stylesheet" type="text/css" href={{ asset('app-assets/css/pages/app-user.min.css') }}>
-    <link rel="stylesheet" type="text/css" href={{asset('app-assets/css/plugins/forms/pickers/form-flat-pickr.min.css')}}>
-    <link rel="stylesheet" type="text/css" href={{asset('app-assets/css/plugins/forms/pickers/form-pickadate.min.css')}}>
+    <link rel="stylesheet" type="text/css"
+        href={{ asset('app-assets/css/plugins/forms/pickers/form-flat-pickr.min.css') }}>
+    <link rel="stylesheet" type="text/css"
+        href={{ asset('app-assets/css/plugins/forms/pickers/form-pickadate.min.css') }}>
     <!-- END: Page CSS-->
 
     <!-- BEGIN: Custom CSS-->
@@ -90,9 +93,9 @@ $avatar = substr(Auth::user()->name, 0, 2);
                                 data-feather="menu"></i></a></li>
                 </ul>
                 <ul class="nav navbar-nav bookmark-icons">
-                    <li class="nav-item d-none d-lg-block"><a class="nav-link" href={{route('show-jadwal-belajar')}}
-                            data-bs-toggle="tooltip" data-bs-placement="bottom" title="Jadwal Belajar"><i
-                                class="ficon" data-feather="calendar"></i></a></li>
+                    <li class="nav-item d-none d-lg-block"><a class="nav-link"
+                            href={{ route('show-jadwal-belajar') }} data-bs-toggle="tooltip" data-bs-placement="bottom"
+                            title="Jadwal Belajar"><i class="ficon" data-feather="calendar"></i></a></li>
                 </ul>
             </div>
             <ul class="nav navbar-nav align-items-center ms-auto">
@@ -104,16 +107,18 @@ $avatar = substr(Auth::user()->name, 0, 2);
                         <div class="user-nav d-sm-flex d-none"><span
                                 class="user-name fw-bolder">{{ $user->name }}</span><span
                                 class="user-status">{{ $user->role }}</span></div><span
-                            class="avatar bg-light-primary"><div class="avatar-content">{{$avatar}}</div></span>
+                            class="avatar bg-light-primary">
+                            <div class="avatar-content">{{ $avatar }}</div>
+                        </span>
                     </a>
                     <div class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdown-user"><a
-                            class="dropdown-item" href={{route('show-profile')}}><i class="me-50"
+                            class="dropdown-item" href={{ route('show-profile') }}><i class="me-50"
                                 data-feather="user"></i> Profile</a>
                         <div class="dropdown-divider">
-                                <form action="{{route('logout')}}" method="POST">
-                                    @csrf
-                            </div><button type="submit" class="dropdown-item" href="page-account-settings.html">
-                                <i class="me-50" data-feather="power"></i> Logout</a>
+                            <form action="{{ route('logout') }}" method="POST">
+                                @csrf
+                        </div><button type="submit" class="dropdown-item" href="page-account-settings.html">
+                            <i class="me-50" data-feather="power"></i> Logout</a>
                             </form>
                     </div>
                 </li>
@@ -146,233 +151,271 @@ $avatar = substr(Auth::user()->name, 0, 2);
                             data-feather="home"></i><span class="menu-title text-truncate"
                             data-i18n="Dashboards">Dashboards</span></a>
                     <ul class="menu-content">
-                        <li class="{{ request()->is('/*') ? 'active' : '' }}"><a class="d-flex align-items-center" href="{{route('home')}}"><i
-                                    data-feather="circle"></i><span class="menu-item text-truncate"
-                                    data-i18n="eCommerce">SMAN 12</span></a></li>
+                        <li class="{{ request()->is('/*') ? 'active' : '' }}"><a class="d-flex align-items-center"
+                                href="{{ route('home') }}"><i data-feather="circle"></i><span
+                                    class="menu-item text-truncate" data-i18n="eCommerce">SMAN 12</span></a></li>
                     </ul>
                     @if (Auth::user()->role == 'Admin')
 
-                    <ul class="menu-content">
-                        <li class="{{ request()->is('dashboard*') ? 'active' : '' }}"><a class="d-flex align-items-center" href="{{route('dashboard')}}"><i
-                                    data-feather="circle"></i><span class="menu-item text-truncate"
-                                    data-i18n="eCommerce">Admin Dashboard</span></a></li>
-                    </ul>
+                        <ul class="menu-content">
+                            <li class="{{ request()->is('dashboard*') ? 'active' : '' }}"><a
+                                    class="d-flex align-items-center" href="{{ route('dashboard') }}"><i
+                                        data-feather="circle"></i><span class="menu-item text-truncate"
+                                        data-i18n="eCommerce">Admin Dashboard</span></a></li>
+                        </ul>
                     @endif
                 </li>
                 @if (Auth::user()->role == 'Admin')
 
-                <li class=" navigation-header"><span data-i18n="Apps &amp; Pages">User Management</span><i
-                        data-feather="more-horizontal"></i>
-                </li>
-                <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i
-                            data-feather="user"></i><span class="menu-title text-truncate"
-                            data-i18n="User">User</span></a>
-                    <ul class="menu-content">
-                        <li class="{{ request()->is('show-siswa*') ? 'active' : '' }}"><a
-                                class="d-flex align-items-center" href="{{ route('show-siswa') }}"><i
-                                    data-feather="circle"></i><span class="menu-item text-truncate"
-                                    data-i18n="List">Daftar Siswa</span></a>
-                        </li>
-                        <li class="{{ request()->is('show-guru*') ? 'active' : '' }}"><a
-                                class="d-flex align-items-center" href="{{ route('show-guru') }}"><i
-                                    data-feather="circle"></i><span class="menu-item text-truncate"
-                                    data-i18n="View">Daftar Guru</span></a>
-                        </li>
-                    </ul>
-                </li>
+                    <li class=" navigation-header"><span data-i18n="Apps &amp; Pages">User Management</span><i
+                            data-feather="more-horizontal"></i>
+                    </li>
+                    <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i
+                                data-feather="user"></i><span class="menu-title text-truncate"
+                                data-i18n="User">User</span></a>
+                        <ul class="menu-content">
+                            <li class="{{ request()->is('show-siswa*') ? 'active' : '' }}"><a
+                                    class="d-flex align-items-center" href="{{ route('show-siswa') }}"><i
+                                        data-feather="circle"></i><span class="menu-item text-truncate"
+                                        data-i18n="List">Daftar Siswa</span></a>
+                            </li>
+                            <li class="{{ request()->is('show-guru*') ? 'active' : '' }}"><a
+                                    class="d-flex align-items-center" href="{{ route('show-guru') }}"><i
+                                        data-feather="circle"></i><span class="menu-item text-truncate"
+                                        data-i18n="View">Daftar Guru</span></a>
+                            </li>
+                        </ul>
+                    </li>
                 @endif
-                <li class=" navigation-header"><span data-i18n="User Interface">Siswa Management</span><i
+                @if (Auth::user()->role != 'WaliKelas')
+                    <li class=" navigation-header"><span data-i18n="User Interface">Siswa Management</span><i
+                            data-feather="more-horizontal"></i>
+                    </li>
+                    <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i
+                                data-feather="calendar"></i><span class="menu-title text-truncate"
+                                data-i18n="User">Jadwal
+                                Siswa</span></a>
+                        <ul class="menu-content">
+                            @if (Auth::user()->role == 'Admin')
+
+                                <li class="{{ request()->is('input-jadwal*') ? 'active' : '' }}"><a
+                                        class="d-flex align-items-center" href="{{ route('input-jadwal') }}"><i
+                                            data-feather="circle"></i><span class="menu-item text-truncate"
+                                            data-i18n="List">Input Jadwal</span></a>
+                                </li>
+                            @endif
+                            <li class="{{ request()->is('show-jadwal/belajar*') ? 'active' : '' }}"><a
+                                    class="d-flex align-items-center" href="{{ route('show-jadwal-belajar') }}"><i
+                                        data-feather="circle"></i><span class="menu-item text-truncate"
+                                        data-i18n="List">Lihat Jadwal</span></a>
+                            </li>
+                    </li>
+            </ul>
+            </li>
+            @endif
+
+            @if (Auth::user()->role == 'Admin')
+                <li class=" nav-item"><a class="d-flex align-items-center mt-1" href="#"><i
+                            data-feather="book-open"></i><span class="menu-title text-truncate" data-i18n="User">Kelas
+                            Siswa</span></a>
+                    <ul class="menu-content">
+                        <li class="{{ request()->is('show-kelas*') ? 'active' : '' }}"><a
+                                class="d-flex align-items-center" href="{{ route('show-kelas') }}"><i
+                                    data-feather="circle"></i><span class="menu-item text-truncate"
+                                    data-i18n="List">Lihat
+                                    Kelas</span></a>
+                        </li>
+                </li>
+                </ul>
+                <li class=" nav-item"><a class="d-flex align-items-center mt-1" href="#"><i
+                            data-feather="database"></i><span class="menu-title text-truncate" data-i18n="User">Data
+                            Siswa</span></a>
+                    <ul class="menu-content">
+                        <li class="{{ request()->is('show-data-siswa*') ? 'active' : '' }}"><a
+                                class="d-flex align-items-center" href="{{ route('show-data-siswa') }}"><i
+                                    data-feather="circle"></i><span class="menu-item text-truncate"
+                                    data-i18n="List">Daftar
+                                    Siswa</span></a>
+                        </li>
+                </li>
+                </ul>
+                </li>
+            @endif
+            @if (Auth::user()->role == 'Admin' || Auth::user()->role == 'Guru')
+
+                <li class=" navigation-header"><span data-i18n="User Interface">Guru Management</span><i
                         data-feather="more-horizontal"></i>
                 </li>
                 <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i
                             data-feather="calendar"></i><span class="menu-title text-truncate" data-i18n="User">Jadwal
+                            Mengajar</span></a>
+                    <ul class="menu-content">
+                        <li class="{{ request()->is('show-jadwal/mengajar*') ? 'active' : '' }}"><a
+                                class="d-flex align-items-center" href="{{ route('show-jadwal-mengajar') }}"><i
+                                    data-feather="circle"></i><span class="menu-item text-truncate"
+                                    data-i18n="List">Lihat
+                                    Jadwal</span></a>
+                        </li>
+                </li>
+                </ul>
+                <li class=" nav-item"><a class="d-flex align-items-center mt-1" href="#"><i
+                            data-feather="check-circle"></i><span class="menu-title text-truncate"
+                            data-i18n="User">Absensi</span></a>
+                    <ul class="menu-content">
+                        <li class="{{ request()->is('show-absensi-siswa*') ? 'active' : '' }}"><a
+                                class="d-flex align-items-center" href="{{ route('show-absensi-siswa') }}"><i
+                                    data-feather="circle"></i><span class="menu-item text-truncate"
+                                    data-i18n="List">Absen Siswa</span></a>
+                        </li>
+                </li>
+                </ul>
+                </li>
+            @endif
+            @if (Auth::user()->role == 'Admin' || Auth::user()->role == 'Guru' || Auth::user()->role == 'Siswa')
+
+                <li class=" nav-item"><a class="d-flex align-items-center mt-1" href="#"><i
+                            data-feather="database"></i><span class="menu-title text-truncate" data-i18n="User">Data
+                            Guru</span></a>
+                    <ul class="menu-content">
+                        <li class="{{ request()->is('show-data-guru*') ? 'active' : '' }}"><a
+                                class="d-flex align-items-center" href="{{ route('show-data-guru') }}"><i
+                                    data-feather="circle"></i><span class="menu-item text-truncate"
+                                    data-i18n="List">Daftar
+                                    Guru</span></a>
+                        </li>
+                </li>
+                </ul>
+                </li>
+            @endif
+            @if (Auth::user()->role == 'Admin')
+                <li class=" navigation-header"><span data-i18n="User Interface">Pelajaran Management</span><i
+                        data-feather="more-horizontal"></i>
+                </li>
+                <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i
+                            data-feather="book"></i><span class="menu-title text-truncate" data-i18n="User">Pelajaran
                             Siswa</span></a>
                     <ul class="menu-content">
-                        @if (Auth::user()->role == 'Admin')
-
-                        <li class="{{ request()->is('input-jadwal*') ? 'active' : '' }}"><a
-                                class="d-flex align-items-center" href="{{ route('input-jadwal') }}"><i
+                        <li class="{{ request()->is('input-pelajaran*') ? 'active' : '' }}"><a
+                                class="d-flex align-items-center" href="{{ route('input-pelajaran') }}"><i
                                     data-feather="circle"></i><span class="menu-item text-truncate"
-                                    data-i18n="List">Input Jadwal</span></a>
+                                    data-i18n="List">Input
+                                    Pelajaran</span></a>
                         </li>
-                        @endif
-                        <li class="{{ request()->is('show-jadwal/belajar*') ? 'active' : '' }}"><a
-                                class="d-flex align-items-center" href="{{ route('show-jadwal-belajar') }}"><i
+                        <li class="{{ request()->is('show-pelajaran*') ? 'active' : '' }}"><a
+                                class="d-flex align-items-center" href="{{ route('show-pelajaran') }}"><i
                                     data-feather="circle"></i><span class="menu-item text-truncate"
-                                    data-i18n="List">Lihat Jadwal</span></a>
+                                    data-i18n="List">Lihat
+                                    Daftar Pelajaran</span></a>
                         </li>
                 </li>
-            </ul>
-            </li>
-            @if (Auth::user()->role == 'Admin')
-            <li class=" nav-item"><a class="d-flex align-items-center mt-1" href="#"><i
-                        data-feather="book-open"></i><span class="menu-title text-truncate" data-i18n="User">Kelas
-                        Siswa</span></a>
-                <ul class="menu-content">
-                    <li class="{{ request()->is('show-kelas*') ? 'active' : '' }}"><a
-                            class="d-flex align-items-center" href="{{ route('show-kelas') }}"><i
-                                data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="List">Lihat
-                                Kelas</span></a>
-                    </li>
-            </li>
-        </ul>
-        <li class=" nav-item"><a class="d-flex align-items-center mt-1" href="#"><i
-            data-feather="database"></i><span class="menu-title text-truncate" data-i18n="User">Data
-                Siswa</span></a>
-                <ul class="menu-content">
-                    <li class="{{ request()->is('show-data-siswa*') ? 'active' : '' }}"><a
-                        class="d-flex align-items-center" href="{{ route('show-data-siswa') }}"><i
-                        data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="List">Daftar
-                            Siswa</span></a>
-                        </li>
-                    </li>
                 </ul>
-            </li>
-            @endif
-            @if (Auth::user()->role == 'Admin' || Auth::user()->role == 'Guru')
-
-            <li class=" navigation-header"><span data-i18n="User Interface">Guru Management</span><i
-                    data-feather="more-horizontal"></i>
-            </li>
-            <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i
-                        data-feather="calendar"></i><span class="menu-title text-truncate" data-i18n="User">Jadwal
-                        Mengajar</span></a>
-                <ul class="menu-content">
-                    <li class="{{ request()->is('show-jadwal/mengajar*') ? 'active' : '' }}"><a
-                            class="d-flex align-items-center" href="{{ route('show-jadwal-mengajar') }}"><i
-                                data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="List">Lihat
-                                Jadwal</span></a>
-                    </li>
-            </li>
-            </ul>
-            <li class=" nav-item"><a class="d-flex align-items-center mt-1" href="#"><i
-                        data-feather="check-circle"></i><span class="menu-title text-truncate" data-i18n="User">Absensi</span></a>
-                        <ul class="menu-content">
-                            <li class="{{ request()->is('show-absensi-siswa*') ? 'active' : '' }}"><a
-                                class="d-flex align-items-center" href="{{ route('show-absensi-siswa') }}"><i
-                                data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="List">Absen Siswa</span></a>
-                            </li>
-                        </li>
-                    </ul>
                 </li>
-                @endif
-             @if (Auth::user()->role == 'Admin' || Auth::user()->role == 'Guru' || Auth::user()->role == 'Siswa')
-
-            <li class=" nav-item"><a class="d-flex align-items-center mt-1" href="#"><i
-                        data-feather="database"></i><span class="menu-title text-truncate" data-i18n="User">Data
-                        Guru</span></a>
-                <ul class="menu-content">
-                    <li class="{{ request()->is('show-data-guru*') ? 'active' : '' }}"><a
-                            class="d-flex align-items-center" href="{{ route('show-data-guru') }}"><i
-                                data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="List">Daftar
-                                Guru</span></a>
-                    </li>
-            </li>
-            </ul>
-            </li>
-            @endif
-            @if (Auth::user()->role == 'Admin')
-            <li class=" navigation-header"><span data-i18n="User Interface">Pelajaran Management</span><i
-                    data-feather="more-horizontal"></i>
-            </li>
-            <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i data-feather="book"></i><span
-                        class="menu-title text-truncate" data-i18n="User">Pelajaran Siswa</span></a>
-                <ul class="menu-content">
-                    <li class="{{ request()->is('input-pelajaran*') ? 'active' : '' }}"><a class="d-flex align-items-center"
-                            href="{{ route('input-pelajaran') }}"><i data-feather="circle"></i><span
-                                class="menu-item text-truncate" data-i18n="List">Input
-                                Pelajaran</span></a>
-                    </li>
-                    <li class="{{ request()->is('show-pelajaran*') ? 'active' : '' }}"><a class="d-flex align-items-center"
-                            href="{{ route('show-pelajaran') }}"><i data-feather="circle"></i><span
-                                class="menu-item text-truncate" data-i18n="List">Lihat
-                                Daftar Pelajaran</span></a>
-                    </li>
-            </li>
-            </ul>
-            </li>
             @endif
             <li class=" navigation-header"><span data-i18n="User Interface">Ujian Management</span><i
                     data-feather="more-horizontal"></i>
             </li>
-            <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i data-feather="calendar"></i><span
-                        class="menu-title text-truncate" data-i18n="User">Jadwal Ujian</span></a>
+            <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i
+                        data-feather="calendar"></i><span class="menu-title text-truncate" data-i18n="User">Jadwal
+                        Ujian</span></a>
                 <ul class="menu-content">
-                    @if(Auth::user()->role == 'Admin')
-                    <li class="{{ request()->is('input-ujian*') ? 'active' : '' }}" ><a class="d-flex align-items-center" href="{{route('input-ujian')}}"><i
-                                data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="List">Input
-                                Jadwal Ujian</span></a>
-                    </li>
+                    @if (Auth::user()->role == 'Admin')
+                        <li class="{{ request()->is('input-ujian*') ? 'active' : '' }}"><a
+                                class="d-flex align-items-center" href="{{ route('input-ujian') }}"><i
+                                    data-feather="circle"></i><span class="menu-item text-truncate"
+                                    data-i18n="List">Input
+                                    Jadwal Ujian</span></a>
+                        </li>
                     @endif
-                    <li class="{{ request()->is('show-ujian*') ? 'active' : '' }}" ><a class="d-flex align-items-center" href="{{route('show-ujian')}}"><i
+                    <li class="{{ request()->is('show-ujian*') ? 'active' : '' }}"><a
+                            class="d-flex align-items-center" href="{{ route('show-ujian') }}"><i
                                 data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="List">
                                 Jadwal Ujian</span></a>
                     </li>
             </li>
             </ul>
-            <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i data-feather="clipboard"></i><span
-                        class="menu-title text-truncate" data-i18n="User">Hasil Ujian</span></a>
-                <ul class="menu-content">
-                    @if(Auth::user()->role == 'Admin' || Auth::user()->role == 'Guru' )
 
-                    <li class="{{ request()->is('input-nilai-ujian*') ? 'active' : '' }}"><a class="d-flex align-items-center" href="{{route('input-nilai-ujian')}}"><i
-                                data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="List">Input
+            <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i
+                        data-feather="clipboard"></i><span class="menu-title text-truncate" data-i18n="User">Hasil
+                        Ujian</span></a>
+                <ul class="menu-content">
+                    @if (Auth::user()->role == 'Admin' || Auth::user()->role == 'WaliKelas')
+
+                        <li class="{{ request()->is('input-nilai-ujian*') ? 'active' : '' }}"><a
+                                class="d-flex align-items-center" href="{{ route('input-nilai-ujian') }}"><i
+                                    data-feather="circle"></i><span class="menu-item text-truncate"
+                                    data-i18n="List">Input
+                                    Nilai Ujian</span></a>
+                        </li>
+                    @endif
+                    <li class="{{ request()->is('show-nilai/ujian*') ? 'active' : '' }}"><a
+                            class="d-flex align-items-center" href="{{ route('show-nilai-ujian') }}"><i
+                                data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="List">Lihat
                                 Nilai Ujian</span></a>
                     </li>
-                    @endif
-                    <li class="{{ request()->is('show-nilai/ujian*') ? 'active' : '' }}"><a class="d-flex align-items-center" href="{{route('show-nilai-ujian')}}"><i
-                                data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="List">Lihat Nilai Ujian</span></a>
-                    </li>
             </li>
             </ul>
             </li>
 
-            <li class=" navigation-header"><span data-i18n="User Interface">Nilai Management</span><i
-                data-feather="more-horizontal"></i>
-            </li>
-            @if (Auth::user()->role == 'Admin')
-            <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i data-feather="thumbs-up"></i><span
-                        class="menu-title text-truncate" data-i18n="User">Nilai Sikap</span></a>
-                <ul class="menu-content">
-                    <li class="{{ request()->is('input-nilai/sikap*') ? 'active' : '' }}" ><a class="d-flex align-items-center" href="{{route('input-nilai-sikap')}}"><i
-                                data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="List">Input
-                                Nilai Sikap</span></a>
+            @if (Auth::user()->role != 'Guru')
+                <li class=" navigation-header"><span data-i18n="User Interface">Nilai Management</span><i
+                        data-feather="more-horizontal"></i>
+                </li>
+                @if (Auth::user()->role != 'Siswa' || Auth::user()->role != 'Guru')
+                    <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i
+                                data-feather="thumbs-up"></i><span class="menu-title text-truncate"
+                                data-i18n="User">Nilai Sikap</span></a>
+                        <ul class="menu-content">
+                            <li class="{{ request()->is('input-nilai/sikap*') ? 'active' : '' }}"><a
+                                    class="d-flex align-items-center" href="{{ route('input-nilai-sikap') }}"><i
+                                        data-feather="circle"></i><span class="menu-item text-truncate"
+                                        data-i18n="List">Input
+                                        Nilai Sikap</span></a>
+                            </li>
                     </li>
-            </li>
-        </ul>
-            <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i data-feather="target"></i><span
-                        class="menu-title text-truncate" data-i18n="User">Nilai Ekstrakurikuler</span></a>
-                <ul class="menu-content">
-                    <li class="{{ request()->is('input-nilai/ekstrakurikuler*') ? 'active' : '' }}" ><a class="d-flex align-items-center" href="{{route('input-ekstrakurikuler')}}"><i
-                                data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="List">Input
-                                Nilai Ekstrakurikuler</span></a>
+                    </ul>
+                    <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i
+                                data-feather="target"></i><span class="menu-title text-truncate" data-i18n="User">Nilai
+                                Ekstrakurikuler</span></a>
+                        <ul class="menu-content">
+                            <li class="{{ request()->is('input-nilai/ekstrakurikuler*') ? 'active' : '' }}"><a
+                                    class="d-flex align-items-center" href="{{ route('input-ekstrakurikuler') }}"><i
+                                        data-feather="circle"></i><span class="menu-item text-truncate"
+                                        data-i18n="List">Input
+                                        Nilai Ekstrakurikuler</span></a>
+                            </li>
                     </li>
-            </li>
-        </ul>
-            <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i data-feather="award"></i><span
-                        class="menu-title text-truncate" data-i18n="User">Nilai Prestasi</span></a>
-                <ul class="menu-content">
-                    <li class="{{ request()->is('input-nilai/prestasi*') ? 'active' : '' }}" ><a class="d-flex align-items-center" href="{{route('input-prestasi')}}"><i
-                                data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="List">Input
-                                Nilai Prestasi</span></a>
+                    </ul>
+                    <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i
+                                data-feather="award"></i><span class="menu-title text-truncate" data-i18n="User">Nilai
+                                Prestasi</span></a>
+                        <ul class="menu-content">
+                            <li class="{{ request()->is('input-nilai/prestasi*') ? 'active' : '' }}"><a
+                                    class="d-flex align-items-center" href="{{ route('input-prestasi') }}"><i
+                                        data-feather="circle"></i><span class="menu-item text-truncate"
+                                        data-i18n="List">Input
+                                        Nilai Prestasi</span></a>
+                            </li>
                     </li>
-            </li>
-        </ul>
-        @endif
+                    </ul>
+                @endif
+                <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i
+                            data-feather="book"></i><span class="menu-title text-truncate" data-i18n="User">Nilai
+                            Lapor</span></a>
+                    <ul class="menu-content">
+                        <li class="{{ request()->is('show-nilai/lapor*') ? 'active' : '' }}"><a
+                                class="d-flex align-items-center" href="{{ route('show-nilai-lapor') }}"><i
+                                    data-feather="circle"></i><span class="menu-item text-truncate"
+                                    data-i18n="List">Lihat Lapor</span></a>
+                        </li>
+                </li>
+                </ul>
+                </li>
 
-            <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i data-feather="book"></i><span
-                        class="menu-title text-truncate" data-i18n="User">Nilai Lapor</span></a>
-                <ul class="menu-content">
-                    <li class="{{ request()->is('show-nilai/lapor*') ? 'active' : '' }}" ><a class="d-flex align-items-center" href="{{route('show-nilai-lapor')}}"><i
-                                data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="List">Lihat Lapor</span></a>
-                    </li>
-            </li>
-            </ul>
-            </li>
+                @endif
 
-            {{-- OPTIONAL FOR FETURE --}}
+                {{-- OPTIONAL FOR FETURE --}}
 
-            {{-- <li class=" navigation-header"><span data-i18n="Forms &amp; Tables">Configuration</span><i data-feather="more-horizontal"></i>
+                {{-- <li class=" navigation-header"><span data-i18n="Forms &amp; Tables">Configuration</span><i data-feather="more-horizontal"></i>
           </li>
           <li class=" nav-item"><a class="d-flex align-items-center" href="https://pixinvent.com/demo/vuexy-html-bootstrap-admin-template/documentation" target="_blank"><i data-feather="database"></i><span class="menu-title text-truncate" data-i18n="RestApi">Rest API</span></a>
           <li class=" nav-item"><a class="d-flex align-items-center" href="https://pixinvent.com/demo/vuexy-html-bootstrap-admin-template/documentation" target="_blank"><i data-feather="code"></i><span class="menu-title text-truncate" data-i18n="Appliaction">Appliaction</span></a>
@@ -413,13 +456,13 @@ $avatar = substr(Auth::user()->name, 0, 2);
                 <script src={{ asset('app-assets/vendors/js/charts/apexcharts.min.js') }}></script>
                 <script src={{ asset('app-assets/vendors/js/forms/select/select2.full.min.js') }}></script>
 
-                <script src={{asset('app-assets/vendors/js/pickers/pickadate/picker.js')}}></script>
-                <script src={{asset('app-assets/vendors/js/pickers/pickadate/picker.date.js')}}></script>
-                <script src={{asset('app-assets/vendors/js/pickers/pickadate/picker.time.js')}}></script>
-                <script src={{asset('app-assets/vendors/js/pickers/pickadate/legacy.js')}}></script>
-                <script src={{asset('app-assets/vendors/js/pickers/flatpickr/flatpickr.min.js')}}></script>
+                <script src={{ asset('app-assets/vendors/js/pickers/pickadate/picker.js') }}></script>
+                <script src={{ asset('app-assets/vendors/js/pickers/pickadate/picker.date.js') }}></script>
+                <script src={{ asset('app-assets/vendors/js/pickers/pickadate/picker.time.js') }}></script>
+                <script src={{ asset('app-assets/vendors/js/pickers/pickadate/legacy.js') }}></script>
+                <script src={{ asset('app-assets/vendors/js/pickers/flatpickr/flatpickr.min.js') }}></script>
 
-                <script src={{asset('app-assets/vendors/js/charts/apexcharts.min.js')}}></script>
+                <script src={{ asset('app-assets/vendors/js/charts/apexcharts.min.js') }}></script>
 
 
 

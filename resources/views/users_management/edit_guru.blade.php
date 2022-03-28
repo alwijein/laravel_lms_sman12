@@ -34,7 +34,7 @@
                                         <input type="email" id="first-name-column" class="form-control"
                                             placeholder="Masukkan Email Baru" value="{{$guru->email}}" name="email" />
                                     </div>
-                                    @error('name')
+                                    @error('email')
                                     <div class="text-danger mt-1">
                                         {{ $message }}
                                     </div>
@@ -46,12 +46,28 @@
                                         <input type="password" id="first-name-column" class="form-control"
                                             placeholder="Masukkan Password Baru" value="{{$guru->password}}"  name="password" />
                                     </div>
-                                    @error('name')
+                                    @error('password')
                                     <div class="text-danger mt-1">
                                         {{ $message }}
                                     </div>
                                     @enderror
                                 </div>
+                                <div class="col-md-6 col-12">
+                                    <div class="mb-1">
+                                        <label class="form-label" for="basicSelect">Status</label>
+                                        <select class="form-select mb-1" id="basicSelect" name="role">
+                                            <option disabled selected>{{$guru->role}}</option>
+                                            <option value="Guru">Guru</option>
+                                            <option value="WaliKelas">Wali Kelas</option>
+                                        </select>
+                                    </div>
+                                    @error('role')
+                                    <div class="text-danger mt-1">
+                                        {{ $message }}
+                                    </div>
+                                    @enderror
+                                </div>
+
                                 <div class="col-12 text-center">
                                     <button type="submit" class="btn btn-primary me-1">Submit</button>
                                     <button type="reset" class="btn btn-outline-secondary">Reset</button>
