@@ -65,7 +65,7 @@
                                                     href="#">&nbsp;privacy policy & terms</a></label>
                                         </div>
                                     </div> --}}
-                                    <button class="btn btn-primary w-100" tabindex="5" type="submit">Sign up</button>
+                                    <button class="btn btn-primary w-100" tabindex="5" type="submit">Login</button>
                                 </form>
                             </div>
                         </div>

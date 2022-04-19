@@ -25,7 +25,7 @@ class UserController extends Controller
         $request->validate([
             'name' => ['required',  'min:3'],
             'email' => ['required', 'unique:users' , 'email'],
-            'password' => ['required', 'min:8'],
+            'password' => ['required', 'min:7'],
         ]);
 
         $user = User::create([
@@ -47,7 +47,7 @@ class UserController extends Controller
         $request->validate([
             'name' => ['required',  'min:3'],
             'email' => ['required', 'unique:users' , 'email'],
-            'password' => ['required', 'min:8'],
+            'password' => ['required', 'min:7'],
         ]);
 
         User::where('id', $id)->update([
@@ -74,7 +74,7 @@ class UserController extends Controller
             'name' => ['required',  'min:3'],
             'email' => ['required', 'unique:users' , 'email'],
             'role' => ['required'],
-            'password' => ['required', 'min:8'],
+            'password' => ['required', 'min:7'],
         ]);
 
         $user = User::create([
@@ -97,7 +97,7 @@ class UserController extends Controller
         $request->validate([
             'name' => ['required',  'min:3'],
             'email' => ['required' , 'email'],
-            'password' => ['required', 'min:8'],
+            'password' => ['required', 'min:7'],
         ]);
 
         User::where('id', $id)->update([
@@ -152,7 +152,7 @@ class UserController extends Controller
     public function updatePassword(Request $request){
 
         $request->validate([
-            'new_password' =>  'min:8',
+            'new_password' =>  'min:7',
             'confirm_new_password' => 'required_with:new_password|same:new_password|min:6',
         ]);
 

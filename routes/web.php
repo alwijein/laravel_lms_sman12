@@ -38,6 +38,7 @@ Route::middleware(['auth'])->group(function(){
     Route::middleware(['isGlobalAccess'])->group(function(){
 
         Route::middleware(['admin'])->group(function(){
+
             Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
             Route::get('/show-siswa',[UserController::class, 'showSiswa'])->name('show-siswa');
@@ -61,6 +62,8 @@ Route::middleware(['auth'])->group(function(){
             Route::delete('/detail-jadwal/{id}',[JadwalController::class, 'destroy'])->name('delete-jadwal');
 
             Route::post('/show-kelas',[KelasController::class, 'store']);
+            Route::get('/show-kelas/{id}/edit',[KelasController::class, 'editKelas'])->name('edit-kelas');
+            Route::put('/show-kelas/{id}', [KelasController::class, 'updateKelas']);
             Route::delete('/show-kelas/{id}',[KelasController::class, 'destroy'])->name('delete-kelas');
 
 

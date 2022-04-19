@@ -24,4 +24,6 @@ class Guru extends Model
     public function nilai(){
         return $this->hasMany(Nilai::class);
     }
+
+
 }

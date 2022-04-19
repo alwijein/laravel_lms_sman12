@@ -360,7 +360,7 @@ $avatar = substr(Auth::user()->name, 0, 2);
                 <li class=" navigation-header"><span data-i18n="User Interface">Nilai Management</span><i
                         data-feather="more-horizontal"></i>
                 </li>
-                @if (Auth::user()->role != 'Siswa' || Auth::user()->role != 'Guru')
+                @if (Auth::user()->role != 'Siswa' && Auth::user()->role != 'Guru')
                     <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i
                                 data-feather="thumbs-up"></i><span class="menu-title text-truncate"
                                 data-i18n="User">Nilai Sikap</span></a>

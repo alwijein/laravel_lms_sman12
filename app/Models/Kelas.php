@@ -11,7 +11,7 @@ class Kelas extends Model
 
     protected $table = 'kelas';
 
-    protected $fillable = ['kelas'];
+    protected $fillable = ['kelas', 'kode_guru'];
 
     public function jadwal(){
         return $this->hasMany(Jadwal::class);
@@ -27,5 +27,9 @@ class Kelas extends Model
 
     public function nilai(){
         return $this->hasMany(Nilai::class);
+    }
+
+    public function guru(){
+        return $this->belongsTo(User::class, 'kode_guru');
     }
 }

@@ -24,6 +24,10 @@ class User extends Authenticatable
         'password',
     ];
 
+    public function kelas(){
+        return $this->hasMany(Kelas::class);
+    }
+
     /**
      * The attributes that should be hidden for serialization.
      *

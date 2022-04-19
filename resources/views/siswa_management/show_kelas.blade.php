@@ -38,7 +38,20 @@
                                                         {{ $message }}
                                                     </div>
                                                 @enderror
-
+                                                    <div class="mb-1">
+                                                        <label class="form-label" for="basicSelect">Pilih Wali Kelas</label>
+                                                        <select class="form-select" id="basicSelect" name="kode_guru">
+                                                            <option disabled selected>Pilih Wali Kelas</option>
+                                                            @foreach ($waliKelas as $data)
+                                                            <option value="{{$data->id}}">{{$data->name}}</option>
+                                                            @endforeach
+                                                        </select>
+                                                    </div>
+                                                    @error('kode_guru')
+                                                    <div class="text-danger mt-1">
+                                                        {{ $message }}
+                                                    </div>
+                                                   @enderror
                                             </div>
                                             <div class="modal-footer">
                                                 <button type="submit" class="btn btn-primary">Daftar</button>
@@ -55,6 +68,7 @@
                                 <tr>
                                     <th>No</th>
                                     <th>Kelas</th>
+                                    <th>Wali Kelas</th>
                                     <th>Aksi</th>
                                 </tr>
                             </thead>
@@ -65,16 +79,30 @@
 
                                         <td>{{ $kls->kelas }}</td>
 
-                                        <td>
+                                        <td>{{ $kls->guru->name }}</td>
 
-                                            <form action="{{ route('delete-kelas', ['id' => $kls->id]) }}" method="POST">
-                                                @method('delete')
-                                                @csrf
-                                                <button class="dropdown-item" type="submit">
-                                                    <i data-feather="trash" class="me-50"></i>
-                                                    <span>Delete</span>
+                                        <td>
+                                            <div class="dropdown">
+                                                <button type="button" class="btn btn-sm dropdown-toggle hide-arrow"
+                                                    data-bs-toggle="dropdown">
+                                                    <i data-feather="more-vertical"></i>
                                                 </button>
-                                            </form>
+                                                <div class="dropdown-menu">
+                                                    <a class="dropdown-item" href="{{ route('edit-kelas', ['id'=>$kls->id]) }}">
+                                                        <i data-feather="edit-2" class="me-50"></i>
+                                                        <span>Edit</span>
+                                                    </a>
+                                                    <form action="{{ route('delete-kelas', ['id' => $kls->id]) }}" method="POST">
+                                                        @method('delete')
+                                                        @csrf
+                                                        <button class="dropdown-item" type="submit">
+                                                            <i data-feather="trash" class="me-50"></i>
+                                                            <span>Delete</span>
+                                                        </button>
+                                                    </form>
+                                                </div>
+                                            </div>
+
                                         </td>
                                     </tr>
                                 @endforeach
