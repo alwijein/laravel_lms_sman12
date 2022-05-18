@@ -11,7 +11,7 @@ class Kelas extends Model
 
     protected $table = 'kelas';
 
-    protected $fillable = ['kelas', 'kode_guru'];
+    protected $fillable = ['kelas'];
 
     public function jadwal(){
         return $this->hasMany(Jadwal::class);

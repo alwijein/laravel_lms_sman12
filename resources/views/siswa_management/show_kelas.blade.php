@@ -38,20 +38,6 @@
                                                         {{ $message }}
                                                     </div>
                                                 @enderror
-                                                    <div class="mb-1">
-                                                        <label class="form-label" for="basicSelect">Pilih Wali Kelas</label>
-                                                        <select class="form-select" id="basicSelect" name="kode_guru">
-                                                            <option disabled selected>Pilih Wali Kelas</option>
-                                                            @foreach ($waliKelas as $data)
-                                                            <option value="{{$data->id}}">{{$data->name}}</option>
-                                                            @endforeach
-                                                        </select>
-                                                    </div>
-                                                    @error('kode_guru')
-                                                    <div class="text-danger mt-1">
-                                                        {{ $message }}
-                                                    </div>
-                                                   @enderror
                                             </div>
                                             <div class="modal-footer">
                                                 <button type="submit" class="btn btn-primary">Daftar</button>
@@ -68,7 +54,6 @@
                                 <tr>
                                     <th>No</th>
                                     <th>Kelas</th>
-                                    <th>Wali Kelas</th>
                                     <th>Aksi</th>
                                 </tr>
                             </thead>
@@ -79,7 +64,6 @@
 
                                         <td>{{ $kls->kelas }}</td>
 
-                                        <td>{{ $kls->guru->name }}</td>
 
                                         <td>
                                             <div class="dropdown">
