@@ -16,7 +16,7 @@ class WaliKelas
      */
     public function handle(Request $request, Closure $next)
     {
-        if ($request->user()->role != 'WaliKelas' && $request->user()->role != 'Admin' ) {
+        if ($request->user()->role != 'WaliKelas' && $request->user()->role != 'Admin' && $request->user()->role != 'Guru') {
             return redirect('/');
         }
         return $next($request);
