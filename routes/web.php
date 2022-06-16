@@ -114,6 +114,7 @@ Route::middleware(['auth'])->group(function(){
             Route::delete('/show-ujian/{id}',[UjianContoller::class, 'destroy'])->name('delete-ujian');
 
 
+            Route::get('/show-kelas/detail/{id}', [KelasController::class, 'detailKelas'])->name('detail-kelas');
 
 
 

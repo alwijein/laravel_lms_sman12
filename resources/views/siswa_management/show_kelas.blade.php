@@ -72,6 +72,10 @@
                                                     <i data-feather="more-vertical"></i>
                                                 </button>
                                                 <div class="dropdown-menu">
+                                                    <a  class="dropdown-item" href="{{ route('detail-kelas', ['id'=>$kls->id]) }}">
+                                                        <i data-feather="eye" class="me-50"></i>
+                                                        <span>Lihat</span>
+                                                    </a>
                                                     <a class="dropdown-item" href="{{ route('edit-kelas', ['id'=>$kls->id]) }}">
                                                         <i data-feather="edit-2" class="me-50"></i>
                                                         <span>Edit</span>

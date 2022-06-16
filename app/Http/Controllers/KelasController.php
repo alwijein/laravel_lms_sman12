@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 
 use App\Models\Kelas;
+use App\Models\Siswa;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -51,5 +52,10 @@ class KelasController extends Controller
         $kelas->delete();
 
         return redirect('show-kelas');
+    }
+
+    public function detailKelas ($id){
+        $siswa = Siswa::where('kode_kelas', $id)->get();
+        return view("siswa_management.detail_kelas", compact('siswa'));
     }
 }

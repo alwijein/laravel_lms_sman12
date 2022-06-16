@@ -72,7 +72,9 @@ $avatar = substr(Auth::user()->name, 0, 2);
     <!-- BEGIN: Custom CSS-->
     <link rel="stylesheet" type="text/css" href={{ asset('assets/css/style.css') }}>
 
-
+    <script>
+        var res = 1;
+    </script>
     <!-- END: Custom CSS-->
 
 </head>
@@ -94,8 +96,9 @@ $avatar = substr(Auth::user()->name, 0, 2);
                 </ul>
                 <ul class="nav navbar-nav bookmark-icons">
                     <li class="nav-item d-none d-lg-block"><a class="nav-link"
-                            href={{ route('show-jadwal-belajar') }} data-bs-toggle="tooltip" data-bs-placement="bottom"
-                            title="Jadwal Belajar"><i class="ficon" data-feather="calendar"></i></a></li>
+                            href={{ route('show-jadwal-belajar') }} data-bs-toggle="tooltip"
+                            data-bs-placement="bottom" title="Jadwal Belajar"><i class="ficon"
+                                data-feather="calendar"></i></a></li>
                 </ul>
             </div>
             <ul class="nav navbar-nav align-items-center ms-auto">
@@ -156,7 +159,6 @@ $avatar = substr(Auth::user()->name, 0, 2);
                                     class="menu-item text-truncate" data-i18n="eCommerce">SMAN 12</span></a></li>
                     </ul>
                     @if (Auth::user()->role == 'Admin')
-
                         <ul class="menu-content">
                             <li class="{{ request()->is('dashboard*') ? 'active' : '' }}"><a
                                     class="d-flex align-items-center" href="{{ route('dashboard') }}"><i
@@ -166,7 +168,6 @@ $avatar = substr(Auth::user()->name, 0, 2);
                     @endif
                 </li>
                 @if (Auth::user()->role == 'Admin')
-
                     <li class=" navigation-header"><span data-i18n="Apps &amp; Pages">User Management</span><i
                             data-feather="more-horizontal"></i>
                     </li>
@@ -197,7 +198,6 @@ $avatar = substr(Auth::user()->name, 0, 2);
                                 Siswa</span></a>
                         <ul class="menu-content">
                             @if (Auth::user()->role == 'Admin')
-
                                 <li class="{{ request()->is('input-jadwal*') ? 'active' : '' }}"><a
                                         class="d-flex align-items-center" href="{{ route('input-jadwal') }}"><i
                                             data-feather="circle"></i><span class="menu-item text-truncate"
@@ -242,7 +242,6 @@ $avatar = substr(Auth::user()->name, 0, 2);
                 </li>
             @endif
             @if (Auth::user()->role == 'Admin' || Auth::user()->role == 'Guru')
-
                 <li class=" navigation-header"><span data-i18n="User Interface">Guru Management</span><i
                         data-feather="more-horizontal"></i>
                 </li>
@@ -272,7 +271,6 @@ $avatar = substr(Auth::user()->name, 0, 2);
                 </li>
             @endif
             @if (Auth::user()->role == 'Admin' || Auth::user()->role == 'Guru' || Auth::user()->role == 'Siswa')
-
                 <li class=" nav-item"><a class="d-flex align-items-center mt-1" href="#"><i
                             data-feather="database"></i><span class="menu-title text-truncate" data-i18n="User">Data
                             Guru</span></a>
@@ -339,7 +337,6 @@ $avatar = substr(Auth::user()->name, 0, 2);
                         Ujian</span></a>
                 <ul class="menu-content">
                     @if (Auth::user()->role == 'Admin' || Auth::user()->role == 'WaliKelas')
-
                         <li class="{{ request()->is('input-nilai-ujian*') ? 'active' : '' }}"><a
                                 class="d-flex align-items-center" href="{{ route('input-nilai-ujian') }}"><i
                                     data-feather="circle"></i><span class="menu-item text-truncate"
@@ -356,64 +353,64 @@ $avatar = substr(Auth::user()->name, 0, 2);
             </ul>
             </li>
 
-                <li class=" navigation-header"><span data-i18n="User Interface">Nilai Management</span><i
-                        data-feather="more-horizontal"></i>
-                </li>
-                @if (Auth::user()->role != 'Siswa')
-                    <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i
-                                data-feather="thumbs-up"></i><span class="menu-title text-truncate"
-                                data-i18n="User">Nilai Sikap</span></a>
-                        <ul class="menu-content">
-                            <li class="{{ request()->is('input-nilai/sikap*') ? 'active' : '' }}"><a
-                                    class="d-flex align-items-center" href="{{ route('input-nilai-sikap') }}"><i
-                                        data-feather="circle"></i><span class="menu-item text-truncate"
-                                        data-i18n="List">Input
-                                        Nilai Sikap</span></a>
-                            </li>
-                    </li>
-                    </ul>
-                    <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i
-                                data-feather="target"></i><span class="menu-title text-truncate" data-i18n="User">Nilai
-                                Ekstrakurikuler</span></a>
-                        <ul class="menu-content">
-                            <li class="{{ request()->is('input-nilai/ekstrakurikuler*') ? 'active' : '' }}"><a
-                                    class="d-flex align-items-center" href="{{ route('input-ekstrakurikuler') }}"><i
-                                        data-feather="circle"></i><span class="menu-item text-truncate"
-                                        data-i18n="List">Input
-                                        Nilai Ekstrakurikuler</span></a>
-                            </li>
-                    </li>
-                    </ul>
-                    <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i
-                                data-feather="award"></i><span class="menu-title text-truncate" data-i18n="User">Nilai
-                                Prestasi</span></a>
-                        <ul class="menu-content">
-                            <li class="{{ request()->is('input-nilai/prestasi*') ? 'active' : '' }}"><a
-                                    class="d-flex align-items-center" href="{{ route('input-prestasi') }}"><i
-                                        data-feather="circle"></i><span class="menu-item text-truncate"
-                                        data-i18n="List">Input
-                                        Nilai Prestasi</span></a>
-                            </li>
-                    </li>
-                    </ul>
-                @endif
+            <li class=" navigation-header"><span data-i18n="User Interface">Nilai Management</span><i
+                    data-feather="more-horizontal"></i>
+            </li>
+            @if (Auth::user()->role != 'Siswa')
                 <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i
-                            data-feather="book"></i><span class="menu-title text-truncate" data-i18n="User">Nilai
-                            Lapor</span></a>
+                            data-feather="thumbs-up"></i><span class="menu-title text-truncate" data-i18n="User">Nilai
+                            Sikap</span></a>
                     <ul class="menu-content">
-                        <li class="{{ request()->is('show-nilai/lapor*') ? 'active' : '' }}"><a
-                                class="d-flex align-items-center" href="{{ route('show-nilai-lapor') }}"><i
+                        <li class="{{ request()->is('input-nilai/sikap*') ? 'active' : '' }}"><a
+                                class="d-flex align-items-center" href="{{ route('input-nilai-sikap') }}"><i
                                     data-feather="circle"></i><span class="menu-item text-truncate"
-                                    data-i18n="List">Lihat Lapor</span></a>
+                                    data-i18n="List">Input
+                                    Nilai Sikap</span></a>
                         </li>
                 </li>
                 </ul>
+                <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i
+                            data-feather="target"></i><span class="menu-title text-truncate" data-i18n="User">Nilai
+                            Ekstrakurikuler</span></a>
+                    <ul class="menu-content">
+                        <li class="{{ request()->is('input-nilai/ekstrakurikuler*') ? 'active' : '' }}"><a
+                                class="d-flex align-items-center" href="{{ route('input-ekstrakurikuler') }}"><i
+                                    data-feather="circle"></i><span class="menu-item text-truncate"
+                                    data-i18n="List">Input
+                                    Nilai Ekstrakurikuler</span></a>
+                        </li>
                 </li>
+                </ul>
+                <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i
+                            data-feather="award"></i><span class="menu-title text-truncate" data-i18n="User">Nilai
+                            Prestasi</span></a>
+                    <ul class="menu-content">
+                        <li class="{{ request()->is('input-nilai/prestasi*') ? 'active' : '' }}"><a
+                                class="d-flex align-items-center" href="{{ route('input-prestasi') }}"><i
+                                    data-feather="circle"></i><span class="menu-item text-truncate"
+                                    data-i18n="List">Input
+                                    Nilai Prestasi</span></a>
+                        </li>
+                </li>
+                </ul>
+            @endif
+            <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i data-feather="book"></i><span
+                        class="menu-title text-truncate" data-i18n="User">Nilai
+                        Lapor</span></a>
+                <ul class="menu-content">
+                    <li class="{{ request()->is('show-nilai/lapor*') ? 'active' : '' }}"><a
+                            class="d-flex align-items-center" href="{{ route('show-nilai-lapor') }}"><i
+                                data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="List">Lihat
+                                Lapor</span></a>
+                    </li>
+            </li>
+            </ul>
+            </li>
 
 
-                {{-- OPTIONAL FOR FETURE --}}
+            {{-- OPTIONAL FOR FETURE --}}
 
-                {{-- <li class=" navigation-header"><span data-i18n="Forms &amp; Tables">Configuration</span><i data-feather="more-horizontal"></i>
+            {{-- <li class=" navigation-header"><span data-i18n="Forms &amp; Tables">Configuration</span><i data-feather="more-horizontal"></i>
           </li>
           <li class=" nav-item"><a class="d-flex align-items-center" href="https://pixinvent.com/demo/vuexy-html-bootstrap-admin-template/documentation" target="_blank"><i data-feather="database"></i><span class="menu-title text-truncate" data-i18n="RestApi">Rest API</span></a>
           <li class=" nav-item"><a class="d-flex align-items-center" href="https://pixinvent.com/demo/vuexy-html-bootstrap-admin-template/documentation" target="_blank"><i data-feather="code"></i><span class="menu-title text-truncate" data-i18n="Appliaction">Appliaction</span></a>
@@ -497,6 +494,26 @@ $avatar = substr(Auth::user()->name, 0, 2);
                             });
                         }
                     })
+
+                    $(document).ready(function() {
+                        $('#matapelajaran').on('change', function() {
+                            const selected = $(this).find('option:selected');
+                            const matapelajaran = selected.data('matapelajaran');
+
+                            console.log("Hell")
+                            $("#input").val(matapelajaran);
+                        });
+                    });
+                    var input = document.getElementById('input');
+                    var select = document.getElementById('guru_pelajaran');
+                    var opt = document.createElement('option');
+                    console.log(nilaiMatematika)
+                    if(input.value == 1){
+                        opt.value = 'guru matematika';
+                        opt.innerHTML = 'Guru Matematika';
+                        opt.selected = true;
+                        select.appendChild(opt);
+                    }
                 </script>
 </body>
 <!-- END: Body-->

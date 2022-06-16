@@ -2,6 +2,7 @@
 
 @section('content')
     <!-- Basic multiple Column Form section start -->
+
     <section id="multiple-column-form">
         <div class="row">
             <div class="col-12">
@@ -45,26 +46,36 @@
                                 <div class="col-md-6 col-12">
                                     <div class="mb-1">
                                         <label class="form-label" for="basicSelect">Mata Pelajaran</label>
-                                        <select class="form-select" id="basicSelect" name="kode_pelajaran">
+                                        <select class="form-select"  name="kode_pelajaran" id="matapelajaran">
                                             <option disabled selected>Pilih Mata Pelajaran</option>
                                             @foreach ($pelajaran as $data)
-                                                <option value="{{ $data->id }}">{{ $data->mata_pelajaran }}</option>
-                                            @endforeach
+                                                <option value="{{ $data->id }}" data-matapelajaran="{{$data->id}}">{{ $data->mata_pelajaran }}</option>
+                                                @endforeach
+                                                <option value="0" data-matapelajaran="kimia">Kimia</option>
+                                                <option value="1" data-matapelajaran="fisika">Fisika</option>
                                         </select>
                                     </div>
+                                    <input type="text" id="input">
+
+
                                     @error('kode_pelajaran')
                                         <div class="text-danger mt-1">
                                             {{ $message }}
                                         </div>
                                     @enderror
                                 </div>
+
+
+
                                 <div class="col-md-6 col-12">
                                     <div class="mb-1">
                                         <label class="form-label" for="basicSelect">Guru Pengajar</label>
-                                        <select class="form-select" id="basicSelect" name="kode_guru">
-                                            <option disabled selected>Pilih Mata Pelajaran</option>
+                                        <select class="form-select" id="guru_pelajaran" name="kode_guru">
+                                            <option disabled selected>Pilih Guru Pengajar</option>
                                             @foreach ($guru as $data)
+                                                @if ($data->kode_pelajaran == 1)
                                                 <option value="{{ $data->id }}">{{ $data->nama_guru }}</option>
+                                                @endif
                                             @endforeach
                                         </select>
                                     </div>
@@ -76,7 +87,7 @@
                                 </div>
                                 <div class="col-md-6 col-12">
                                     <div class="mb-1">
-                                        <label class="form-label" for="basicSelect">Nilai</label>
+                                        <label class="form-label" for="basicSelect">Nilai </label>
                                         <input value="{{ old('nilai') }}" type="number" id="first-name"
                                             class="form-control text-lowercase" name="nilai"
                                             placeholder="Masukkan Nilai Siswa" />
@@ -141,4 +152,30 @@
             </div>
         </div>
     </section>
+
+    <script>
+        // const nilaiMatematika = 0;
+        //  $(window).on('load', function() {
+        //                 if (feather) {
+        //                     feather.replace({
+        //                         width: 14,
+        //                         height: 14
+        //                     });
+        //                 }
+        //             })
+
+        //             $(document).ready(function() {
+        //                 $('#matapelajaran').on('change', function() {
+        //                     const selected = $(this).find('option:selected');
+        //                     const matapelajaran = selected.data('matapelajaran');
+        //                     nilaiMatematika = matapelajaran;
+        //                     console.log("Hell")
+        //                     $("#input").val(matapelajaran);
+        //                 });
+        //             });
+
+    </script>
+
+
 @endsection
+
