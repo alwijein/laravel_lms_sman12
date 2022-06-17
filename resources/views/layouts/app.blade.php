@@ -500,20 +500,9 @@ $avatar = substr(Auth::user()->name, 0, 2);
                             const selected = $(this).find('option:selected');
                             const matapelajaran = selected.data('matapelajaran');
 
-                            console.log("Hell")
                             $("#input").val(matapelajaran);
                         });
                     });
-                    var input = document.getElementById('input');
-                    var select = document.getElementById('guru_pelajaran');
-                    var opt = document.createElement('option');
-                    console.log(nilaiMatematika)
-                    if(input.value == 1){
-                        opt.value = 'guru matematika';
-                        opt.innerHTML = 'Guru Matematika';
-                        opt.selected = true;
-                        select.appendChild(opt);
-                    }
                 </script>
 </body>
 <!-- END: Body-->
