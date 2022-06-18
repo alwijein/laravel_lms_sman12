@@ -154,6 +154,9 @@
     </section>
 
     <script>
+        function ambilGuruMapel(id) {
+            console.log(id);
+        }
         // const nilaiMatematika = 0;
         //  $(window).on('load', function() {
         //                 if (feather) {

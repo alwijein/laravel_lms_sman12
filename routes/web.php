@@ -14,6 +14,7 @@ use App\Http\Controllers\PrestasiController;
 use App\Http\Controllers\UjianContoller;
 use App\Http\Controllers\UserManagement\UserController;
 use App\Models\AbsensiSiswa;
+use App\Models\Guru;
 use App\Models\Pelajaran;
 use Illuminate\Support\Facades\Route;
 use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
@@ -28,6 +29,13 @@ use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+
+Route::get('/get-guru-by-mapel-id/{id}', function ($id) {
+    $teachers = Guru::where('kode_pelajaran', $id)->get();
+    return view('guru_management.components.list-guru', compact('teachers'));
+})->name('gpi');
+
 Route::middleware(['auth'])->group(function(){
     Route::get('/', function () {
         return view('home.home');

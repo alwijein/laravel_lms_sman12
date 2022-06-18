@@ -33,7 +33,7 @@
                                 <div class="col-md-6 col-12">
                                     <div class="mb-1">
                                         <label class="form-label" for="basicSelect">Pilih Mata Pelajaran</label>
-                                        <select class="form-select" id="basicSelect" name="matapelajaran">
+                                        <select class="form-select" id="basicSelect" name="matapelajaran" onchange="filterGuruMapel(this)">
                                             <option disabled selected>Pilih Mata Pelajaran</option>
 
                                             @foreach ($pelajaran as $matapelajaran)
@@ -71,12 +71,12 @@
                                 </div>
                                 <div class="col-md-6 col-12">
                                     <div class="mb-1">
-                                        <label class="form-label" for="basicSelect">Pilih Guru</label>
-                                        <select class="form-select" id="basicSelect" name="guru">
+                                        <label class="form-label" for="selectGuru">Pilih Guru</label>
+                                        <select class="form-select" id="selectGuru" name="guru">
                                             <option disabled selected>Pilih Guru</option>
 
                                             @foreach ($guru as $namaguru)
-                                                <option value="{{$namaguru->id}}" >{{$namaguru->nama_guru}}</option>
+                                                <option value="{{$namaguru->id}}" data-mapel="{{$namaguru->kode_pelajaran}}">{{$namaguru->nama_guru}}</option>
                                             @endforeach
                                         </select>
                                     </div>
@@ -115,4 +115,16 @@
             </div>
         </div>
     </section>
+
+
+    <script>
+        function filterGuruMapel(el) {
+            let val  = el.value;
+            let listEl = document.getElementById('selectGuru').parentElement;
+            $.get(`http://localhost:8000/get-guru-by-mapel-id/${val}`, function (res) {
+                listEl.innerHTML = res;
+            });
+        }
+    </script>
+
 @endsection
