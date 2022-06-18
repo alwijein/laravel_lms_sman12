@@ -51,8 +51,6 @@
                                             @foreach ($pelajaran as $data)
                                                 <option value="{{ $data->id }}" data-matapelajaran="{{$data->id}}">{{ $data->mata_pelajaran }}</option>
                                                 @endforeach
-                                                <option value="0" data-matapelajaran="kimia">Kimia</option>
-                                                <option value="1" data-matapelajaran="fisika">Fisika</option>
                                         </select>
                                     </div>
                                     <input type="text" id="input">
